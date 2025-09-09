@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline PWA Test Suite</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #0a0a0a;
+            color: #00f5ff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: rgba(26, 26, 26, 0.95);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-title {
+            color: #39ff14;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #00f5ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #39ff14;
+        }
+        .output {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-size: 12px;
+            min-height: 80px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .success {
+            color: #39ff14;
+        }
+        .error {
+            color: #ff00aa;
+        }
+        .warning {
+            color: #ff6600;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .online { background: #39ff14; }
+        .offline { background: #ff00aa; }
+    </style>
+</head>
+<body>
+    <h1>📱 Offline PWA Test Suite</h1>
+    <p>Network Status: <span class="status-indicator" id="networkStatus"></span><span id="networkText"></span></p>
+    
+    <div class="test-section">
+        <div class="test-title">🔧 PWA Installation Tests</div>
+        <button onclick="testManifest()">Test Manifest</button>
+        <button onclick="testServiceWorker()">Test Service Worker</button>
+        <button onclick="testInstallability()">Test Install Prompt</button>
+        <div id="pwaOutput" class="output">Click buttons to test PWA features</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">💾 Caching Tests</div>
+        <button onclick="testCatalogCache()">Test Catalog Cache</button>
+        <button onclick="testStaticCache()">Test Static Resources</button>
+        <button onclick="testCacheSize()">Check Cache Size</button>
+        <button onclick="clearAllCaches()">Clear All Caches</button>
+        <div id="cacheOutput" class="output">Test caching functionality</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">⭐ Favorites System Tests</div>
+        <button onclick="testFavoritesStorage()">Test Favorites Storage</button>
+        <button onclick="testFavoriteCategories()">Test Categories</button>
+        <button onclick="populateTestFavorites()">Add Test Favorites</button>
+        <button onclick="clearFavorites()">Clear Favorites</button>
+        <div id="favoritesOutput" class="output">Test favorites functionality</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">📱 Offline Simulation</div>
+        <button onclick="simulateOffline()">Simulate Offline</button>
+        <button onclick="simulateOnline()">Simulate Online</button>
+        <button onclick="testOfflineNavigation()">Test Offline Navigation</button>
+        <div id="offlineOutput" class="output">Simulate offline conditions</div>
+    </div>
+
+    <div class="test-section">
+        <div class="test-title">⚡ Performance Tests</div>
+        <button onclick="testLoadSpeed()">Test Load Speed</button>
+        <button onclick="testFavoritesPerformance()">Test Favorites Performance</button>
+        <button onclick="measureCacheHitRatio()">Cache Hit Ratio</button>
+        <div id="performanceOutput" class="output">Measure app performance</div>
+    </div>
+
+    <script>
+        // Network status monitoring
+        function updateNetworkStatus() {
+            const statusEl = document.getElementById('networkStatus');
+            const textEl = document.getElementById('networkText');
+            
+            if (navigator.onLine) {
+                statusEl.className = 'status-indicator online';
+                textEl.textContent = 'Online';
+            } else {
+                statusEl.className = 'status-indicator offline';
+                textEl.textContent = 'Offline';
+            }
+        }
+
+        // PWA Tests
+        async function testManifest() {
+            const output = document.getElementById('pwaOutput');
+            output.innerHTML = '<span class="warning">Testing manifest...</span>\n';
+            
+            try {
+                const response = await fetch('/manifest.json');
+                if (response.ok) {
+                    const manifest = await response.json();
+                    output.innerHTML += `<span class="success">✅ Manifest loaded successfully</span>\n`;
+                    output.innerHTML += `   Name: ${manifest.name}\n`;
+                    output.innerHTML += `   Short name: ${manifest.short_name}\n`;
+                    output.innerHTML += `   Start URL: ${manifest.start_url}\n`;
+                    output.innerHTML += `   Display: ${manifest.display}\n`;
+                    output.innerHTML += `   Theme color: ${manifest.theme_color}\n`;
+                    output.innerHTML += `   Icons: ${manifest.icons.length} configured\n`;
+                } else {
+                    output.innerHTML += `<span class="error">❌ Manifest failed to load: ${response.status}</span>\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Manifest test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        async function testServiceWorker() {
+            const output = document.getElementById('pwaOutput');
+            output.innerHTML = '<span class="warning">Testing Service Worker...</span>\n';
+            
+            if ('serviceWorker' in navigator) {
+                try {
+                    const registration = await navigator.serviceWorker.getRegistration();
+                    if (registration) {
+                        output.innerHTML += `<span class="success">✅ Service Worker registered</span>\n`;
+                        output.innerHTML += `   Scope: ${registration.scope}\n`;
+                        output.innerHTML += `   State: ${registration.active ? registration.active.state : 'Not active'}\n`;
+                        
+                        // Test message communication
+                        const messageChannel = new MessageChannel();
+                        messageChannel.port1.onmessage = (event) => {
+                            output.innerHTML += `   Cache status: ${JSON.stringify(event.data, null, 2)}\n`;
+                        };
+                        
+                        if (registration.active) {
+                            registration.active.postMessage({ type: 'CACHE_STATUS' }, [messageChannel.port2]);
+                        }
+                    } else {
+                        output.innerHTML += `<span class="error">❌ Service Worker not registered</span>\n`;
+                    }
+                } catch (error) {
+                    output.innerHTML += `<span class="error">❌ Service Worker test failed: ${error.message}</span>\n`;
+                }
+            } else {
+                output.innerHTML += `<span class="error">❌ Service Workers not supported</span>\n`;
+            }
+        }
+
+        function testInstallability() {
+            const output = document.getElementById('pwaOutput');
+            output.innerHTML = '<span class="warning">Testing PWA installability...</span>\n';
+            
+            // Check if app is already installed
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                output.innerHTML += '<span class="success">✅ App is currently running as installed PWA</span>\n';
+            } else {
+                output.innerHTML += '<span class="warning">⚠️ App is running in browser mode</span>\n';
+            }
+            
+            // Check for install prompt
+            if (window.deferredPrompt) {
+                output.innerHTML += '<span class="success">✅ Install prompt available</span>\n';
+            } else {
+                output.innerHTML += '<span class="warning">⚠️ Install prompt not captured (may have been used or not available)</span>\n';
+            }
+        }
+
+        // Cache Tests
+        async function testCatalogCache() {
+            const output = document.getElementById('cacheOutput');
+            output.innerHTML = '<span class="warning">Testing catalog cache...</span>\n';
+            
+            try {
+                const cache = await caches.open('mission-linen-catalog-v1.0');
+                const cachedResponse = await cache.match('/data/catalog.json');
+                
+                if (cachedResponse) {
+                    const data = await cachedResponse.json();
+                    output.innerHTML += `<span class="success">✅ Catalog cached successfully</span>\n`;
+                    output.innerHTML += `   Products: ${data.products.length}\n`;
+                    output.innerHTML += `   Cache date: ${cachedResponse.headers.get('date')}\n`;
+                    
+                    // Test performance
+                    const start = performance.now();
+                    await cache.match('/data/catalog.json');
+                    const end = performance.now();
+                    output.innerHTML += `   Cache access time: ${(end - start).toFixed(2)}ms\n`;
+                } else {
+                    output.innerHTML += `<span class="error">❌ Catalog not cached</span>\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Cache test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        async function testStaticCache() {
+            const output = document.getElementById('cacheOutput');
+            output.innerHTML = '<span class="warning">Testing static resource cache...</span>\n';
+            
+            try {
+                const cache = await caches.open('mission-linen-v1.0');
+                const cachedRequests = await cache.keys();
+                
+                output.innerHTML += `<span class="success">✅ Static cache contains ${cachedRequests.length} items</span>\n`;
+                cachedRequests.forEach(request => {
+                    output.innerHTML += `   - ${request.url}\n`;
+                });
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Static cache test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        async function testCacheSize() {
+            const output = document.getElementById('cacheOutput');
+            output.innerHTML = '<span class="warning">Calculating cache size...</span>\n';
+            
+            try {
+                if ('storage' in navigator && 'estimate' in navigator.storage) {
+                    const estimate = await navigator.storage.estimate();
+                    const usedMB = (estimate.usage / 1024 / 1024).toFixed(2);
+                    const quotaMB = (estimate.quota / 1024 / 1024).toFixed(2);
+                    
+                    output.innerHTML += `<span class="success">✅ Storage usage</span>\n`;
+                    output.innerHTML += `   Used: ${usedMB} MB\n`;
+                    output.innerHTML += `   Quota: ${quotaMB} MB\n`;
+                    output.innerHTML += `   Available: ${(quotaMB - usedMB).toFixed(2)} MB\n`;
+                }
+                
+                const cacheNames = await caches.keys();
+                output.innerHTML += `   Cache instances: ${cacheNames.length}\n`;
+                cacheNames.forEach(name => {
+                    output.innerHTML += `   - ${name}\n`;
+                });
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Cache size test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        async function clearAllCaches() {
+            const output = document.getElementById('cacheOutput');
+            output.innerHTML = '<span class="warning">Clearing all caches...</span>\n';
+            
+            try {
+                const cacheNames = await caches.keys();
+                await Promise.all(cacheNames.map(name => caches.delete(name)));
+                output.innerHTML += `<span class="success">✅ Cleared ${cacheNames.length} caches</span>\n`;
+                output.innerHTML += `<span class="warning">⚠️ App will need to reload resources</span>\n`;
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Failed to clear caches: ${error.message}</span>\n`;
+            }
+        }
+
+        // Favorites Tests
+        function testFavoritesStorage() {
+            const output = document.getElementById('favoritesOutput');
+            output.innerHTML = '<span class="warning">Testing favorites storage...</span>\n';
+            
+            try {
+                const testFavorites = {
+                    bestDeals: ['TEST001', 'TEST002'],
+                    customerFaves: ['TEST003'],
+                    quickRef: ['TEST004', 'TEST005'],
+                    recentlyViewed: ['TEST001', 'TEST002', 'TEST003']
+                };
+                
+                localStorage.setItem('missionLinenFavorites', JSON.stringify(testFavorites));
+                const retrieved = JSON.parse(localStorage.getItem('missionLinenFavorites'));
+                
+                if (JSON.stringify(testFavorites) === JSON.stringify(retrieved)) {
+                    output.innerHTML += `<span class="success">✅ Favorites storage working</span>\n`;
+                    output.innerHTML += `   Best Deals: ${retrieved.bestDeals.length}\n`;
+                    output.innerHTML += `   Customer Favorites: ${retrieved.customerFaves.length}\n`;
+                    output.innerHTML += `   Quick Reference: ${retrieved.quickRef.length}\n`;
+                    output.innerHTML += `   Recently Viewed: ${retrieved.recentlyViewed.length}\n`;
+                } else {
+                    output.innerHTML += `<span class="error">❌ Favorites storage corrupted</span>\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Favorites storage test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        function testFavoriteCategories() {
+            const output = document.getElementById('favoritesOutput');
+            output.innerHTML = '<span class="warning">Testing favorite categories...</span>\n';
+            
+            try {
+                const favorites = JSON.parse(localStorage.getItem('missionLinenFavorites')) || {
+                    bestDeals: [],
+                    customerFaves: [],
+                    quickRef: [],
+                    recentlyViewed: []
+                };
+                
+                const totalFavorites = favorites.bestDeals.length + favorites.customerFaves.length + favorites.quickRef.length;
+                
+                output.innerHTML += `<span class="success">✅ Category structure valid</span>\n`;
+                output.innerHTML += `   Total favorites: ${totalFavorites}\n`;
+                output.innerHTML += `   💰 Best Deals: ${favorites.bestDeals.length}\n`;
+                output.innerHTML += `   👥 Customer Faves: ${favorites.customerFaves.length}\n`;
+                output.innerHTML += `   ⚡ Quick Ref: ${favorites.quickRef.length}\n`;
+                output.innerHTML += `   📝 Recently Viewed: ${favorites.recentlyViewed.length}\n`;
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Category test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        function populateTestFavorites() {
+            const output = document.getElementById('favoritesOutput');
+            output.innerHTML = '<span class="warning">Populating test favorites...</span>\n';
+            
+            try {
+                const testFavorites = {
+                    bestDeals: ['99054962', '99054963', '99054964'],
+                    customerFaves: ['99054965', '99054966'],
+                    quickRef: ['99054967', '99054968', '99054969', '99054970'],
+                    recentlyViewed: ['99054962', '99054965', '99054967']
+                };
+                
+                localStorage.setItem('missionLinenFavorites', JSON.stringify(testFavorites));
+                output.innerHTML += `<span class="success">✅ Test favorites populated</span>\n`;
+                output.innerHTML += `   Ready for UI testing\n`;
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Failed to populate favorites: ${error.message}</span>\n`;
+            }
+        }
+
+        function clearFavorites() {
+            const output = document.getElementById('favoritesOutput');
+            localStorage.removeItem('missionLinenFavorites');
+            output.innerHTML = '<span class="success">✅ Favorites cleared</span>\n';
+        }
+
+        // Offline Simulation
+        function simulateOffline() {
+            const output = document.getElementById('offlineOutput');
+            output.innerHTML = '<span class="warning">Simulating offline mode...</span>\n';
+            
+            // Override navigator.onLine
+            Object.defineProperty(navigator, 'onLine', {
+                writable: true,
+                value: false
+            });
+            
+            // Trigger offline event
+            window.dispatchEvent(new Event('offline'));
+            
+            output.innerHTML += '<span class="error">📱 Now in offline mode</span>\n';
+            output.innerHTML += 'App should show offline indicators and work with cached data\n';
+            updateNetworkStatus();
+        }
+
+        function simulateOnline() {
+            const output = document.getElementById('offlineOutput');
+            output.innerHTML = '<span class="warning">Simulating online mode...</span>\n';
+            
+            // Restore navigator.onLine
+            Object.defineProperty(navigator, 'onLine', {
+                writable: true,
+                value: true
+            });
+            
+            // Trigger online event
+            window.dispatchEvent(new Event('online'));
+            
+            output.innerHTML += '<span class="success">🌐 Back online</span>\n';
+            output.innerHTML += 'App should sync and update cached data\n';
+            updateNetworkStatus();
+        }
+
+        async function testOfflineNavigation() {
+            const output = document.getElementById('offlineOutput');
+            output.innerHTML = '<span class="warning">Testing offline navigation...</span>\n';
+            
+            try {
+                // Test if main page loads from cache
+                const response = await fetch('/', { cache: 'only-if-cached', mode: 'same-origin' });
+                if (response.ok) {
+                    output.innerHTML += '<span class="success">✅ Main page available offline</span>\n';
+                } else {
+                    output.innerHTML += '<span class="error">❌ Main page not cached</span>\n';
+                }
+            } catch (error) {
+                output.innerHTML += '<span class="error">❌ Offline navigation failed: ' + error.message + '</span>\n';
+            }
+        }
+
+        // Performance Tests
+        async function testLoadSpeed() {
+            const output = document.getElementById('performanceOutput');
+            output.innerHTML = '<span class="warning">Testing load speed...</span>\n';
+            
+            try {
+                const start = performance.now();
+                const response = await fetch('/data/catalog.json');
+                const data = await response.json();
+                const end = performance.now();
+                
+                output.innerHTML += `<span class="success">✅ Catalog load time: ${(end - start).toFixed(2)}ms</span>\n`;
+                output.innerHTML += `   Products loaded: ${data.products.length}\n`;
+                output.innerHTML += `   Data size: ~${JSON.stringify(data).length} bytes\n`;
+                
+                if (end - start < 100) {
+                    output.innerHTML += `   🚀 EXCELLENT performance\n`;
+                } else if (end - start < 500) {
+                    output.innerHTML += `   ✅ GOOD performance\n`;
+                } else {
+                    output.innerHTML += `   ⚠️ SLOW performance\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Load speed test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        function testFavoritesPerformance() {
+            const output = document.getElementById('performanceOutput');
+            output.innerHTML = '<span class="warning">Testing favorites performance...</span>\n';
+            
+            try {
+                const start = performance.now();
+                
+                // Simulate typical operations
+                for (let i = 0; i < 1000; i++) {
+                    const favorites = JSON.parse(localStorage.getItem('missionLinenFavorites') || '{"bestDeals":[],"customerFaves":[],"quickRef":[],"recentlyViewed":[]}');
+                    const totalFavs = favorites.bestDeals.length + favorites.customerFaves.length + favorites.quickRef.length;
+                }
+                
+                const end = performance.now();
+                output.innerHTML += `<span class="success">✅ 1000 favorites operations: ${(end - start).toFixed(2)}ms</span>\n`;
+                output.innerHTML += `   Average per operation: ${((end - start) / 1000).toFixed(4)}ms\n`;
+                
+                if (end - start < 10) {
+                    output.innerHTML += `   🚀 EXCELLENT favorites performance\n`;
+                } else {
+                    output.innerHTML += `   ⚠️ Consider optimization\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Favorites performance test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        async function measureCacheHitRatio() {
+            const output = document.getElementById('performanceOutput');
+            output.innerHTML = '<span class="warning">Measuring cache hit ratio...</span>\n';
+            
+            try {
+                let cacheHits = 0;
+                let totalRequests = 10;
+                
+                for (let i = 0; i < totalRequests; i++) {
+                    const start = performance.now();
+                    await fetch('/data/catalog.json');
+                    const end = performance.now();
+                    
+                    // If request is very fast, likely from cache
+                    if (end - start < 5) {
+                        cacheHits++;
+                    }
+                }
+                
+                const hitRatio = (cacheHits / totalRequests * 100).toFixed(1);
+                output.innerHTML += `<span class="success">✅ Cache hit ratio: ${hitRatio}%</span>\n`;
+                output.innerHTML += `   Cache hits: ${cacheHits}/${totalRequests}\n`;
+                
+                if (hitRatio > 80) {
+                    output.innerHTML += `   🚀 EXCELLENT cache performance\n`;
+                } else if (hitRatio > 50) {
+                    output.innerHTML += `   ✅ GOOD cache performance\n`;
+                } else {
+                    output.innerHTML += `   ⚠️ Cache may not be working optimally\n`;
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">❌ Cache hit ratio test failed: ${error.message}</span>\n`;
+            }
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            updateNetworkStatus();
+        });
+
+        window.addEventListener('online', updateNetworkStatus);
+        window.addEventListener('offline', updateNetworkStatus);
+    </script>
+</body>
+</html>

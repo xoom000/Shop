@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard Copy System Test</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #0a0a0a;
+            color: #00f5ff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: rgba(26, 26, 26, 0.95);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-title {
+            color: #39ff14;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #00f5ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #39ff14;
+        }
+        .output {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-size: 12px;
+            min-height: 100px;
+        }
+        .success {
+            color: #39ff14;
+        }
+        .error {
+            color: #ff00aa;
+        }
+    </style>
+</head>
+<body>
+    <h1>📋 Clipboard Copy System Test Suite</h1>
+    
+    <div class="test-section">
+        <div class="test-title">🎯 Test Environment Setup</div>
+        <button onclick="setupTestData()">Setup Test Data</button>
+        <button onclick="clearTestData()">Clear Test Data</button>
+        <div id="setupOutput" class="output">Click "Setup Test Data" to begin</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">📋 Copy Format Tests</div>
+        <button onclick="testBossFormat()">Test Boss Format</button>
+        <button onclick="testTeamFormat()">Test Team Format</button>
+        <button onclick="testCustomerFormat()">Test Customer Format</button>
+        <button onclick="testSKUsFormat()">Test SKUs Only</button>
+        <div id="formatOutput" class="output">Select a format to test</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">✅ Clipboard Test</div>
+        <button onclick="testClipboard()">Test Clipboard Copy</button>
+        <button onclick="pasteFromClipboard()">Paste & Verify</button>
+        <div id="clipboardOutput" class="output">Test clipboard functionality</div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">📱 Mobile Features</div>
+        <button onclick="testShare()">Test Share API</button>
+        <button onclick="testVibration()">Test Haptic Feedback</button>
+        <div id="mobileOutput" class="output">Test mobile-specific features</div>
+    </div>
+
+    <script>
+        // Test data
+        let testOrderList = [];
+        let testCustomerInfo = {
+            name: 'Marriott Downtown',
+            account: '123456'
+        };
+
+        function setupTestData() {
+            testOrderList = [
+                {
+                    sku: '99054962',
+                    name: 'Nitrile Gloves - Large Black',
+                    price: 43.94,
+                    quantity: 5
+                },
+                {
+                    sku: '99054963',
+                    name: 'Paper Towels C-Fold',
+                    price: 28.50,
+                    quantity: 10
+                },
+                {
+                    sku: '99054964',
+                    name: 'Sanitizer Spray',
+                    price: 15.99,
+                    quantity: 3
+                }
+            ];
+            
+            localStorage.setItem('missionLinenOrderList', JSON.stringify(testOrderList));
+            localStorage.setItem('missionLinenCustomer', JSON.stringify(testCustomerInfo));
+            
+            const output = document.getElementById('setupOutput');
+            output.innerHTML = `<span class="success">✅ Test data loaded successfully!</span>\n\n`;
+            output.innerHTML += `Customer: ${testCustomerInfo.name} #${testCustomerInfo.account}\n`;
+            output.innerHTML += `Items in list: ${testOrderList.length}\n\n`;
+            testOrderList.forEach(item => {
+                output.innerHTML += `- ${item.name}\n  SKU: ${item.sku} | Qty: ${item.quantity} | Price: $${item.price}\n`;
+            });
+        }
+
+        function clearTestData() {
+            testOrderList = [];
+            localStorage.removeItem('missionLinenOrderList');
+            localStorage.removeItem('missionLinenCustomer');
+            document.getElementById('setupOutput').innerHTML = '<span class="success">✅ Test data cleared</span>';
+        }
+
+        function formatForBoss() {
+            const date = new Date().toLocaleDateString();
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            let total = 0;
+            
+            let text = `ORDER REQUEST\n`;
+            text += `Customer: ${testCustomerInfo.name} #${testCustomerInfo.account}\n`;
+            text += `Date: ${date} ${time}\n`;
+            text += `---\n`;
+            
+            testOrderList.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                text += `${item.sku} | ${item.name} | ${item.quantity}cs @ $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}\n`;
+            });
+            
+            text += `---\n`;
+            text += `TOTAL: $${total.toFixed(2)}`;
+            
+            return text;
+        }
+
+        function formatForTeam() {
+            let text = '🔥 CHECK THESE DEALS!\n\n';
+            
+            testOrderList.forEach(item => {
+                text += `${item.name}\n`;
+                text += `SKU: ${item.sku}\n`;
+                text += `Price: $${item.price.toFixed(2)}/case\n`;
+                text += `Qty Available: ${item.quantity} cases\n`;
+                text += `---\n`;
+            });
+            
+            return text;
+        }
+
+        function formatForCustomer() {
+            const date = new Date();
+            const quoteNum = `Q${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}-${String(Math.floor(Math.random()*1000)).padStart(3,'0')}`;
+            const validUntil = new Date(date.getTime() + 7*24*60*60*1000).toLocaleDateString();
+            let total = 0;
+            
+            let text = `QUOTE #${quoteNum}\n`;
+            text += `Valid Until: ${validUntil}\n\n`;
+            
+            testOrderList.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                text += `${item.quantity} cases - ${item.name}\n`;
+            });
+            
+            text += `\nEstimated Total: $${total.toFixed(2)}\n`;
+            text += `*Pricing subject to final confirmation`;
+            
+            return text;
+        }
+
+        function formatSKUsOnly() {
+            return testOrderList.map(item => `${item.sku} x${item.quantity}`).join('\n');
+        }
+
+        function testBossFormat() {
+            if (testOrderList.length === 0) {
+                document.getElementById('formatOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            const text = formatForBoss();
+            document.getElementById('formatOutput').innerHTML = `<span class="success">Boss Format:</span>\n${text}`;
+        }
+
+        function testTeamFormat() {
+            if (testOrderList.length === 0) {
+                document.getElementById('formatOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            const text = formatForTeam();
+            document.getElementById('formatOutput').innerHTML = `<span class="success">Team Format:</span>\n${text}`;
+        }
+
+        function testCustomerFormat() {
+            if (testOrderList.length === 0) {
+                document.getElementById('formatOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            const text = formatForCustomer();
+            document.getElementById('formatOutput').innerHTML = `<span class="success">Customer Format:</span>\n${text}`;
+        }
+
+        function testSKUsFormat() {
+            if (testOrderList.length === 0) {
+                document.getElementById('formatOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            const text = formatSKUsOnly();
+            document.getElementById('formatOutput').innerHTML = `<span class="success">SKUs Only Format:</span>\n${text}`;
+        }
+
+        function testClipboard() {
+            if (testOrderList.length === 0) {
+                document.getElementById('clipboardOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            
+            const text = formatForBoss();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById('clipboardOutput').innerHTML = `<span class="success">✅ Successfully copied to clipboard!</span>\n\nCopied text:\n${text}`;
+            }).catch(err => {
+                // Fallback method
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    document.getElementById('clipboardOutput').innerHTML = `<span class="success">✅ Copied using fallback method!</span>\n\nCopied text:\n${text}`;
+                } catch (err) {
+                    document.getElementById('clipboardOutput').innerHTML = `<span class="error">❌ Failed to copy: ${err.message}</span>`;
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function pasteFromClipboard() {
+            navigator.clipboard.readText().then(text => {
+                document.getElementById('clipboardOutput').innerHTML = `<span class="success">✅ Pasted from clipboard:</span>\n${text}`;
+            }).catch(err => {
+                document.getElementById('clipboardOutput').innerHTML = `<span class="error">❌ Cannot read clipboard (requires permission)</span>`;
+            });
+        }
+
+        function testShare() {
+            if (testOrderList.length === 0) {
+                document.getElementById('mobileOutput').innerHTML = '<span class="error">❌ Please setup test data first</span>';
+                return;
+            }
+            
+            const text = formatForBoss();
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mission Linen Order',
+                    text: text
+                }).then(() => {
+                    document.getElementById('mobileOutput').innerHTML = '<span class="success">✅ Share completed!</span>';
+                }).catch(err => {
+                    document.getElementById('mobileOutput').innerHTML = `<span class="error">Share cancelled: ${err.message}</span>`;
+                });
+            } else {
+                document.getElementById('mobileOutput').innerHTML = '<span class="error">❌ Share API not available (desktop browser)</span>';
+            }
+        }
+
+        function testVibration() {
+            if (navigator.vibrate) {
+                navigator.vibrate([50, 100, 50]);
+                document.getElementById('mobileOutput').innerHTML = '<span class="success">✅ Haptic feedback triggered!</span>';
+            } else {
+                document.getElementById('mobileOutput').innerHTML = '<span class="error">❌ Vibration API not available (desktop or iOS)</span>';
+            }
+        }
+
+        // Auto-setup on load
+        window.addEventListener('load', () => {
+            setTimeout(setupTestData, 500);
+        });
+    </script>
+</body>
+</html>

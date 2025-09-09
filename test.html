@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Linen Catalog - Test Suite</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #0a0a0a;
+            color: #00f5ff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: rgba(26, 26, 26, 0.95);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-title {
+            color: #39ff14;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .test-case {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 3px solid #444;
+        }
+        .test-pass {
+            border-left-color: #39ff14;
+            background: rgba(57, 255, 20, 0.1);
+        }
+        .test-fail {
+            border-left-color: #ff00aa;
+            background: rgba(255, 0, 170, 0.1);
+        }
+        .test-pending {
+            border-left-color: #ff6600;
+            background: rgba(255, 102, 0, 0.1);
+        }
+        button {
+            background: #00f5ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #39ff14;
+        }
+        #results {
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Mission Linen Mobile Catalog - Test Suite</h1>
+    
+    <div class="test-section">
+        <div class="test-title">🔧 Critical Fixes Validation</div>
+        <button onclick="runCriticalTests()">Run Critical Tests</button>
+        <div id="criticalResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">📱 Mobile Functionality Tests</div>
+        <button onclick="runMobileTests()">Run Mobile Tests</button>
+        <div id="mobileResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">🛒 Cart Operations Tests</div>
+        <button onclick="runCartTests()">Run Cart Tests</button>
+        <div id="cartResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">🔍 Search & Navigation Tests</div>
+        <button onclick="runSearchTests()">Run Search Tests</button>
+        <div id="searchResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">⚠️ Error Handling Tests</div>
+        <button onclick="runErrorTests()">Run Error Tests</button>
+        <div id="errorResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">📊 Performance Tests</div>
+        <button onclick="runPerformanceTests()">Run Performance Tests</button>
+        <div id="performanceResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">🎯 Production Readiness</div>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <div id="allResults"></div>
+    </div>
+    
+    <script>
+        // Test utilities
+        function logTest(testName, passed, message = '', container = 'results') {
+            const resultDiv = document.getElementById(container);
+            const status = passed ? '✅ PASS' : '❌ FAIL';
+            const cssClass = passed ? 'test-pass' : 'test-fail';
+            
+            const testResult = document.createElement('div');
+            testResult.className = `test-case ${cssClass}`;
+            testResult.innerHTML = `<strong>${status}:</strong> ${testName}${message ? ' - ' + message : ''}`;
+            resultDiv.appendChild(testResult);
+            
+            return passed;
+        }
+        
+        function clearResults(container) {
+            document.getElementById(container).innerHTML = '';
+        }
+        
+        // Critical fixes validation
+        function runCriticalTests() {
+            clearResults('criticalResults');
+            let passCount = 0;
+            let totalTests = 5;
+            
+            // Test 1: Check if main catalog exists
+            fetch('data/catalog.json')
+                .then(response => {
+                    if (logTest('Catalog data file exists', response.ok, '', 'criticalResults')) passCount++;
+                    return response.json();
+                })
+                .then(data => {
+                    if (logTest('Catalog has valid structure', data && data.products && Array.isArray(data.products), '', 'criticalResults')) passCount++;
+                    if (logTest('Catalog contains products', data.products.length > 0, `${data.products.length} products found`, 'criticalResults')) passCount++;
+                })
+                .catch(error => {
+                    logTest('Catalog loading', false, error.message, 'criticalResults');
+                });
+            
+            // Test 2: Check for localStorage support
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                if (logTest('LocalStorage functionality', true, '', 'criticalResults')) passCount++;
+            } catch (e) {
+                logTest('LocalStorage functionality', false, e.message, 'criticalResults');
+            }
+            
+            // Test 3: Check main elements exist
+            setTimeout(() => {
+                const mainFrame = window.open('../index.html', '_blank');
+                setTimeout(() => {
+                    try {
+                        const hasGrid = mainFrame.document.getElementById('productsGrid') !== null;
+                        const hasSearch = mainFrame.document.getElementById('searchInput') !== null;
+                        const hasNav = mainFrame.document.querySelector('.nav-item') !== null;
+                        
+                        logTest('Main UI elements present', hasGrid && hasSearch && hasNav, '', 'criticalResults');
+                        mainFrame.close();
+                        
+                        // Final summary
+                        setTimeout(() => {
+                            const summary = document.createElement('div');
+                            summary.className = 'test-case';
+                            summary.innerHTML = `<strong>SUMMARY:</strong> ${passCount}/${totalTests} critical tests passed`;
+                            document.getElementById('criticalResults').appendChild(summary);
+                        }, 100);
+                    } catch (e) {
+                        logTest('UI elements check', false, 'Cross-origin restriction', 'criticalResults');
+                        mainFrame.close();
+                    }
+                }, 2000);
+            }, 500);
+        }
+        
+        // Mobile functionality tests
+        function runMobileTests() {
+            clearResults('mobileResults');
+            
+            // Test responsive design
+            logTest('Viewport meta tag present', document.querySelector('meta[name="viewport"]') !== null, '', 'mobileResults');
+            
+            // Test touch-friendly elements
+            const testFrame = window.open('../index.html', '_blank', 'width=375,height=667');
+            setTimeout(() => {
+                try {
+                    const bottomNav = testFrame.document.querySelector('.bottom-nav');
+                    logTest('Bottom navigation exists', bottomNav !== null, '', 'mobileResults');
+                    
+                    const categoryPills = testFrame.document.querySelector('.category-pills');
+                    logTest('Category pills exist', categoryPills !== null, '', 'mobileResults');
+                    
+                    const productCards = testFrame.document.querySelector('.product-card');
+                    logTest('Product cards exist', productCards !== null, '', 'mobileResults');
+                    
+                    testFrame.close();
+                } catch (e) {
+                    logTest('Mobile elements check', false, 'Cross-origin restriction', 'mobileResults');
+                    testFrame.close();
+                }
+            }, 3000);
+        }
+        
+        // Cart operation tests
+        function runCartTests() {
+            clearResults('cartResults');
+            
+            // Test localStorage cart operations
+            try {
+                const testCart = [{ sku: 'TEST001', name: 'Test Product', price: 10.99, quantity: 2 }];
+                localStorage.setItem('missionLinenCart', JSON.stringify(testCart));
+                
+                const retrieved = JSON.parse(localStorage.getItem('missionLinenCart'));
+                logTest('Cart persistence', Array.isArray(retrieved) && retrieved.length === 1, '', 'cartResults');
+                
+                localStorage.removeItem('missionLinenCart');
+                logTest('Cart cleanup', localStorage.getItem('missionLinenCart') === null, '', 'cartResults');
+            } catch (e) {
+                logTest('Cart operations', false, e.message, 'cartResults');
+            }
+        }
+        
+        // Search and navigation tests
+        function runSearchTests() {
+            clearResults('searchResults');
+            
+            // Test basic search functionality
+            fetch('data/catalog.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.products && data.products.length > 0) {
+                        const firstProduct = data.products[0];
+                        const searchTerm = firstProduct.name.split(' ')[0];
+                        
+                        const results = data.products.filter(p => 
+                            p.name.toLowerCase().includes(searchTerm.toLowerCase())
+                        );
+                        
+                        logTest('Search filtering works', results.length > 0, `Found ${results.length} results for "${searchTerm}"`, 'searchResults');
+                    }
+                    
+                    // Test category filtering
+                    const categories = ['safety-ppe', 'food-packaging', 'paper-products'];
+                    categories.forEach(category => {
+                        const categoryProducts = data.products.filter(p => 
+                            p.categoryPath && p.categoryPath[0] === category
+                        );
+                        logTest(`Category filtering: ${category}`, categoryProducts.length > 0, `${categoryProducts.length} products`, 'searchResults');
+                    });
+                })
+                .catch(error => {
+                    logTest('Search functionality', false, error.message, 'searchResults');
+                });
+        }
+        
+        // Error handling tests
+        function runErrorTests() {
+            clearResults('errorResults');
+            
+            // Test invalid catalog URL
+            fetch('data/nonexistent.json')
+                .then(response => {
+                    logTest('404 handling', !response.ok, 'Correctly returns error for missing file', 'errorResults');
+                })
+                .catch(error => {
+                    logTest('Network error handling', true, 'Fetch correctly throws error', 'errorResults');
+                });
+            
+            // Test malformed JSON handling
+            fetch('test.html') // This will return HTML, not JSON
+                .then(response => response.json())
+                .then(data => {
+                    logTest('JSON parsing error', false, 'Should have failed to parse HTML as JSON', 'errorResults');
+                })
+                .catch(error => {
+                    logTest('JSON parsing error handling', true, 'Correctly catches parse error', 'errorResults');
+                });
+            
+            // Test localStorage error simulation
+            try {
+                const originalSetItem = localStorage.setItem;
+                localStorage.setItem = function() {
+                    throw new Error('Storage quota exceeded');
+                };
+                
+                logTest('localStorage error simulation', true, 'Ready to test storage errors', 'errorResults');
+                
+                // Restore original function
+                localStorage.setItem = originalSetItem;
+            } catch (e) {
+                logTest('localStorage error setup', false, e.message, 'errorResults');
+            }
+        }
+        
+        // Performance tests
+        function runPerformanceTests() {
+            clearResults('performanceResults');
+            
+            // Test catalog loading time
+            const startTime = performance.now();
+            fetch('data/catalog.json')
+                .then(response => response.json())
+                .then(data => {
+                    const loadTime = performance.now() - startTime;
+                    logTest('Catalog load time', loadTime < 1000, `${loadTime.toFixed(2)}ms`, 'performanceResults');
+                    
+                    // Test large dataset handling
+                    if (data.products) {
+                        const largeDatasetTime = performance.now();
+                        
+                        // Simulate sorting large dataset
+                        const sorted = [...data.products].sort((a, b) => b.times_sold - a.times_sold);
+                        
+                        const sortTime = performance.now() - largeDatasetTime;
+                        logTest('Product sorting performance', sortTime < 100, `${sortTime.toFixed(2)}ms for ${data.products.length} products`, 'performanceResults');
+                        
+                        // Test search performance
+                        const searchTime = performance.now();
+                        const searchResults = data.products.filter(p => 
+                            p.name.toLowerCase().includes('glove')
+                        );
+                        const searchDuration = performance.now() - searchTime;
+                        
+                        logTest('Search performance', searchDuration < 50, `${searchDuration.toFixed(2)}ms`, 'performanceResults');
+                    }
+                })
+                .catch(error => {
+                    logTest('Performance tests', false, error.message, 'performanceResults');
+                });
+        }
+        
+        // Run all tests
+        function runAllTests() {
+            clearResults('allResults');
+            
+            const testSuites = [
+                { name: 'Critical Tests', func: runCriticalTests },
+                { name: 'Mobile Tests', func: runMobileTests },
+                { name: 'Cart Tests', func: runCartTests },
+                { name: 'Search Tests', func: runSearchTests },
+                { name: 'Error Tests', func: runErrorTests },
+                { name: 'Performance Tests', func: runPerformanceTests }
+            ];
+            
+            let suiteIndex = 0;
+            const runNextSuite = () => {
+                if (suiteIndex < testSuites.length) {
+                    const suite = testSuites[suiteIndex];
+                    logTest(`Running ${suite.name}`, true, 'Starting test suite...', 'allResults');
+                    suite.func();
+                    suiteIndex++;
+                    setTimeout(runNextSuite, 2000);
+                } else {
+                    setTimeout(() => {
+                        logTest('All Test Suites Complete', true, 'Check individual sections for detailed results', 'allResults');
+                    }, 1000);
+                }
+            };
+            
+            runNextSuite();
+        }
+        
+        // Auto-run critical tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                logTest('Test suite ready', true, 'Click buttons above to run tests', 'allResults');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

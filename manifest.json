@@ -1,0 +1,60 @@
+{
+  "name": "Mission Linen Supply Mobile Catalog",
+  "short_name": "Mission Linen",
+  "description": "Quick reference catalog for Mission Linen Supply products with offline capability",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#00f5ff",
+  "background_color": "#0a0a0a",
+  "categories": ["business", "productivity", "reference"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwYTBhMGEiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGY1ZmYiIHN0cm9rZS13aWR0aD0iMiI+CjxwYXRoIGQ9Im0zIDlsOS00IDktNHY2bC05IDR2NGwtOS00eiIvPgo8cGF0aCBkPSJtMjEgMTZsLTktNGEyIDIgMCAwIDAtMiAwbC05IDQiLz4KPHA+PC9wPgo8L3N2Zz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMwYTBhMGEiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmNWZmIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJtMyA5bDktNCA5LTR2NmwtOSA0djRsLTktNHoiLz4KPHBhdGggZD0ibTIxIDE2bC05LTRhMiAyIDAgMCAwLTIgMGwtOSA0Ii8+CjxwPjwvcD4KPC9zdmc+Cjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjY2NyIgdmlld0JveD0iMCAwIDM3NSA2NjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNzUiIGhlaWdodD0iNjY3IiByeD0iMjQiIGZpbGw9IiMwYTBhMGEiLz4KPHN2ZyB4PSI1MCIgeT0iMTAwIiB3aWR0aD0iMjc1IiBoZWlnaHQ9IjQ2NyIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGY1ZmYiIHN0cm9rZS13aWR0aD0iMSI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiMxYTFhMWEiLz4KPHN2ZyB4PSI0IiB5PSI0IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmNWZmIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJtMyA5bDktNCA5LTR2NmwtOSA0djRsLTktNHoiLz4KPHA+PC9wPgo8L3N2Zz4KPC9zdmc+Cjwvc3ZnPg==",
+      "sizes": "375x667",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Favorites",
+      "short_name": "Favorites",
+      "description": "View your favorite products",
+      "url": "/?view=favorites",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0ibTEyIDJsMyA2aDZsLTUgNCAyIDdMMTIgMTUgNiAxOWwyLTctNS00aDZsMy02eiIgZmlsbD0iI2ZmZDA0NCIvPgo8L3N2Zz4K",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Quick Reference",
+      "short_name": "Quick Ref",
+      "description": "Access frequently viewed items",
+      "url": "/?view=quickref",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzIDJMMTAgMTQgMTQgMTF6IiBmaWxsPSIjMzlmZjE0Ii8+Cjwvc3ZnPgo=",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

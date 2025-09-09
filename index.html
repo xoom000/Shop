@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Linen Supply</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mission Linen">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwYTBhMGEiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGY1ZmYiIHN0cm9rZS13aWR0aD0iMiI+CjxwYXRoIGQ9Im0zIDlsOS00IDktNHY2bC05IDR2NGwtOS00eiIvPgo8cGF0aCBkPSJtMjEgMTZsLTktNGEyIDIgMCAwIDAtMiAwbC05IDQiLz4KPHA+PC9wPgo8L3N2Zz4KPC9zdmc+">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#00f5ff">
+    <meta name="msapplication-navbutton-color" content="#00f5ff">
+    <meta name="msapplication-TileColor" content="#0a0a0a">
+    <style>
+        :root {
+            --neon-blue: #00f5ff;
+            --neon-green: #39ff14;
+            --neon-pink: #ff00aa;
+            --neon-orange: #ff6600;
+            --neon-purple: #9d4edd;
+            --cyber-black: #0a0a0a;
+            --dark-bg: #1a1a1a;
+            --card-bg: rgba(26, 26, 26, 0.95);
+            --text-primary: #ffffff;
+            --text-muted: #888888;
+            --border-glow: rgba(0, 245, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--cyber-black) 0%, var(--dark-bg) 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+
+        /* Mobile-First Header */
+        .mobile-header {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-glow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .menu-btn, .cart-btn {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .cart-btn {
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
+            color: var(--cyber-black);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--neon-pink);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-glow);
+            color: var(--text-primary);
+            padding: 12px 40px 12px 15px;
+            border-radius: 25px;
+            font-size: 16px; /* Prevent zoom on iOS */
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px var(--border-glow);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Category Pills - Horizontal Scroll */
+        .category-pills {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+        }
+
+        .category-pills::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-pill {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            position: relative;
+            min-width: fit-content;
+        }
+
+        .category-pill.active {
+            background: var(--pill-color);
+            color: var(--cyber-black);
+            border-color: var(--pill-color);
+            box-shadow: 0 0 15px var(--pill-color);
+        }
+
+        .category-pill:not(.active):hover {
+            background: rgba(0, 245, 255, 0.1);
+            border-color: var(--pill-color);
+        }
+
+        .pill-icon {
+            font-size: 16px;
+        }
+
+        .pill-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .category-pill.active .pill-count {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Area */
+        .content {
+            padding: 0 15px;
+        }
+
+        .content-header {
+            padding: 20px 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .results-count {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .sort-btn {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-glow);
+            color: var(--text-primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Mobile Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding-bottom: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .product-card:active {
+            transform: scale(0.98);
+        }
+
+        .product-image {
+            height: 120px;
+            background: linear-gradient(135deg, var(--product-color), rgba(157, 78, 221, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .bestseller-badge {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: var(--neon-pink);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 8px var(--neon-pink);
+        }
+
+        .product-info {
+            padding: 12px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 12px;
+            line-height: 1.3;
+            min-height: 32px;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-sku {
+            color: var(--text-muted);
+            font-size: 9px;
+            margin-bottom: 6px;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            margin-bottom: 2px;
+        }
+
+        .product-unit {
+            color: var(--text-muted);
+            font-size: 9px;
+            margin-bottom: 10px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-glow);
+            border-radius: 15px;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .qty-btn:active {
+            background: rgba(0, 245, 255, 0.2);
+        }
+
+        .qty-input {
+            flex: 1;
+            text-align: center;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-weight: bold;
+            font-size: 14px;
+            height: 32px;
+        }
+
+        .add-btn {
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
+            border: none;
+            color: var(--cyber-black);
+            width: 40px;
+            height: 32px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 3px 10px var(--success-glow);
+        }
+
+        /* List Panel */
+        .list-panel {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.98), rgba(20, 20, 30, 0.95));
+            border-top: 2px solid var(--neon-cyan);
+            max-height: 50vh;
+            transform: translateY(calc(100% + 60px));
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-panel.active {
+            transform: translateY(0);
+        }
+
+        .list-panel-header {
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-panel-title {
+            color: var(--neon-green);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .list-panel-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .list-clear-btn {
+            background: rgba(255, 0, 170, 0.2);
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .list-minimize-btn {
+            background: transparent;
+            border: none;
+            color: var(--neon-cyan);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .list-items-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .list-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .list-item-info {
+            flex: 1;
+        }
+
+        .list-item-name {
+            color: var(--text-primary);
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .list-item-sku {
+            color: var(--text-muted);
+            font-size: 10px;
+        }
+
+        .list-item-price {
+            color: var(--neon-cyan);
+            font-size: 11px;
+        }
+
+        .list-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .list-item-qty {
+            color: var(--neon-green);
+            font-size: 12px;
+            padding: 0 8px;
+        }
+
+        .list-item-remove {
+            background: rgba(255, 0, 0, 0.2);
+            border: none;
+            color: #ff4444;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .list-total {
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-total-label {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .list-total-amount {
+            color: var(--neon-green);
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .copy-button-bar {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .copy-button-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(57, 255, 20, 0.2));
+            border: 1px solid var(--neon-cyan);
+            color: var(--text-primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copy-btn:active {
+            background: var(--neon-green);
+            color: black;
+            transform: scale(0.95);
+        }
+
+        .copy-btn.copied {
+            background: var(--neon-green);
+            color: black;
+            animation: pulse 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .list-toggle-btn {
+            position: fixed;
+            bottom: 70px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-green));
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: black;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 245, 255, 0.5);
+            z-index: 997;
+            transition: all 0.3s;
+            display: none;
+        }
+
+        .list-toggle-btn.has-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list-toggle-btn:active {
+            transform: scale(0.9);
+        }
+
+        .list-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--neon-pink);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid var(--border-glow);
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .nav-item.active {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--neon-blue);
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+
+        .nav-label {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .nav-badge {
+            position: absolute;
+            top: 2px;
+            right: 8px;
+            background: var(--neon-pink);
+            color: white;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Mobile Category Menu Overlay */
+        .category-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .category-overlay.active {
+            display: flex;
+        }
+
+        .category-menu {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 350px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .category-menu-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--neon-green);
+            margin-bottom: 25px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .category-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-item:active {
+            transform: scale(0.95);
+        }
+
+        .category-item:hover {
+            border-color: var(--item-color);
+            background: rgba(0, 245, 255, 0.1);
+        }
+
+        .category-item-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 8px var(--item-color));
+        }
+
+        .category-item-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--item-color);
+            margin-bottom: 3px;
+        }
+
+        .category-item-count {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Loading States */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+            grid-column: 1/-1;
+        }
+
+        .spinner {
+            border: 3px solid rgba(0, 245, 255, 0.1);
+            border-top: 3px solid var(--neon-blue);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pull to refresh indicator */
+        .pull-indicator {
+            text-align: center;
+            padding: 10px;
+            color: var(--text-muted);
+            font-size: 12px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .pull-indicator.active {
+            transform: translateY(0);
+        }
+
+        /* Haptic feedback simulation */
+        @keyframes haptic {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.98); }
+            100% { transform: scale(1); }
+        }
+
+        .haptic {
+            animation: haptic 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pull to refresh indicator -->
+    <div class="pull-indicator" id="pullIndicator">
+        ↓ Pull to refresh
+    </div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-row">
+            <div class="logo">MISSION LINEN</div>
+            <div class="header-actions">
+                <button class="menu-btn" onclick="showCategoryMenu()">☰</button>
+                <button class="cart-btn" onclick="viewCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </header>
+
+    <!-- Category Pills -->
+    <div class="category-pills" id="categoryPills">
+        <!-- Category pills will be loaded here -->
+    </div>
+
+    <!-- Content -->
+    <main class="content">
+        <div class="content-header">
+            <div>
+                <h1 class="page-title" id="pageTitle">
+                    <span id="pageTitleIcon">🏠</span>
+                    All Products
+                </h1>
+                <div class="results-count" id="resultsCount">Loading...</div>
+            </div>
+            <button class="sort-btn" onclick="toggleSort()">
+                <span id="sortLabel">Popular</span> ↕
+            </button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="bottomNav('home', this)">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item" onclick="bottomNav('categories', this)">
+            <div class="nav-icon">📦</div>
+            <div class="nav-label">Categories</div>
+        </div>
+        <div class="nav-item" onclick="bottomNav('bestsellers', this)">
+            <div class="nav-icon">🔥</div>
+            <div class="nav-label">Best Sellers</div>
+            <div class="nav-badge">15</div>
+        </div>
+        <div class="nav-item" onclick="bottomNav('search', this)">
+            <div class="nav-icon">🔍</div>
+            <div class="nav-label">Search</div>
+        </div>
+        <div class="nav-item" onclick="bottomNav('cart', this)">
+            <div class="nav-icon">🛒</div>
+            <div class="nav-label">Cart</div>
+            <div class="nav-badge" id="bottomCartCount">0</div>
+        </div>
+    </nav>
+
+    <!-- List Panel -->
+    <div class="list-panel" id="listPanel">
+        <div class="list-panel-header">
+            <div class="list-panel-title">
+                📋 Order List <span id="listCount">(0)</span>
+            </div>
+            <div class="list-panel-actions">
+                <button class="list-clear-btn" onclick="clearList()">Clear</button>
+                <button class="list-minimize-btn" onclick="toggleListPanel()">⌄</button>
+            </div>
+        </div>
+        <div class="list-items-container" id="listItems">
+            <!-- List items will appear here -->
+        </div>
+        <div class="list-total">
+            <span class="list-total-label">Total:</span>
+            <span class="list-total-amount" id="listTotal">$0.00</span>
+        </div>
+        <div class="copy-button-bar">
+            <button class="copy-btn" onclick="copyFormat('boss')">📋 For Boss</button>
+            <button class="copy-btn" onclick="copyFormat('team')">👥 For Team</button>
+            <button class="copy-btn" onclick="copyFormat('customer')">📄 Quote</button>
+            <button class="copy-btn" onclick="copyFormat('skus')">🔢 SKUs Only</button>
+            <button class="copy-btn" onclick="shareList()">📤 Share</button>
+        </div>
+    </div>
+
+    <!-- List Toggle Button -->
+    <button class="list-toggle-btn" id="listToggleBtn" onclick="toggleListPanel()">
+        📋
+        <span class="list-badge" id="listToggleBadge">0</span>
+    </button>
+
+    <!-- Category Menu Overlay -->
+    <div class="category-overlay" id="categoryOverlay">
+        <div class="category-menu">
+            <button class="close-menu" onclick="hideCategoryMenu()">×</button>
+            <h2 class="category-menu-title">Select Category</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- Category grid will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let catalog = null;
+        let cart = JSON.parse(localStorage.getItem('missionLinenCart')) || [];
+        let orderList = JSON.parse(localStorage.getItem('missionLinenOrderList')) || [];
+        let currentView = 'all';
+        let currentProducts = [];
+        let currentSort = 'popularity';
+        let customerInfo = JSON.parse(localStorage.getItem('missionLinenCustomer')) || {
+            name: 'Customer',
+            account: '000000'
+        };
+        
+        // Favorites system
+        let favorites = JSON.parse(localStorage.getItem('missionLinenFavorites')) || {
+            bestDeals: [],
+            customerFaves: [],
+            quickRef: [],
+            recentlyViewed: []
+        };
+
+        // Category configuration
+        const categoryConfig = {
+            'safety-ppe': { color: '#ff00aa', icon: '🧤', name: 'Safety & PPE' },
+            'food-packaging': { color: '#00f5ff', icon: '📦', name: 'Food Packaging' },
+            'paper-products': { color: '#39ff14', icon: '🧻', name: 'Paper Products' },
+            'janitorial': { color: '#ff6600', icon: '🧹', name: 'Janitorial' },
+            'drinkware': { color: '#9d4edd', icon: '🥤', name: 'Drinkware' },
+            'tableware': { color: '#f72585', icon: '🍴', name: 'Tableware' },
+            'food-wrap': { color: '#4cc9f0', icon: '🎁', name: 'Food Wrap' }
+        };
+
+        // Initialize
+        async function init() {
+            try {
+                // Show loading state
+                const productsGrid = document.getElementById('productsGrid');
+                if (productsGrid) {
+                    productsGrid.innerHTML = `
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Loading catalog...</p>
+                        </div>
+                    `;
+                }
+                
+                // Fetch catalog with timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                
+                const response = await fetch('data/catalog.json', {
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const catalogData = await response.json();
+                
+                // Validate catalog structure
+                if (!catalogData || !catalogData.products || !Array.isArray(catalogData.products)) {
+                    throw new Error('Invalid catalog data structure');
+                }
+                
+                catalog = catalogData;
+                
+                // Load cart from localStorage with error handling
+                try {
+                    const savedCart = localStorage.getItem('missionLinenCart');
+                    if (savedCart) {
+                        const parsedCart = JSON.parse(savedCart);
+                        if (Array.isArray(parsedCart)) {
+                            cart = parsedCart;
+                        }
+                    }
+                } catch (cartError) {
+                    console.warn('Failed to load saved cart:', cartError);
+                    cart = []; // Reset to empty cart
+                }
+                
+                // Load order list from localStorage
+                try {
+                    const savedList = localStorage.getItem('missionLinenOrderList');
+                    if (savedList) {
+                        const parsedList = JSON.parse(savedList);
+                        if (Array.isArray(parsedList)) {
+                            orderList = parsedList;
+                        }
+                    }
+                } catch (listError) {
+                    console.warn('Failed to load saved list:', listError);
+                    orderList = []; // Reset to empty list
+                }
+                
+                // Initialize UI components
+                renderCategoryPills();
+                renderCategoryGrid();
+                loadView('all');
+                updateCartCount();
+                updateListPanel();
+                setupSearch();
+                setupPullToRefresh();
+                
+            } catch (error) {
+                console.error('Error loading catalog:', error);
+                
+                // Show user-friendly error message
+                const productsGrid = document.getElementById('productsGrid');
+                if (productsGrid) {
+                    let errorMessage = 'Unable to load catalog. ';
+                    
+                    if (error.name === 'AbortError') {
+                        errorMessage += 'Request timed out. Please check your connection and try again.';
+                    } else if (error.message.includes('HTTP')) {
+                        errorMessage += 'Server error. Please try again later.';
+                    } else if (error.message.includes('Invalid catalog')) {
+                        errorMessage += 'Catalog data is corrupted. Please contact support.';
+                    } else {
+                        errorMessage += 'Please check your connection and refresh the page.';
+                    }
+                    
+                    productsGrid.innerHTML = `
+                        <div class="loading" style="grid-column: 1/-1;">
+                            <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
+                            <p style="color: #ff6666; font-weight: bold; margin-bottom: 10px;">Error Loading Catalog</p>
+                            <p style="color: #888; margin-bottom: 20px;">${errorMessage}</p>
+                            <button onclick="location.reload()" style="background: var(--neon-blue); color: var(--cyber-black); border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
+                                Retry
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Render category pills
+        function renderCategoryPills() {
+            const pills = document.getElementById('categoryPills');
+            let html = `
+                <div class="category-pill active" data-category="all" style="--pill-color: var(--neon-green)" onclick="selectCategory('all')">
+                    <span class="pill-icon">🏠</span>
+                    <span>All</span>
+                    <span class="pill-count">107</span>
+                </div>
+            `;
+            
+            Object.entries(categoryConfig).forEach(([key, config]) => {
+                const products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
+                if (products.length > 0) {
+                    html += `
+                        <div class="category-pill" data-category="${key}" style="--pill-color: ${config.color}" onclick="selectCategory('${key}')">
+                            <span class="pill-icon">${config.icon}</span>
+                            <span>${config.name.split(' ')[0]}</span>
+                            <span class="pill-count">${products.length}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            html += `
+                <div class="category-pill" data-category="bestsellers" style="--pill-color: var(--neon-orange)" onclick="selectCategory('bestsellers')">
+                    <span class="pill-icon">🔥</span>
+                    <span>Best</span>
+                    <span class="pill-count">15</span>
+                </div>
+                <div class="category-pill" data-category="favorites" style="--pill-color: var(--neon-pink)" onclick="selectCategory('favorites')">
+                    <span class="pill-icon">⭐</span>
+                    <span>Favorites</span>
+                    <span class="pill-count">${getTotalFavorites()}</span>
+                </div>
+                <div class="category-pill" data-category="bestdeals" style="--pill-color: var(--neon-green)" onclick="selectCategory('bestdeals')">
+                    <span class="pill-icon">💰</span>
+                    <span>Best Deals</span>
+                    <span class="pill-count">${favorites.bestDeals.length}</span>
+                </div>
+                <div class="category-pill" data-category="quickref" style="--pill-color: var(--neon-purple)" onclick="selectCategory('quickref')">
+                    <span class="pill-icon">⚡</span>
+                    <span>Quick Ref</span>
+                    <span class="pill-count">${favorites.quickRef.length}</span>
+                </div>
+            `;
+            
+            pills.innerHTML = html;
+        }
+
+        // Render category grid for overlay
+        function renderCategoryGrid() {
+            const grid = document.getElementById('categoryGrid');
+            let html = '';
+            
+            Object.entries(categoryConfig).forEach(([key, config]) => {
+                const products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
+                if (products.length > 0) {
+                    html += `
+                        <div class="category-item" style="--item-color: ${config.color}" onclick="selectCategoryFromMenu('${key}')">
+                            <div class="category-item-icon">${config.icon}</div>
+                            <div class="category-item-name">${config.name}</div>
+                            <div class="category-item-count">${products.length} products</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            grid.innerHTML = html;
+        }
+
+        // Select category
+        function selectCategory(category) {
+            // Update pill states
+            document.querySelectorAll('.category-pill').forEach(pill => {
+                pill.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+            
+            // Scroll pill into view
+            const selectedPill = document.querySelector(`[data-category="${category}"]`);
+            selectedPill.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            
+            // Load content
+            loadView(category);
+            
+            // Haptic feedback
+            addHapticFeedback(selectedPill);
+        }
+
+        // Select from category menu
+        function selectCategoryFromMenu(category) {
+            hideCategoryMenu();
+            selectCategory(category);
+        }
+
+        // Get total favorites count
+        function getTotalFavorites() {
+            return favorites.bestDeals.length + favorites.customerFaves.length + favorites.quickRef.length;
+        }
+
+        // Load view content
+        function loadView(category) {
+            currentView = category;
+            let products = [];
+            let title = '';
+            let icon = '';
+            
+            switch(category) {
+                case 'all':
+                    products = catalog.products;
+                    title = 'All Products';
+                    icon = '🏠';
+                    break;
+                case 'bestsellers':
+                    products = catalog.products.filter(p => p.times_sold >= 10).sort((a, b) => b.times_sold - a.times_sold);
+                    title = 'Best Sellers';
+                    icon = '🔥';
+                    break;
+                case 'favorites':
+                    const allFavSkus = [...favorites.bestDeals, ...favorites.customerFaves, ...favorites.quickRef];
+                    products = catalog.products.filter(p => allFavSkus.includes(p.sku));
+                    title = 'All Favorites';
+                    icon = '⭐';
+                    break;
+                case 'bestdeals':
+                    products = catalog.products.filter(p => favorites.bestDeals.includes(p.sku));
+                    title = 'Best Deals';
+                    icon = '💰';
+                    break;
+                case 'quickref':
+                    products = catalog.products.filter(p => favorites.quickRef.includes(p.sku));
+                    title = 'Quick Reference';
+                    icon = '⚡';
+                    break;
+                default:
+                    products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === category);
+                    const config = categoryConfig[category];
+                    title = config ? config.name : 'Category';
+                    icon = config ? config.icon : '📦';
+            }
+            
+            // Update header
+            document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">${icon}</span> ${title}`;
+            
+            // Render products
+            renderProducts(products);
+        }
+
+        // Render products
+        function renderProducts(products) {
+            try {
+                // Input validation
+                if (!Array.isArray(products)) {
+                    console.error('Invalid products array provided to renderProducts');
+                    return false;
+                }
+                
+                currentProducts = products;
+                
+                // Sort products with error handling
+                const sorted = [...products];
+                try {
+                    switch(currentSort) {
+                        case 'popularity':
+                            sorted.sort((a, b) => (b.times_sold || 0) - (a.times_sold || 0));
+                            break;
+                        case 'price-low':
+                            sorted.sort((a, b) => (a.case_price || 0) - (b.case_price || 0));
+                            break;
+                        case 'price-high':
+                            sorted.sort((a, b) => (b.case_price || 0) - (a.case_price || 0));
+                            break;
+                        case 'name':
+                            sorted.sort((a, b) => {
+                                const nameA = a.name || '';
+                                const nameB = b.name || '';
+                                return nameA.localeCompare(nameB);
+                            });
+                            break;
+                        default:
+                            console.warn('Unknown sort value:', currentSort);
+                    }
+                } catch (sortError) {
+                    console.warn('Error sorting products:', sortError);
+                }
+                
+                // Update count safely
+                const resultsCount = document.getElementById('resultsCount');
+                if (resultsCount) {
+                    resultsCount.textContent = 
+                        `${sorted.length} product${sorted.length !== 1 ? 's' : ''}`;
+                }
+                
+                // Render grid safely
+                const grid = document.getElementById('productsGrid');
+                if (!grid) {
+                    console.error('Products grid element not found');
+                    return false;
+                }
+                
+                if (sorted.length === 0) {
+                    grid.innerHTML = `
+                        <div class="loading" style="grid-column: 1/-1;">
+                            <div style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;">📋</div>
+                            <p>No products found</p>
+                        </div>
+                    `;
+                    return true;
+                }
+                
+                try {
+                    const productCards = sorted.map(product => {
+                        try {
+                            return renderProductCard(product);
+                        } catch (cardError) {
+                            console.warn('Error rendering product card:', cardError, product);
+                            return ''; // Skip problematic products
+                        }
+                    }).filter(card => card.length > 0);
+                    
+                    grid.innerHTML = productCards.join('');
+                } catch (renderError) {
+                    console.error('Error rendering product grid:', renderError);
+                    grid.innerHTML = `
+                        <div class="loading" style="grid-column: 1/-1;">
+                            <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
+                            <p style="color: #ff6666;">Error displaying products</p>
+                        </div>
+                    `;
+                    return false;
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('Error in renderProducts:', error);
+                return false;
+            }
+        }
+
+        // Render product card
+        function renderProductCard(product) {
+            const categoryKey = product.categoryPath ? product.categoryPath[0] : 'default';
+            const config = categoryConfig[categoryKey] || { color: '#00f5ff', icon: '📦' };
+            const isBestSeller = product.times_sold >= 20;
+            const isFavorited = isInAnyFavorites(product.sku);
+            const favCategory = getFavoriteCategory(product.sku);
+            
+            return `
+                <div class="product-card" style="--product-color: ${config.color}20">
+                    <div class="product-image">
+                        ${isBestSeller ? '<span class="bestseller-badge">BEST SELLER</span>' : ''}
+                        <button class="favorite-btn ${isFavorited ? 'favorited' : ''}" 
+                                onclick="toggleFavorite('${product.sku}', this)" 
+                                title="${isFavorited ? `Remove from ${favCategory}` : 'Add to favorites'}"
+                                style="
+                                    position: absolute;
+                                    top: 8px;
+                                    right: 8px;
+                                    background: ${isFavorited ? 'var(--neon-pink)' : 'rgba(0, 0, 0, 0.5)'};
+                                    border: none;
+                                    color: ${isFavorited ? 'black' : 'white'};
+                                    width: 28px;
+                                    height: 28px;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 14px;
+                                    z-index: 10;
+                                    transition: all 0.3s;
+                                ">
+                            ${isFavorited ? '⭐' : '☆'}
+                        </button>
+                        <span style="color: ${config.color};">${config.icon}</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-sku">SKU: ${product.sku}</div>
+                        <div class="product-price">$${product.case_price.toFixed(2)}</div>
+                        <div class="product-unit">per case</div>
+                        <div class="product-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="changeQty('${product.sku}', -1)">−</button>
+                                <input type="text" class="qty-input" id="qty-${product.sku}" value="1" readonly>
+                                <button class="qty-btn" onclick="changeQty('${product.sku}', 1)">+</button>
+                            </div>
+                            <button class="add-btn" onclick="addToList('${product.sku}', this)">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Bottom navigation
+        function bottomNav(section, navElement = null) {
+            try {
+                // Input validation
+                if (!section || typeof section !== 'string') {
+                    console.error('Invalid section provided to bottomNav');
+                    return false;
+                }
+                
+                // Update nav states
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                
+                // Use passed element or find the clicked one
+                const activeElement = navElement || document.querySelector(`[onclick*="bottomNav('${section}')"]`);
+                if (activeElement) {
+                    activeElement.classList.add('active');
+                }
+                
+                switch(section) {
+                    case 'home':
+                        selectCategory('all');
+                        break;
+                    case 'categories':
+                        showCategoryMenu();
+                        break;
+                    case 'bestsellers':
+                        selectCategory('bestsellers');
+                        break;
+                    case 'search':
+                        const searchInput = document.getElementById('searchInput');
+                        if (searchInput) {
+                            searchInput.focus();
+                        }
+                        break;
+                    case 'cart':
+                        viewCart();
+                        break;
+                    default:
+                        console.warn('Unknown navigation section:', section);
+                        return false;
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('Error in bottomNav:', error);
+                return false;
+            }
+        }
+
+        // Category menu functions
+        function showCategoryMenu() {
+            document.getElementById('categoryOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideCategoryMenu() {
+            document.getElementById('categoryOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Sort toggle
+        function toggleSort() {
+            const sorts = ['popularity', 'price-low', 'price-high', 'name'];
+            const labels = ['Popular', 'Price ↑', 'Price ↓', 'Name'];
+            
+            const currentIndex = sorts.indexOf(currentSort);
+            const nextIndex = (currentIndex + 1) % sorts.length;
+            
+            currentSort = sorts[nextIndex];
+            document.getElementById('sortLabel').textContent = labels[nextIndex];
+            
+            renderProducts(currentProducts);
+        }
+
+        // Cart functions
+        function changeQty(sku, delta) {
+            const input = document.getElementById(`qty-${sku}`);
+            let value = parseInt(input.value) + delta;
+            if (value < 1) value = 1;
+            if (value > 99) value = 99;
+            input.value = value;
+        }
+
+        function addToList(sku, buttonElement = null) {
+            try {
+                // Input validation
+                if (!sku || typeof sku !== 'string') {
+                    console.error('Invalid SKU provided to addToList');
+                    return false;
+                }
+                
+                const product = catalog.products.find(p => p.sku === sku);
+                if (!product) {
+                    console.error('Product not found:', sku);
+                    return false;
+                }
+                
+                const qtyElement = document.getElementById(`qty-${sku}`);
+                if (!qtyElement) {
+                    console.error('Quantity element not found for SKU:', sku);
+                    return false;
+                }
+                
+                const qty = parseInt(qtyElement.value) || 1;
+                
+                // Check if item already in list
+                const existing = orderList.find(item => item.sku === sku);
+                if (existing) {
+                    existing.quantity += qty;
+                } else {
+                    orderList.push({
+                        sku: product.sku,
+                        name: product.name,
+                        price: product.case_price,
+                        quantity: qty
+                    });
+                }
+                
+                // Save to localStorage
+                try {
+                    localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
+                } catch (storageError) {
+                    console.error('Failed to save list:', storageError);
+                }
+                
+                // Update UI
+                updateListPanel();
+                showListPanel();
+                
+                // Reset quantity
+                qtyElement.value = 1;
+                
+                // Visual feedback
+                const btn = buttonElement || document.querySelector(`[onclick*="addToList('${sku}')"]`);
+                if (btn) {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '✓';
+                    btn.style.background = 'var(--neon-green)';
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 1000);
+                    
+                    // Haptic feedback
+                    addHapticFeedback(btn);
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('Error in addToList:', error);
+                return false;
+            }
+        }
+
+        // Keep old addToCart for compatibility but redirect to addToList
+        function addToCart(sku, buttonElement = null) {
+            return addToList(sku, buttonElement);
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('bottomCartCount').textContent = count;
+            
+            // Hide badge if empty
+            const badges = document.querySelectorAll('#bottomCartCount');
+            badges.forEach(badge => {
+                badge.style.display = count > 0 ? 'flex' : 'none';
+            });
+        }
+
+        function viewCart() {
+            toggleListPanel();
+        }
+
+        // List Panel Functions
+        function updateListPanel() {
+            const listItems = document.getElementById('listItems');
+            const listCount = document.getElementById('listCount');
+            const listTotal = document.getElementById('listTotal');
+            const toggleBtn = document.getElementById('listToggleBtn');
+            const toggleBadge = document.getElementById('listToggleBadge');
+            
+            if (orderList.length === 0) {
+                listItems.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        <div style="font-size: 32px; margin-bottom: 10px;">📋</div>
+                        <div>No items in list</div>
+                        <div style="font-size: 11px; margin-top: 5px;">Add items to build your order</div>
+                    </div>
+                `;
+                listCount.textContent = '(0)';
+                listTotal.textContent = '$0.00';
+                toggleBtn.classList.remove('has-items');
+            } else {
+                // Render list items
+                let html = '';
+                let total = 0;
+                
+                orderList.forEach((item, index) => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    
+                    html += `
+                        <div class="list-item">
+                            <div class="list-item-info">
+                                <div class="list-item-name">${item.name}</div>
+                                <div class="list-item-sku">SKU: ${item.sku}</div>
+                                <div class="list-item-price">${item.quantity} × $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}</div>
+                            </div>
+                            <div class="list-item-controls">
+                                <button class="list-item-remove" onclick="removeFromList(${index})">×</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                listItems.innerHTML = html;
+                listCount.textContent = `(${orderList.length})`;
+                listTotal.textContent = `$${total.toFixed(2)}`;
+                
+                // Show toggle button with badge
+                toggleBtn.classList.add('has-items');
+                toggleBadge.textContent = orderList.length;
+            }
+        }
+
+        function removeFromList(index) {
+            orderList.splice(index, 1);
+            
+            // Save to localStorage
+            try {
+                localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
+            } catch (e) {
+                console.error('Failed to save list:', e);
+            }
+            
+            updateListPanel();
+            
+            // Hide panel if empty
+            if (orderList.length === 0) {
+                setTimeout(() => {
+                    document.getElementById('listPanel').classList.remove('active');
+                }, 500);
+            }
+        }
+
+        function clearList() {
+            if (orderList.length === 0) return;
+            
+            if (confirm('Clear all items from the list?')) {
+                orderList = [];
+                
+                // Save to localStorage
+                try {
+                    localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
+                } catch (e) {
+                    console.error('Failed to save list:', e);
+                }
+                
+                updateListPanel();
+                
+                // Hide panel
+                setTimeout(() => {
+                    document.getElementById('listPanel').classList.remove('active');
+                }, 500);
+            }
+        }
+
+        function toggleListPanel() {
+            const panel = document.getElementById('listPanel');
+            panel.classList.toggle('active');
+        }
+
+        function showListPanel() {
+            const panel = document.getElementById('listPanel');
+            if (!panel.classList.contains('active')) {
+                panel.classList.add('active');
+            }
+        }
+
+        // Search
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            let searchTimeout;
+            
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    const query = e.target.value.trim();
+                    if (query) {
+                        searchProducts(query);
+                    } else {
+                        loadView('all');
+                    }
+                }, 300);
+            });
+        }
+
+        function searchProducts(query) {
+            const results = catalog.products.filter(p => 
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.sku.includes(query)
+            );
+            
+            document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">🔍</span> Search Results`;
+            renderProducts(results);
+        }
+
+        // Utility functions
+        function addHapticFeedback(element) {
+            element.classList.add('haptic');
+            setTimeout(() => element.classList.remove('haptic'), 100);
+        }
+
+        function setupPullToRefresh() {
+            let startY = 0;
+            let currentY = 0;
+            let isPulling = false;
+            
+            document.addEventListener('touchstart', (e) => {
+                if (window.pageYOffset === 0) {
+                    startY = e.touches[0].pageY;
+                    isPulling = true;
+                }
+            });
+            
+            document.addEventListener('touchmove', (e) => {
+                if (isPulling) {
+                    currentY = e.touches[0].pageY;
+                    const pullDistance = currentY - startY;
+                    
+                    if (pullDistance > 50) {
+                        document.getElementById('pullIndicator').classList.add('active');
+                    }
+                }
+            });
+            
+            document.addEventListener('touchend', () => {
+                if (isPulling) {
+                    const pullDistance = currentY - startY;
+                    if (pullDistance > 100) {
+                        // Trigger refresh
+                        location.reload();
+                    }
+                    document.getElementById('pullIndicator').classList.remove('active');
+                    isPulling = false;
+                }
+            });
+        }
+
+        // Favorites Management Functions
+        function isInAnyFavorites(sku) {
+            return favorites.bestDeals.includes(sku) || 
+                   favorites.customerFaves.includes(sku) || 
+                   favorites.quickRef.includes(sku);
+        }
+
+        function getFavoriteCategory(sku) {
+            if (favorites.bestDeals.includes(sku)) return 'Best Deals';
+            if (favorites.customerFaves.includes(sku)) return 'Customer Favorites';
+            if (favorites.quickRef.includes(sku)) return 'Quick Reference';
+            return null;
+        }
+
+        function toggleFavorite(sku, buttonElement) {
+            // Add to recently viewed
+            addToRecentlyViewed(sku);
+            
+            // Check if already favorited
+            const currentCategory = getFavoriteCategory(sku);
+            
+            if (currentCategory) {
+                // Remove from current category
+                removeFromFavorites(sku);
+                
+                // Update button appearance
+                buttonElement.style.background = 'rgba(0, 0, 0, 0.5)';
+                buttonElement.style.color = 'white';
+                buttonElement.innerHTML = '☆';
+                buttonElement.title = 'Add to favorites';
+                buttonElement.classList.remove('favorited');
+                
+                showFavoriteFeedback('Removed from favorites', 'var(--neon-orange)');
+            } else {
+                // Show category selection menu
+                showFavoriteCategoryMenu(sku, buttonElement);
+            }
+            
+            // Save to storage and update UI
+            saveFavorites();
+            updateFavoriteCounts();
+        }
+
+        function showFavoriteCategoryMenu(sku, buttonElement) {
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--dark-bg);
+                border: 2px solid var(--neon-cyan);
+                border-radius: 15px;
+                padding: 20px;
+                z-index: 10000;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+                max-width: 300px;
+                width: 90%;
+            `;
+            
+            menu.innerHTML = `
+                <div style="color: var(--neon-green); font-size: 16px; margin-bottom: 15px; text-align: center;">
+                    <strong>⭐ Add to Favorites</strong>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button onclick="addToFavoriteCategory('${sku}', 'bestDeals', this.parentElement.parentElement)" 
+                            style="background: var(--neon-green); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                        💰 Best Deals
+                    </button>
+                    <button onclick="addToFavoriteCategory('${sku}', 'customerFaves', this.parentElement.parentElement)" 
+                            style="background: var(--neon-pink); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                        👥 Customer Favorites
+                    </button>
+                    <button onclick="addToFavoriteCategory('${sku}', 'quickRef', this.parentElement.parentElement)" 
+                            style="background: var(--neon-purple); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                        ⚡ Quick Reference
+                    </button>
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            style="background: rgba(255, 255, 255, 0.1); color: white; border: none; padding: 8px; border-radius: 8px; cursor: pointer; margin-top: 5px;">
+                        Cancel
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(menu);
+            
+            // Store button reference for later update
+            menu.dataset.buttonId = buttonElement.id || `btn-${sku}`;
+            if (!buttonElement.id) {
+                buttonElement.id = `btn-${sku}`;
+            }
+        }
+
+        function addToFavoriteCategory(sku, category, menuElement) {
+            // Add to the specified category
+            if (!favorites[category].includes(sku)) {
+                favorites[category].push(sku);
+            }
+            
+            // Update the button that triggered this
+            const buttonId = menuElement.dataset.buttonId;
+            const button = document.getElementById(buttonId);
+            
+            if (button) {
+                button.style.background = 'var(--neon-pink)';
+                button.style.color = 'black';
+                button.innerHTML = '⭐';
+                button.classList.add('favorited');
+                
+                const categoryNames = {
+                    'bestDeals': 'Best Deals',
+                    'customerFaves': 'Customer Favorites', 
+                    'quickRef': 'Quick Reference'
+                };
+                button.title = `Remove from ${categoryNames[category]}`;
+            }
+            
+            // Remove menu
+            menuElement.remove();
+            
+            // Save and update
+            saveFavorites();
+            updateFavoriteCounts();
+            
+            const categoryIcons = {
+                'bestDeals': '💰',
+                'customerFaves': '👥',
+                'quickRef': '⚡'
+            };
+            
+            showFavoriteFeedback(`${categoryIcons[category]} Added to ${categoryNames[category]}!`, 'var(--neon-green)');
+        }
+
+        function removeFromFavorites(sku) {
+            favorites.bestDeals = favorites.bestDeals.filter(id => id !== sku);
+            favorites.customerFaves = favorites.customerFaves.filter(id => id !== sku);
+            favorites.quickRef = favorites.quickRef.filter(id => id !== sku);
+        }
+
+        function addToRecentlyViewed(sku) {
+            // Remove if already exists
+            favorites.recentlyViewed = favorites.recentlyViewed.filter(id => id !== sku);
+            
+            // Add to beginning
+            favorites.recentlyViewed.unshift(sku);
+            
+            // Keep only last 20 items
+            if (favorites.recentlyViewed.length > 20) {
+                favorites.recentlyViewed = favorites.recentlyViewed.slice(0, 20);
+            }
+        }
+
+        function saveFavorites() {
+            try {
+                localStorage.setItem('missionLinenFavorites', JSON.stringify(favorites));
+            } catch (error) {
+                console.error('Failed to save favorites:', error);
+            }
+        }
+
+        function updateFavoriteCounts() {
+            // Update category pill counts
+            const pills = document.querySelectorAll('.category-pill');
+            pills.forEach(pill => {
+                const category = pill.dataset.category;
+                const countSpan = pill.querySelector('.pill-count');
+                
+                if (countSpan) {
+                    switch(category) {
+                        case 'favorites':
+                            countSpan.textContent = getTotalFavorites();
+                            break;
+                        case 'bestdeals':
+                            countSpan.textContent = favorites.bestDeals.length;
+                            break;
+                        case 'quickref':
+                            countSpan.textContent = favorites.quickRef.length;
+                            break;
+                    }
+                }
+            });
+        }
+
+        function showFavoriteFeedback(message, color) {
+            const feedback = document.createElement('div');
+            feedback.style.cssText = `
+                position: fixed;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${color};
+                color: black;
+                padding: 10px 20px;
+                border-radius: 25px;
+                z-index: 10001;
+                font-weight: bold;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                animation: fadeInOut 2s ease-in-out;
+            `;
+            
+            feedback.innerHTML = message;
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                if (feedback.parentNode) {
+                    feedback.remove();
+                }
+            }, 2000);
+        }
+
+        // Copy Functions
+        function copyFormat(format) {
+            if (orderList.length === 0) {
+                alert('No items in list to copy');
+                return;
+            }
+            
+            let text = '';
+            
+            switch(format) {
+                case 'boss':
+                    text = formatForBoss();
+                    break;
+                case 'team':
+                    text = formatForTeam();
+                    break;
+                case 'customer':
+                    text = formatForCustomer();
+                    break;
+                case 'skus':
+                    text = formatSKUsOnly();
+                    break;
+                default:
+                    text = formatForBoss();
+            }
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                // Visual feedback
+                const btn = event.target;
+                btn.classList.add('copied');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ Copied!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalText;
+                }, 2000);
+                
+                // Haptic feedback
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('Copied to clipboard!');
+                } catch (err) {
+                    alert('Failed to copy. Please try again.');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function formatForBoss() {
+            const date = new Date().toLocaleDateString();
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            let total = 0;
+            
+            let text = `ORDER REQUEST\n`;
+            text += `Customer: ${customerInfo.name} #${customerInfo.account}\n`;
+            text += `Date: ${date} ${time}\n`;
+            text += `---\n`;
+            
+            orderList.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                text += `${item.sku} | ${item.name} | ${item.quantity}cs @ $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}\n`;
+            });
+            
+            text += `---\n`;
+            text += `TOTAL: $${total.toFixed(2)}`;
+            
+            return text;
+        }
+
+        function formatForTeam() {
+            let text = '🔥 CHECK THESE DEALS!\n\n';
+            
+            orderList.forEach(item => {
+                text += `${item.name}\n`;
+                text += `SKU: ${item.sku}\n`;
+                text += `Price: $${item.price.toFixed(2)}/case\n`;
+                text += `Qty Available: ${item.quantity} cases\n`;
+                text += `---\n`;
+            });
+            
+            return text;
+        }
+
+        function formatForCustomer() {
+            const date = new Date();
+            const quoteNum = `Q${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}-${String(Math.floor(Math.random()*1000)).padStart(3,'0')}`;
+            const validUntil = new Date(date.getTime() + 7*24*60*60*1000).toLocaleDateString();
+            let total = 0;
+            
+            let text = `QUOTE #${quoteNum}\n`;
+            text += `Valid Until: ${validUntil}\n\n`;
+            
+            orderList.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                text += `${item.quantity} cases - ${item.name}\n`;
+            });
+            
+            text += `\nEstimated Total: $${total.toFixed(2)}\n`;
+            text += `*Pricing subject to final confirmation`;
+            
+            return text;
+        }
+
+        function formatSKUsOnly() {
+            return orderList.map(item => `${item.sku} x${item.quantity}`).join('\n');
+        }
+
+        function shareList() {
+            const text = formatForBoss();
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mission Linen Order',
+                    text: text
+                }).catch(err => {
+                    console.log('Share cancelled or failed', err);
+                });
+            } else {
+                // Fallback to copy
+                copyFormat('boss');
+            }
+        }
+
+        // PWA Installation
+        let deferredPrompt;
+        let isInstalled = false;
+
+        // Check if app is already installed
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA installed');
+            isInstalled = true;
+            hideInstallPrompt();
+        });
+
+        // Capture install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('Install prompt triggered');
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+
+        function showInstallPrompt() {
+            if (isInstalled) return;
+            
+            // Create install banner
+            const installBanner = document.createElement('div');
+            installBanner.id = 'installBanner';
+            installBanner.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-green));
+                    color: black;
+                    padding: 10px 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    z-index: 9999;
+                    font-size: 14px;
+                    box-shadow: 0 2px 10px rgba(0, 245, 255, 0.5);
+                ">
+                    <div>
+                        <strong>📱 Install App</strong>
+                        <div style="font-size: 11px; opacity: 0.8;">Works offline • Faster loading</div>
+                    </div>
+                    <div>
+                        <button onclick="installApp()" style="
+                            background: rgba(0, 0, 0, 0.2);
+                            border: 1px solid rgba(0, 0, 0, 0.3);
+                            color: black;
+                            padding: 5px 12px;
+                            border-radius: 15px;
+                            margin-right: 10px;
+                            cursor: pointer;
+                            font-size: 12px;
+                        ">Install</button>
+                        <button onclick="hideInstallPrompt()" style="
+                            background: transparent;
+                            border: none;
+                            color: black;
+                            font-size: 18px;
+                            cursor: pointer;
+                            padding: 5px;
+                        ">×</button>
+                    </div>
+                </div>
+            `;
+            
+            // Only show if not already shown
+            if (!document.getElementById('installBanner')) {
+                document.body.appendChild(installBanner);
+                
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    hideInstallPrompt();
+                }, 10000);
+            }
+        }
+
+        function hideInstallPrompt() {
+            const banner = document.getElementById('installBanner');
+            if (banner) {
+                banner.remove();
+            }
+        }
+
+        async function installApp() {
+            if (!deferredPrompt) return;
+            
+            const result = await deferredPrompt.prompt();
+            console.log('Install prompt result:', result);
+            
+            deferredPrompt = null;
+            hideInstallPrompt();
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('SW registered:', registration.scope);
+                    
+                    // Handle updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        if (newWorker) {
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateAvailable();
+                                }
+                            });
+                        }
+                    });
+                    
+                } catch (error) {
+                    console.log('SW registration failed:', error);
+                }
+            });
+        }
+
+        function showUpdateAvailable() {
+            const updateBanner = document.createElement('div');
+            updateBanner.innerHTML = `
+                <div style="
+                    position: fixed;
+                    bottom: 70px;
+                    left: 15px;
+                    right: 15px;
+                    background: var(--neon-green);
+                    color: black;
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    z-index: 999;
+                    font-size: 14px;
+                    box-shadow: 0 4px 20px rgba(57, 255, 20, 0.5);
+                ">
+                    <div>
+                        <strong>Update Available</strong>
+                        <div style="font-size: 11px; opacity: 0.8;">New features and improvements</div>
+                    </div>
+                    <button onclick="updateApp()" style="
+                        background: rgba(0, 0, 0, 0.2);
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        color: black;
+                        padding: 5px 12px;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        font-size: 12px;
+                    ">Update</button>
+                </div>
+            `;
+            document.body.appendChild(updateBanner);
+        }
+
+        function updateApp() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.ready.then(registration => {
+                    if (registration.waiting) {
+                        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+
+        // Network status monitoring
+        let isOnline = navigator.onLine;
+        
+        function updateNetworkStatus() {
+            const wasOnline = isOnline;
+            isOnline = navigator.onLine;
+            
+            if (!wasOnline && isOnline) {
+                showNetworkStatus('🌐 Back Online', 'var(--neon-green)');
+            } else if (wasOnline && !isOnline) {
+                showNetworkStatus('📱 Working Offline', 'var(--neon-orange)');
+            }
+        }
+
+        function showNetworkStatus(message, color) {
+            const statusDiv = document.createElement('div');
+            statusDiv.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: ${color};
+                    color: black;
+                    padding: 10px 20px;
+                    border-radius: 25px;
+                    z-index: 10000;
+                    font-weight: bold;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                ">${message}</div>
+            `;
+            
+            document.body.appendChild(statusDiv);
+            
+            setTimeout(() => {
+                statusDiv.remove();
+            }, 2000);
+        }
+
+        // Listen for network changes
+        window.addEventListener('online', updateNetworkStatus);
+        window.addEventListener('offline', updateNetworkStatus);
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Handle back button
+        window.addEventListener('popstate', () => {
+            if (document.getElementById('categoryOverlay').classList.contains('active')) {
+                hideCategoryMenu();
+            }
+        });
+    </script>
+</body>
+</html>

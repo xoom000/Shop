@@ -1,0 +1,1662 @@
+{
+  "catalog": {
+    "name": "Mission Linen Supply Catalog",
+    "version": "1.0",
+    "lastUpdated": "2025-01-09",
+    "totalProducts": 107,
+    "totalSales": 679
+  },
+  "products": [
+    {
+      "sku": "99054962",
+      "name": "Nitrile Gloves - Large Black",
+      "original_name": "PF NITRILGLV L BLK",
+      "case_price": 43.94,
+      "times_sold": 54,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "nitrile-gloves"
+      ]
+    },
+    {
+      "sku": "99054961",
+      "name": "Nitrile Gloves - Medium Black",
+      "original_name": "PF NITRILGLV M BLK",
+      "case_price": 42.13,
+      "times_sold": 43,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "nitrile-gloves"
+      ]
+    },
+    {
+      "sku": "99455667",
+      "name": "Vinyl Gloves - x -large (10 Boxes of 100)",
+      "original_name": "VINYL GLV XLG 10/100",
+      "case_price": 23.8,
+      "times_sold": 38,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "vinyl-gloves"
+      ]
+    },
+    {
+      "sku": "99037012",
+      "name": "Paper Towel Roll White",
+      "original_name": "HWRLL TELPPR WHT",
+      "case_price": 34.4,
+      "times_sold": 37,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "roll-towels"
+      ]
+    },
+    {
+      "sku": "99054963",
+      "name": "Nitrile Gloves - x -large Black",
+      "original_name": "PF NITRILGLV XL BLK",
+      "case_price": 42.18,
+      "times_sold": 34,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "nitrile-gloves"
+      ]
+    },
+    {
+      "sku": "99451284",
+      "name": "Center Pull Paper Towels 600 Sheets 6/case",
+      "original_name": "CNTRPLL 600SHT 6/CS",
+      "case_price": 32.71,
+      "times_sold": 33,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "center-pull"
+      ]
+    },
+    {
+      "sku": "99031054",
+      "name": "60 Gallon Can Liner Black 1.5m",
+      "original_name": "60GAL CNLNR BLK 1.5M",
+      "case_price": 41.29,
+      "times_sold": 27,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "extra-large-liners"
+      ]
+    },
+    {
+      "sku": "99031055",
+      "name": "40/45 Gallon Liner Black 1.5m",
+      "original_name": "40/45G LNR BLK 1.5M",
+      "case_price": 32.64,
+      "times_sold": 26,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "large-liners"
+      ]
+    },
+    {
+      "sku": "99055640",
+      "name": "Dinner Napkins 1/8fold White",
+      "original_name": "DNRNAP 1/8FLD WHT",
+      "case_price": 43.14,
+      "times_sold": 25,
+      "categoryPath": [
+        "paper-products",
+        "napkins",
+        "dinner-napkins"
+      ]
+    },
+    {
+      "sku": "99451290",
+      "name": "Jumbo Toilet Paper 700 White 12/case",
+      "original_name": "JBT 700 WHT 12/CS",
+      "case_price": 27.65,
+      "times_sold": 19,
+      "categoryPath": [
+        "paper-products",
+        "toilet-tissue",
+        "jumbo-rolls"
+      ]
+    },
+    {
+      "sku": "99031243",
+      "name": "1hinged Container 9 x 9 White",
+      "original_name": "1HNGDCMT 9X9 WHT",
+      "case_price": 32.84,
+      "times_sold": 18,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99059091",
+      "name": "1compartment 9 x 9 x 3 Clearhng",
+      "original_name": "1CMPT 9X9X3 CLRHNG",
+      "case_price": 50.07,
+      "times_sold": 16,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99089317",
+      "name": "Portion Cup 2oz",
+      "original_name": "PORTION CUP 2OZ",
+      "case_price": 33.47,
+      "times_sold": 11,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99059117",
+      "name": "Folded Paper Container #4 Kr",
+      "original_name": "FLDPPR CONT #4 KR",
+      "case_price": 44.66,
+      "times_sold": 10,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99013058",
+      "name": "Bleach Germicide 1gl 6%",
+      "original_name": "PB BLCHGERM 1GL 6%",
+      "case_price": 27.23,
+      "times_sold": 10,
+      "categoryPath": [
+        "janitorial",
+        "cleaning-chemicals",
+        "disinfectants"
+      ]
+    },
+    {
+      "sku": "99013352",
+      "name": "Clamshell Container Formed 9in",
+      "original_name": "CLMSHLL FRMLDED 9IN",
+      "case_price": 44.78,
+      "times_sold": 9,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99031245",
+      "name": "Hinged Container 9 x 6 White 1cmp",
+      "original_name": "HNGDCMT 9X6 WHT 1CMP",
+      "case_price": 20.06,
+      "times_sold": 9,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99089257",
+      "name": "Lid For Jv150,jv200",
+      "original_name": "LID FOR JV150,JV200",
+      "case_price": 22.46,
+      "times_sold": 9,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99089299",
+      "name": "Portion Cup 2oz",
+      "original_name": "PORTION CUP 2OZ",
+      "case_price": 29.75,
+      "times_sold": 9,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99039711",
+      "name": "Dispenser Napkins 6.5 x 8natural",
+      "original_name": "DIS NAP 6.5X8NATURAL",
+      "case_price": 27.4,
+      "times_sold": 8,
+      "categoryPath": [
+        "paper-products",
+        "napkins",
+        "dispenser-napkins"
+      ]
+    },
+    {
+      "sku": "99059066",
+      "name": "Flat Lid with Straw Hole 98mm Clear",
+      "original_name": "FLTLID WHLE 98MM CLR",
+      "case_price": 36.08,
+      "times_sold": 8,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99435269",
+      "name": "Paper Towel Roll",
+      "original_name": "PAPER TOWEL ROLL",
+      "case_price": 35.6,
+      "times_sold": 8,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "roll-towels"
+      ]
+    },
+    {
+      "sku": "99020538",
+      "name": "Round Container with Lid Black Clear 32oz",
+      "original_name": "RNDCMBO BLK CLR 32OZ",
+      "case_price": 31.88,
+      "times_sold": 8,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "round-containers"
+      ]
+    },
+    {
+      "sku": "99394433",
+      "name": "Cc Sanitizer-10 Quaternary",
+      "original_name": "CC SANI-10 QUAT",
+      "case_price": 57.57,
+      "times_sold": 7,
+      "categoryPath": [
+        "janitorial",
+        "cleaning-chemicals",
+        "sanitizers"
+      ]
+    },
+    {
+      "sku": "99059074",
+      "name": "Cold Cup 16oz 98mm Clear",
+      "original_name": "CLDCP 16OZ 98MM CLR",
+      "case_price": 65.33,
+      "times_sold": 7,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99435237",
+      "name": "Pprfdcontainer 8oz (20 Packs of 25)",
+      "original_name": "PPRFDCNTNR 8OZ 20/25",
+      "case_price": 73.98,
+      "times_sold": 7,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99020542",
+      "name": "Round Container with Lid Black Clear 24oz",
+      "original_name": "RNDCMBO BLK CLR 24OZ",
+      "case_price": 28.84,
+      "times_sold": 7,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "round-containers"
+      ]
+    },
+    {
+      "sku": "99039702",
+      "name": "Hged 9 x 9 1compartment Blck",
+      "original_name": "HGED 9X9 1CMPT BLCK",
+      "case_price": 31.36,
+      "times_sold": 6,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99014091",
+      "name": "Tray Bwktray128npfa",
+      "original_name": "Tray BWKTRAY128NPFA",
+      "case_price": 27.73,
+      "times_sold": 6,
+      "categoryPath": [
+        "tableware",
+        "serving-trays"
+      ]
+    },
+    {
+      "sku": "99350527",
+      "name": "2 Oz Black Souffle C",
+      "original_name": "2 OZ BLACK SOUFFLE C",
+      "case_price": 38.84,
+      "times_sold": 5,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "souffle-cups"
+      ]
+    },
+    {
+      "sku": "99059073",
+      "name": "Cold Cup 20oz 98mm Clear",
+      "original_name": "CLDCP 20OZ 98MM CLR",
+      "case_price": 60.49,
+      "times_sold": 5,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99514709",
+      "name": "Industrial Strength",
+      "original_name": "Industrial Strength",
+      "case_price": 62.17,
+      "times_sold": 5,
+      "categoryPath": [
+        "janitorial",
+        "cleaning-chemicals",
+        "degreasers"
+      ]
+    },
+    {
+      "sku": "99031067",
+      "name": "55/60 Gallon Liner Black 2m",
+      "original_name": "55/60GAL LNR BLK 2M",
+      "case_price": 55.18,
+      "times_sold": 4,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "extra-large-liners"
+      ]
+    },
+    {
+      "sku": "99514604",
+      "name": "Bwk526 60 Gallon Canliner",
+      "original_name": "BWK526 60G CanLiner",
+      "case_price": 59.31,
+      "times_sold": 4,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "extra-large-liners"
+      ]
+    },
+    {
+      "sku": "99059075",
+      "name": "Cold Cup 12oz 98mm Clear",
+      "original_name": "CLDCP 12OZ 98MM CLR",
+      "case_price": 58.44,
+      "times_sold": 4,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99033047",
+      "name": "Facial Tiss Sol11513",
+      "original_name": "Facial Tiss SOL11513",
+      "case_price": 30.19,
+      "times_sold": 4,
+      "categoryPath": [
+        "paper-products",
+        "facial-tissue"
+      ]
+    },
+    {
+      "sku": "99059114",
+      "name": "Folded Paper Container #1 Kr",
+      "original_name": "FLDPPR CONT #1 KR",
+      "case_price": 61.91,
+      "times_sold": 4,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99055654",
+      "name": "Hndtowel Multifold",
+      "original_name": "HNDTOWEL MLTIFOLD",
+      "case_price": 47.65,
+      "times_sold": 4,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "multifold-towels"
+      ]
+    },
+    {
+      "sku": "99054960",
+      "name": "Nitrile Gloves - Small Black",
+      "original_name": "PF NITRILGLV SM BLK",
+      "case_price": 44.23,
+      "times_sold": 4,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "nitrile-gloves"
+      ]
+    },
+    {
+      "sku": "99394486",
+      "name": "Seat Cvr 1/2-fold",
+      "original_name": "SEAT CVR 1/2-FOLD",
+      "case_price": 38.11,
+      "times_sold": 4,
+      "categoryPath": [
+        "janitorial",
+        "restroom-supplies",
+        "seat-covers"
+      ]
+    },
+    {
+      "sku": "99057385",
+      "name": "Sh Pf Blu - Large (10 Boxes of 100)",
+      "original_name": "SH PF BLU LG 10/100",
+      "case_price": 35.7,
+      "times_sold": 4,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "poly-gloves"
+      ]
+    },
+    {
+      "sku": "99057384",
+      "name": "Sh Pf Blu M (10 Boxes of 100)",
+      "original_name": "SH PF BLU M 10/100",
+      "case_price": 35.7,
+      "times_sold": 4,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "poly-gloves"
+      ]
+    },
+    {
+      "sku": "99394410",
+      "name": "1gl Dish Dtrgent",
+      "original_name": "1GL DISH DTRGENT",
+      "case_price": 17.64,
+      "times_sold": 3,
+      "categoryPath": [
+        "janitorial",
+        "cleaning-chemicals",
+        "detergents"
+      ]
+    },
+    {
+      "sku": "99031241",
+      "name": "1hinged Container 6 x 6 White",
+      "original_name": "1HNGDCMT 6X6 WHT",
+      "case_price": 28.75,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99392344",
+      "name": "75000868 Lid Paper",
+      "original_name": "75000868 LID PAPER",
+      "case_price": 91.77,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99037011",
+      "name": "Bath Tissue Rolll - Smalll White",
+      "original_name": "BTHTSU RLL SML WHT",
+      "case_price": 60.46,
+      "times_sold": 3,
+      "categoryPath": [
+        "paper-products",
+        "toilet-tissue",
+        "standard-rolls"
+      ]
+    },
+    {
+      "sku": "99016191",
+      "name": "Delicontainer W/lid 32oz",
+      "original_name": "DELICONT W/LID 32OZ",
+      "case_price": 49.57,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99016188",
+      "name": "Delicontainer W/lid 8oz",
+      "original_name": "DELICONT W/LID 8OZ",
+      "case_price": 35.21,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99039735",
+      "name": "Hged 6 x 6 1compartment Blck",
+      "original_name": "HGED 6X6 1CMPT BLCK",
+      "case_price": 18.64,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99013359",
+      "name": "Hoagi Molded Fbt 9 x 6",
+      "original_name": "HOAGI MOLDED FBT 9X6",
+      "case_price": 40.16,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99057785",
+      "name": "Napkins Interfold Brown",
+      "original_name": "NAPKINS INTERFOLD BR",
+      "case_price": 36.34,
+      "times_sold": 3,
+      "categoryPath": [
+        "paper-products",
+        "napkins",
+        "dispenser-napkins"
+      ]
+    },
+    {
+      "sku": "99391903",
+      "name": "Pizza B x 12in",
+      "original_name": "PIZZA BX 12IN",
+      "case_price": 31.46,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99059104",
+      "name": "Porolld 62mm 1.5/2.5oz",
+      "original_name": "PORLD 62MM 1.5/2.5OZ",
+      "case_price": 23.47,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99019412",
+      "name": "Portn Cup Bwkprtn4bl",
+      "original_name": "Portn Cup BWKPRTN4BL",
+      "case_price": 64.46,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99020452",
+      "name": "Round Container with Lid Black Clear 40oz",
+      "original_name": "RNDCMBO BLK CLR 40OZ",
+      "case_price": 34.16,
+      "times_sold": 3,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "round-containers"
+      ]
+    },
+    {
+      "sku": "99455666",
+      "name": "Vinyl Gloves - Large (10 Boxes of 100)",
+      "original_name": "VINYL GLV LG 10/100",
+      "case_price": 25.9,
+      "times_sold": 3,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "vinyl-gloves"
+      ]
+    },
+    {
+      "sku": "99455692",
+      "name": "Vinyl Gloves Md (10 Boxes of 100)",
+      "original_name": "VINYL GLV MD 10/100",
+      "case_price": 23.8,
+      "times_sold": 3,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "vinyl-gloves"
+      ]
+    },
+    {
+      "sku": "99059094",
+      "name": "1compartment 6 x 6 x 3d Clearhng",
+      "original_name": "1CMPT 6X6X3D CLRHNG",
+      "case_price": 69.66,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99076106",
+      "name": "Bev Nap 1/4fold Black",
+      "original_name": "BEV NAP 1/4FLD BLK",
+      "case_price": 44.35,
+      "times_sold": 2,
+      "categoryPath": [
+        "paper-products",
+        "napkins",
+        "beverage-napkins"
+      ]
+    },
+    {
+      "sku": "99019621",
+      "name": "Canlner 39 x 45 Blck",
+      "original_name": "CANLNER 39X45 BLCK",
+      "case_price": 21.74,
+      "times_sold": 2,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "medium-liners"
+      ]
+    },
+    {
+      "sku": "99019617",
+      "name": "Canliner Roll Nat",
+      "original_name": "CANLNR ROLL NAT",
+      "case_price": 55.56,
+      "times_sold": 2,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners"
+      ]
+    },
+    {
+      "sku": "99076107",
+      "name": "Cut Kit H-wgt Black",
+      "original_name": "CUT KIT H-WGT BLK",
+      "case_price": 29.33,
+      "times_sold": 2,
+      "categoryPath": [
+        "tableware",
+        "cutlery",
+        "cutlery-kits"
+      ]
+    },
+    {
+      "sku": "99435244",
+      "name": "Delicontainerlid 8-32oz",
+      "original_name": "DELICNTNRLID 8-32OZ",
+      "case_price": 29.19,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99028204",
+      "name": "Flatlidbwkround7flid",
+      "original_name": "FlatLidBWKROUND7FLID",
+      "case_price": 23.62,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99514858",
+      "name": "Grill Brick 8 x 4",
+      "original_name": "Grill Brick 8 x 4",
+      "case_price": 32.36,
+      "times_sold": 2,
+      "categoryPath": [
+        "janitorial",
+        "cleaning-tools",
+        "grill-maintenance"
+      ]
+    },
+    {
+      "sku": "99039692",
+      "name": "Hged 9 x 6 1compartment Blck",
+      "original_name": "HGED 9X6 1CMPT BLCK",
+      "case_price": 23.89,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "hinged-containers"
+      ]
+    },
+    {
+      "sku": "99089316",
+      "name": "Lid For 325/400/550",
+      "original_name": "LID FOR 325/400/550",
+      "case_price": 51.79,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99517053",
+      "name": "Polystyrene Portion",
+      "original_name": "Polystyrene Portion",
+      "case_price": 32.11,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99089072",
+      "name": "Portion Cup 4oz",
+      "original_name": "PORTION CUP 4OZ",
+      "case_price": 57.12,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "plastic-portion"
+      ]
+    },
+    {
+      "sku": "99435286",
+      "name": "Party Wrap Film 2000/roll",
+      "original_name": "PRTYWRP FILM 2000/RL",
+      "case_price": 31.93,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-wrap",
+        "plastic-wrap"
+      ]
+    },
+    {
+      "sku": "99451280",
+      "name": "Rollltwl White800 6/case",
+      "original_name": "RLLTWL WHT800 6/CS",
+      "case_price": 41.6,
+      "times_sold": 2,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "roll-towels"
+      ]
+    },
+    {
+      "sku": "99057383",
+      "name": "Sh Pf Blu - Small (10 Boxes of 100)",
+      "original_name": "SH PF BLU SM 10/100",
+      "case_price": 35.7,
+      "times_sold": 2,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "poly-gloves"
+      ]
+    },
+    {
+      "sku": "99089242",
+      "name": "Steam Pan Full Size",
+      "original_name": "STEAM PAN FULL SIZE",
+      "case_price": 94.75,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "food-service-pans",
+        "steam-pans"
+      ]
+    },
+    {
+      "sku": "99089211",
+      "name": "Steam Table Pan Lid",
+      "original_name": "STEAMTABLE PAN LID",
+      "case_price": 36.82,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99089314",
+      "name": "Steam Table Pan Lid",
+      "original_name": "STEAMTABLE PAN LID",
+      "case_price": 28.21,
+      "times_sold": 2,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99535666",
+      "name": "Universal Jumbo Bath",
+      "original_name": "Universal Jumbo Bath",
+      "case_price": 71.6,
+      "times_sold": 2,
+      "categoryPath": [
+        "paper-products",
+        "toilet-tissue",
+        "jumbo-rolls"
+      ]
+    },
+    {
+      "sku": "99519742",
+      "name": "Wave 3d Urinal Deodo",
+      "original_name": "Wave 3D Urinal Deodo",
+      "case_price": 37.73,
+      "times_sold": 2,
+      "categoryPath": [
+        "janitorial",
+        "restroom-supplies",
+        "air-fresheners"
+      ]
+    },
+    {
+      "sku": "99350581",
+      "name": "12 x 12 Natural Sandwi",
+      "original_name": "12X12 NATURAL SANDWI",
+      "case_price": 114.56,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "paper-containers"
+      ]
+    },
+    {
+      "sku": "99047906",
+      "name": "18x500 Foil Roll",
+      "original_name": "18x500 FOIL ROLL",
+      "case_price": 23.04,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-wrap",
+        "aluminum-foil"
+      ]
+    },
+    {
+      "sku": "99350531",
+      "name": "2 Oz Clear Lid",
+      "original_name": "2 OZ CLEAR LID",
+      "case_price": 33.55,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99350524",
+      "name": "2 Oz Translucent Sou",
+      "original_name": "2 OZ TRANSLUCENT SOU",
+      "case_price": 41.15,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "portion-cups",
+        "souffle-cups"
+      ]
+    },
+    {
+      "sku": "99350530",
+      "name": "3.25/4 Oz Clear Lid",
+      "original_name": "3.25/4  OZ CLEAR LID",
+      "case_price": 45.79,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99392336",
+      "name": "3940 Fork P/p",
+      "original_name": "3940 FORK P/P",
+      "case_price": 25.42,
+      "times_sold": 1,
+      "categoryPath": [
+        "tableware",
+        "cutlery",
+        "plastic-cutlery"
+      ]
+    },
+    {
+      "sku": "99392338",
+      "name": "3942 Teaspoon",
+      "original_name": "3942 TEASPOON",
+      "case_price": 25.42,
+      "times_sold": 1,
+      "categoryPath": [
+        "tableware",
+        "cutlery",
+        "plastic-cutlery"
+      ]
+    },
+    {
+      "sku": "99019616",
+      "name": "Bath Tissue 2-ply 1000 Sheets",
+      "original_name": "BTHTSU 2PLY 1000SHT",
+      "case_price": 83.79,
+      "times_sold": 1,
+      "categoryPath": [
+        "paper-products",
+        "toilet-tissue",
+        "standard-rolls"
+      ]
+    },
+    {
+      "sku": "99019614",
+      "name": "Canlner Rolclr 24 x 33",
+      "original_name": "CANLNER ROLCLR 24X33",
+      "case_price": 41.29,
+      "times_sold": 1,
+      "categoryPath": [
+        "janitorial",
+        "waste-management",
+        "can-liners",
+        "medium-liners"
+      ]
+    },
+    {
+      "sku": "99459198",
+      "name": "Cold Cup 20oz Clear",
+      "original_name": "CLD CUP 20OZ CLR",
+      "case_price": 73.04,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99059072",
+      "name": "Cold Cup 24oz 98mm Clear",
+      "original_name": "CLDCP 24OZ 98MM CLR",
+      "case_price": 46.28,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99514970",
+      "name": "Cocktail Straws 8in",
+      "original_name": "Cocktail Straws 8IN",
+      "case_price": 23.95,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "straws-stirrers"
+      ]
+    },
+    {
+      "sku": "99392331",
+      "name": "Coffee Jacket Kraft",
+      "original_name": "COFFEE JACKET KRAFT",
+      "case_price": 48.06,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "hot-cups",
+        "paper-hot-cups"
+      ]
+    },
+    {
+      "sku": "99046971",
+      "name": "Deli Lid Sccch16a",
+      "original_name": "Deli Lid SCCCH16A",
+      "case_price": 77.63,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99435243",
+      "name": "Deli Container 32oz 500/case",
+      "original_name": "DELICNTR 32OZ 500/CS",
+      "case_price": 63.38,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "deli-containers"
+      ]
+    },
+    {
+      "sku": "99039671",
+      "name": "Dispenser Napkins 6.5 x 8 White",
+      "original_name": "DIS NAP 6.5X8 WHITE",
+      "case_price": 26.25,
+      "times_sold": 1,
+      "categoryPath": [
+        "paper-products",
+        "napkins",
+        "dispenser-napkins"
+      ]
+    },
+    {
+      "sku": "82690000",
+      "name": "Fm-antibac Foam Soap",
+      "original_name": "FM-ANTIBAC FOAM SOAP",
+      "case_price": 38.8,
+      "times_sold": 1,
+      "categoryPath": [
+        "janitorial",
+        "restroom-supplies",
+        "soap-dispensers"
+      ]
+    },
+    {
+      "sku": "99350484",
+      "name": "Fork Black",
+      "original_name": "FORK BLACK",
+      "case_price": 34.87,
+      "times_sold": 1,
+      "categoryPath": [
+        "tableware",
+        "cutlery",
+        "plastic-cutlery"
+      ]
+    },
+    {
+      "sku": "99047931",
+      "name": "Freshener Frsmycabea",
+      "original_name": "FRESHENER FRSMYCABEA",
+      "case_price": 13.77,
+      "times_sold": 1,
+      "categoryPath": [
+        "janitorial",
+        "restroom-supplies",
+        "air-fresheners"
+      ]
+    },
+    {
+      "sku": "80330000",
+      "name": "Hardwound Vwht 8 x 800",
+      "original_name": "HARDWOUND VWHT 8X800",
+      "case_price": 39.9,
+      "times_sold": 1,
+      "categoryPath": [
+        "paper-products",
+        "paper-towels",
+        "roll-towels"
+      ]
+    },
+    {
+      "sku": "99031266",
+      "name": "Hot Cup 24oz Ppr White",
+      "original_name": "HTCP 24OZ PPR WHT",
+      "case_price": 97.16,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "hot-cups",
+        "paper-hot-cups"
+      ]
+    },
+    {
+      "sku": "99039676",
+      "name": "Lid Ppr Food Cup2vnt",
+      "original_name": "LID PPR FOOD CUP2VNT",
+      "case_price": 74.79,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99039704",
+      "name": "Lidpp832oz Lid Clear",
+      "original_name": "LIDPP832OZ LID CLR",
+      "case_price": 39.61,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "container-lids",
+        "flat-lids"
+      ]
+    },
+    {
+      "sku": "99013715",
+      "name": "Plate Bwkplhips10wh",
+      "original_name": "Plate BWKPLHIPS10WH",
+      "case_price": 81.2,
+      "times_sold": 1,
+      "categoryPath": [
+        "tableware",
+        "plates-bowls"
+      ]
+    },
+    {
+      "sku": "99020451",
+      "name": "Round Container with Lid Black Clear 48oz",
+      "original_name": "RNDCMBO BLK CLR 48OZ",
+      "case_price": 53.66,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "takeout-containers",
+        "round-containers"
+      ]
+    },
+    {
+      "sku": "99057386",
+      "name": "Sh Pf Blu x L (10 Boxes of 100)",
+      "original_name": "SH PF BLU XL 10/100",
+      "case_price": 35.7,
+      "times_sold": 1,
+      "categoryPath": [
+        "safety-ppe",
+        "disposable-gloves",
+        "poly-gloves"
+      ]
+    },
+    {
+      "sku": "99089300",
+      "name": "Steam Pan 1/2 Size",
+      "original_name": "STEAM PAN 1/2 SIZE",
+      "case_price": 58.49,
+      "times_sold": 1,
+      "categoryPath": [
+        "food-packaging",
+        "food-service-pans",
+        "steam-pans"
+      ]
+    },
+    {
+      "sku": "99516966",
+      "name": "Straw-slot Cold Cup",
+      "original_name": "Straw-Slot Cold Cup",
+      "case_price": 50.34,
+      "times_sold": 1,
+      "categoryPath": [
+        "drinkware",
+        "cold-cups",
+        "pet-cups"
+      ]
+    },
+    {
+      "sku": "99530410",
+      "name": "Tc Tcell Odor Contro",
+      "original_name": "TC TCell Odor Contro",
+      "case_price": 2.13,
+      "times_sold": 1,
+      "categoryPath": [
+        "janitorial",
+        "restroom-supplies",
+        "air-fresheners"
+      ]
+    },
+    {
+      "sku": "99537403",
+      "name": "Toilet Bowl Ring Rem",
+      "original_name": "Toilet Bowl Ring Rem",
+      "case_price": 42.46,
+      "times_sold": 1,
+      "categoryPath": [
+        "paper-products",
+        "toilet-tissue",
+        "standard-rolls"
+      ]
+    }
+  ],
+  "taxonomy": {
+    "name": "Mission Linen Product Catalog",
+    "version": "1.0",
+    "categories": {
+      "safety-ppe": {
+        "name": "Safety & PPE",
+        "icon": "\ud83e\udde4",
+        "description": "Personal protective equipment and safety supplies",
+        "subcategories": {
+          "disposable-gloves": {
+            "name": "Disposable Gloves",
+            "description": "Single-use gloves for food service and cleaning",
+            "subcategories": {
+              "nitrile-gloves": {
+                "name": "Nitrile Gloves",
+                "description": "Powder-free, latex-free, chemical resistant"
+              },
+              "vinyl-gloves": {
+                "name": "Vinyl Gloves",
+                "description": "Economical, powder-free, latex-free"
+              },
+              "poly-gloves": {
+                "name": "Poly Gloves",
+                "description": "Lightweight polyethylene for food prep"
+              }
+            }
+          }
+        }
+      },
+      "food-packaging": {
+        "name": "Food Packaging & Storage",
+        "icon": "\ud83d\udce6",
+        "description": "Containers, lids, and storage solutions",
+        "subcategories": {
+          "takeout-containers": {
+            "name": "Take-Out Containers",
+            "description": "To-go containers for restaurants",
+            "subcategories": {
+              "hinged-containers": {
+                "name": "Hinged Containers",
+                "description": "Clamshell and hinged foam/plastic containers"
+              },
+              "round-containers": {
+                "name": "Round Containers",
+                "description": "Round containers with matching lids"
+              },
+              "deli-containers": {
+                "name": "Deli Containers",
+                "description": "Clear plastic deli containers"
+              },
+              "paper-containers": {
+                "name": "Paper Food Containers",
+                "description": "Eco-friendly paper takeout boxes"
+              }
+            }
+          },
+          "container-lids": {
+            "name": "Container Lids",
+            "description": "Replacement and matching lids",
+            "subcategories": {
+              "flat-lids": {
+                "name": "Flat Lids",
+                "description": "Flat lids with or without straw slots"
+              },
+              "dome-lids": {
+                "name": "Dome Lids",
+                "description": "Raised lids for extra capacity"
+              }
+            }
+          },
+          "portion-cups": {
+            "name": "Portion Cups & Souffle",
+            "description": "Small containers for condiments and sides",
+            "subcategories": {
+              "plastic-portion": {
+                "name": "Plastic Portion Cups",
+                "description": "Clear plastic portion cups with lids"
+              },
+              "souffle-cups": {
+                "name": "Souffle Cups",
+                "description": "Paper and plastic souffle cups"
+              }
+            }
+          },
+          "food-service-pans": {
+            "name": "Food Service Pans",
+            "description": "Steam table and serving pans",
+            "subcategories": {
+              "steam-pans": {
+                "name": "Steam Table Pans",
+                "description": "Stainless steel and aluminum pans"
+              },
+              "foil-pans": {
+                "name": "Aluminum Foil Pans",
+                "description": "Disposable aluminum pans"
+              }
+            }
+          }
+        }
+      },
+      "drinkware": {
+        "name": "Cups & Drinkware",
+        "icon": "\ud83e\udd64",
+        "description": "Disposable cups and drinking accessories",
+        "subcategories": {
+          "cold-cups": {
+            "name": "Cold Cups",
+            "description": "Clear plastic cups for cold beverages",
+            "subcategories": {
+              "pet-cups": {
+                "name": "PET Plastic Cups",
+                "description": "Clear PET cups in various sizes"
+              },
+              "pp-cups": {
+                "name": "Polypropylene Cups",
+                "description": "Durable PP cups"
+              }
+            }
+          },
+          "hot-cups": {
+            "name": "Hot Cups",
+            "description": "Paper cups for hot beverages",
+            "subcategories": {
+              "paper-hot-cups": {
+                "name": "Paper Hot Cups",
+                "description": "Insulated paper cups"
+              },
+              "cup-accessories": {
+                "name": "Cup Accessories",
+                "description": "Sleeves, jackets, and carriers"
+              }
+            }
+          },
+          "straws-stirrers": {
+            "name": "Straws & Stirrers",
+            "description": "Drinking straws and coffee stirrers"
+          }
+        }
+      },
+      "paper-products": {
+        "name": "Paper Products",
+        "icon": "\ud83e\uddfb",
+        "description": "Paper towels, napkins, and tissue products",
+        "subcategories": {
+          "paper-towels": {
+            "name": "Paper Towels",
+            "description": "Hand towels and cleaning towels",
+            "subcategories": {
+              "roll-towels": {
+                "name": "Roll Towels",
+                "description": "Hardwound and kitchen roll towels"
+              },
+              "multifold-towels": {
+                "name": "Multifold Towels",
+                "description": "Folded paper hand towels"
+              },
+              "center-pull": {
+                "name": "Center Pull Towels",
+                "description": "Center pull dispensing towels"
+              }
+            }
+          },
+          "napkins": {
+            "name": "Napkins",
+            "description": "Paper napkins for dining and dispensers",
+            "subcategories": {
+              "dinner-napkins": {
+                "name": "Dinner Napkins",
+                "description": "Full-size dinner napkins"
+              },
+              "beverage-napkins": {
+                "name": "Beverage Napkins",
+                "description": "Cocktail and beverage napkins"
+              },
+              "dispenser-napkins": {
+                "name": "Dispenser Napkins",
+                "description": "Interfold and dispenser napkins"
+              }
+            }
+          },
+          "toilet-tissue": {
+            "name": "Toilet Paper",
+            "description": "Bathroom tissue products",
+            "subcategories": {
+              "jumbo-rolls": {
+                "name": "Jumbo Roll Tissue",
+                "description": "Large commercial toilet paper rolls"
+              },
+              "standard-rolls": {
+                "name": "Standard Rolls",
+                "description": "Regular size toilet paper"
+              }
+            }
+          },
+          "facial-tissue": {
+            "name": "Facial Tissue",
+            "description": "Facial tissue boxes and refills"
+          }
+        }
+      },
+      "tableware": {
+        "name": "Tableware & Cutlery",
+        "icon": "\ud83c\udf74",
+        "description": "Disposable plates, bowls, and utensils",
+        "subcategories": {
+          "plates-bowls": {
+            "name": "Plates & Bowls",
+            "description": "Disposable dining plates and bowls",
+            "subcategories": {
+              "paper-plates": {
+                "name": "Paper Plates",
+                "description": "Coated paper plates"
+              },
+              "plastic-plates": {
+                "name": "Plastic Plates",
+                "description": "Reusable plastic plates"
+              },
+              "foam-plates": {
+                "name": "Foam Plates",
+                "description": "Lightweight foam plates"
+              }
+            }
+          },
+          "cutlery": {
+            "name": "Cutlery",
+            "description": "Disposable forks, knives, and spoons",
+            "subcategories": {
+              "plastic-cutlery": {
+                "name": "Plastic Cutlery",
+                "description": "Heavy and medium weight plastic utensils"
+              },
+              "cutlery-kits": {
+                "name": "Cutlery Kits",
+                "description": "Pre-wrapped cutlery sets"
+              }
+            }
+          },
+          "serving-trays": {
+            "name": "Serving Trays",
+            "description": "Food service and cafeteria trays"
+          }
+        }
+      },
+      "janitorial": {
+        "name": "Janitorial & Cleaning",
+        "icon": "\ud83e\uddf9",
+        "description": "Cleaning supplies and waste management",
+        "subcategories": {
+          "waste-management": {
+            "name": "Waste Management",
+            "description": "Trash bags and can liners",
+            "subcategories": {
+              "can-liners": {
+                "name": "Can Liners",
+                "description": "Commercial grade trash bags",
+                "subcategories": {
+                  "small-liners": {
+                    "name": "Small (7-15 Gallon)",
+                    "description": "Office and restroom liners"
+                  },
+                  "medium-liners": {
+                    "name": "Medium (20-35 Gallon)",
+                    "description": "Kitchen and general waste"
+                  },
+                  "large-liners": {
+                    "name": "Large (40-45 Gallon)",
+                    "description": "Standard commercial size"
+                  },
+                  "extra-large-liners": {
+                    "name": "Extra Large (55-60 Gallon)",
+                    "description": "Industrial and outdoor use"
+                  }
+                }
+              }
+            }
+          },
+          "cleaning-chemicals": {
+            "name": "Cleaning Chemicals",
+            "description": "Cleaners, sanitizers, and disinfectants",
+            "subcategories": {
+              "sanitizers": {
+                "name": "Sanitizers",
+                "description": "Quaternary and food-safe sanitizers"
+              },
+              "disinfectants": {
+                "name": "Disinfectants",
+                "description": "Bleach and hospital-grade disinfectants"
+              },
+              "detergents": {
+                "name": "Detergents",
+                "description": "Dish and general purpose detergents"
+              },
+              "degreasers": {
+                "name": "Degreasers",
+                "description": "Heavy-duty kitchen degreasers"
+              }
+            }
+          },
+          "restroom-supplies": {
+            "name": "Restroom Supplies",
+            "description": "Restroom specific products",
+            "subcategories": {
+              "seat-covers": {
+                "name": "Toilet Seat Covers",
+                "description": "Disposable seat covers"
+              },
+              "air-fresheners": {
+                "name": "Air Fresheners",
+                "description": "Deodorizers and air care"
+              },
+              "soap-dispensers": {
+                "name": "Soap & Dispensers",
+                "description": "Hand soap and dispensing systems"
+              }
+            }
+          },
+          "cleaning-tools": {
+            "name": "Cleaning Tools",
+            "description": "Brushes, sponges, and cleaning equipment",
+            "subcategories": {
+              "grill-maintenance": {
+                "name": "Grill Maintenance",
+                "description": "Grill bricks and scrapers"
+              },
+              "floor-care": {
+                "name": "Floor Care",
+                "description": "Mops and floor cleaning supplies"
+              }
+            }
+          }
+        }
+      },
+      "food-wrap": {
+        "name": "Food Wrap & Storage",
+        "icon": "\ud83c\udf81",
+        "description": "Wrapping and bagging supplies",
+        "subcategories": {
+          "plastic-wrap": {
+            "name": "Plastic Wrap",
+            "description": "Food service film and wrap"
+          },
+          "aluminum-foil": {
+            "name": "Aluminum Foil",
+            "description": "Heavy duty aluminum foil rolls"
+          },
+          "food-bags": {
+            "name": "Food Storage Bags",
+            "description": "Plastic bags for food storage",
+            "subcategories": {
+              "sandwich-bags": {
+                "name": "Sandwich Bags",
+                "description": "Small food storage bags"
+              },
+              "produce-bags": {
+                "name": "Produce Bags",
+                "description": "Roll bags for produce"
+              }
+            }
+          },
+          "paper-bags": {
+            "name": "Paper Bags",
+            "description": "Grocery and merchandise bags"
+          }
+        }
+      }
+    }
+  }
+}
