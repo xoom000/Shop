@@ -50,7 +50,7 @@
         }
 
         /* Mobile-First Header */
-        .mobile-header {
+        .ml-header {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-glow);
@@ -60,14 +60,14 @@
             padding: 15px;
         }
 
-        .header-row {
+        .ml-header-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
         }
 
-        .logo {
+        .ml-logo {
             font-size: 1.2rem;
             font-weight: bold;
             background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
@@ -76,13 +76,13 @@
             background-clip: text;
         }
 
-        .header-actions {
+        .ml-header-actions {
             display: flex;
             gap: 10px;
             align-items: center;
         }
 
-        .menu-btn, .cart-btn {
+        .ml-menu-btn, .ml-cart-btn {
             background: rgba(0, 245, 255, 0.1);
             border: 1px solid var(--neon-blue);
             color: var(--neon-blue);
@@ -97,12 +97,12 @@
             position: relative;
         }
 
-        .cart-btn {
+        .ml-cart-btn {
             background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
             color: var(--cyber-black);
         }
 
-        .cart-count {
+        .ml-cart-count {
             position: absolute;
             top: -5px;
             right: -5px;
@@ -118,11 +118,11 @@
             font-weight: bold;
         }
 
-        .search-bar {
+        .ml-search-bar {
             position: relative;
         }
 
-        .search-input {
+        .ml-search-input {
             width: 100%;
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid var(--border-glow);
@@ -132,13 +132,13 @@
             font-size: 16px; /* Prevent zoom on iOS */
         }
 
-        .search-input:focus {
+        .ml-search-input:focus {
             outline: none;
             border-color: var(--neon-blue);
             box-shadow: 0 0 10px var(--border-glow);
         }
 
-        .search-btn {
+        .ml-search-btn {
             position: absolute;
             right: 10px;
             top: 50%;
@@ -151,7 +151,7 @@
         }
 
         /* Category Pills - Horizontal Scroll */
-        .category-pills {
+        .ml-category-pills {
             padding: 15px;
             display: flex;
             gap: 10px;
@@ -161,11 +161,11 @@
             scroll-behavior: smooth;
         }
 
-        .category-pills::-webkit-scrollbar {
+        .ml-category-pills::-webkit-scrollbar {
             display: none;
         }
 
-        .category-pill {
+        .ml-category-pill {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 25px;
@@ -181,23 +181,23 @@
             min-width: fit-content;
         }
 
-        .category-pill.active {
+        .ml-category-pill.ml-active {
             background: var(--pill-color);
             color: var(--cyber-black);
             border-color: var(--pill-color);
             box-shadow: 0 0 15px var(--pill-color);
         }
 
-        .category-pill:not(.active):hover {
+        .ml-category-pill:not(.ml-active):hover {
             background: rgba(0, 245, 255, 0.1);
             border-color: var(--pill-color);
         }
 
-        .pill-icon {
+        .ml-pill-icon {
             font-size: 16px;
         }
 
-        .pill-count {
+        .ml-pill-count {
             background: rgba(255, 255, 255, 0.2);
             padding: 2px 6px;
             border-radius: 10px;
@@ -205,23 +205,23 @@
             font-weight: bold;
         }
 
-        .category-pill.active .pill-count {
+        .ml-category-pill.ml-active .ml-pill-count {
             background: rgba(0, 0, 0, 0.3);
         }
 
         /* Content Area */
-        .content {
+        .ml-content {
             padding: 0 15px;
         }
 
-        .content-header {
+        .ml-content-header {
             padding: 20px 0 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .page-title {
+        .ml-page-title {
             font-size: 1.5rem;
             color: var(--neon-green);
             text-shadow: 0 0 10px var(--neon-green);
@@ -230,12 +230,12 @@
             gap: 10px;
         }
 
-        .results-count {
+        .ml-results-count {
             color: var(--text-muted);
             font-size: 14px;
         }
 
-        .sort-btn {
+        .ml-sort-btn {
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid var(--border-glow);
             color: var(--text-primary);
@@ -249,14 +249,14 @@
         }
 
         /* Mobile Product Grid */
-        .products-grid {
+        .ml-products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             padding-bottom: 20px;
         }
 
-        .product-card {
+        .ml-product-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -266,11 +266,11 @@
             position: relative;
         }
 
-        .product-card:active {
+        .ml-product-card:active {
             transform: scale(0.98);
         }
 
-        .product-image {
+        .ml-product-image {
             height: 120px;
             background: linear-gradient(135deg, var(--product-color), rgba(157, 78, 221, 0.1));
             display: flex;
@@ -280,7 +280,7 @@
             position: relative;
         }
 
-        .bestseller-badge {
+        .ml-bestseller-badge {
             position: absolute;
             top: 6px;
             right: 6px;
@@ -294,11 +294,11 @@
             box-shadow: 0 0 8px var(--neon-pink);
         }
 
-        .product-info {
+        .ml-product-info {
             padding: 12px;
         }
 
-        .product-name {
+        .ml-product-name {
             font-weight: 600;
             color: var(--text-primary);
             font-size: 12px;
@@ -311,13 +311,13 @@
             overflow: hidden;
         }
 
-        .product-sku {
+        .ml-product-sku {
             color: var(--text-muted);
             font-size: 9px;
             margin-bottom: 6px;
         }
 
-        .product-price {
+        .ml-product-price {
             font-size: 1.1rem;
             font-weight: bold;
             color: var(--neon-green);
@@ -325,19 +325,19 @@
             margin-bottom: 2px;
         }
 
-        .product-unit {
+        .ml-product-unit {
             color: var(--text-muted);
             font-size: 9px;
             margin-bottom: 10px;
         }
 
-        .product-actions {
+        .ml-product-actions {
             display: flex;
             gap: 6px;
             align-items: center;
         }
 
-        .qty-control {
+        .ml-qty-control {
             display: flex;
             align-items: center;
             background: rgba(0, 0, 0, 0.5);
@@ -347,7 +347,7 @@
             flex: 1;
         }
 
-        .qty-btn {
+        .ml-qty-btn {
             background: none;
             border: none;
             color: var(--neon-blue);
@@ -361,11 +361,11 @@
             transition: background 0.2s;
         }
 
-        .qty-btn:active {
+        .ml-qty-btn:active {
             background: rgba(0, 245, 255, 0.2);
         }
 
-        .qty-input {
+        .ml-qty-input {
             flex: 1;
             text-align: center;
             background: none;
@@ -376,7 +376,7 @@
             height: 32px;
         }
 
-        .add-btn {
+        .ml-add-btn {
             background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
             border: none;
             color: var(--cyber-black);
@@ -392,13 +392,13 @@
             justify-content: center;
         }
 
-        .add-btn:active {
+        .ml-add-btn:active {
             transform: scale(0.95);
             box-shadow: 0 3px 10px var(--success-glow);
         }
 
         /* List Panel */
-        .list-panel {
+        .ml-list-panel {
             position: fixed;
             bottom: 60px;
             left: 0;
@@ -413,11 +413,11 @@
             flex-direction: column;
         }
 
-        .list-panel.active {
+        .ml-list-panel.ml-active {
             transform: translateY(0);
         }
 
-        .list-panel-header {
+        .ml-list-panel-header {
             padding: 12px 15px;
             background: rgba(0, 0, 0, 0.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -426,7 +426,7 @@
             align-items: center;
         }
 
-        .list-panel-title {
+        .ml-list-panel-title {
             color: var(--neon-green);
             font-size: 14px;
             font-weight: 600;
@@ -435,12 +435,12 @@
             gap: 8px;
         }
 
-        .list-panel-actions {
+        .ml-list-panel-actions {
             display: flex;
             gap: 10px;
         }
 
-        .list-clear-btn {
+        .ml-list-clear-btn {
             background: rgba(255, 0, 170, 0.2);
             border: 1px solid var(--neon-pink);
             color: var(--neon-pink);
@@ -450,7 +450,7 @@
             cursor: pointer;
         }
 
-        .list-minimize-btn {
+        .ml-list-minimize-btn {
             background: transparent;
             border: none;
             color: var(--neon-cyan);
@@ -459,13 +459,13 @@
             padding: 0 5px;
         }
 
-        .list-items-container {
+        .ml-list-items-container {
             flex: 1;
             overflow-y: auto;
             padding: 10px;
         }
 
-        .list-item {
+        .ml-list-item {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -488,40 +488,40 @@
             }
         }
 
-        .list-item-info {
+        .ml-list-item-info {
             flex: 1;
         }
 
-        .list-item-name {
+        .ml-list-item-name {
             color: var(--text-primary);
             font-size: 12px;
             font-weight: 500;
             margin-bottom: 2px;
         }
 
-        .list-item-sku {
+        .ml-list-item-sku {
             color: var(--text-muted);
             font-size: 10px;
         }
 
-        .list-item-price {
+        .ml-list-item-price {
             color: var(--neon-cyan);
             font-size: 11px;
         }
 
-        .list-item-controls {
+        .ml-list-item-controls {
             display: flex;
             align-items: center;
             gap: 5px;
         }
 
-        .list-item-qty {
+        .ml-list-item-qty {
             color: var(--neon-green);
             font-size: 12px;
             padding: 0 8px;
         }
 
-        .list-item-remove {
+        .ml-list-item-remove {
             background: rgba(255, 0, 0, 0.2);
             border: none;
             color: #ff4444;
@@ -535,7 +535,7 @@
             font-size: 16px;
         }
 
-        .list-total {
+        .ml-list-total {
             padding: 12px 15px;
             background: rgba(0, 0, 0, 0.7);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -544,19 +544,19 @@
             align-items: center;
         }
 
-        .list-total-label {
+        .ml-list-total-label {
             color: var(--text-muted);
             font-size: 12px;
         }
 
-        .list-total-amount {
+        .ml-list-total-amount {
             color: var(--neon-green);
             font-size: 18px;
             font-weight: bold;
             text-shadow: 0 0 10px var(--neon-green);
         }
 
-        .copy-button-bar {
+        .ml-copy-button-bar {
             padding: 10px;
             background: rgba(0, 0, 0, 0.8);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -566,11 +566,11 @@
             scrollbar-width: none;
         }
 
-        .copy-button-bar::-webkit-scrollbar {
+        .ml-copy-button-bar::-webkit-scrollbar {
             display: none;
         }
 
-        .copy-btn {
+        .ml-copy-btn {
             background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(57, 255, 20, 0.2));
             border: 1px solid var(--neon-cyan);
             color: var(--text-primary);
@@ -585,13 +585,13 @@
             gap: 5px;
         }
 
-        .copy-btn:active {
+        .ml-copy-btn:active {
             background: var(--neon-green);
             color: black;
             transform: scale(0.95);
         }
 
-        .copy-btn.copied {
+        .ml-copy-btn.ml-copied {
             background: var(--neon-green);
             color: black;
             animation: pulse 0.5s;
@@ -602,7 +602,7 @@
             50% { transform: scale(1.1); }
         }
 
-        .list-toggle-btn {
+        .ml-list-toggle-btn {
             position: fixed;
             bottom: 70px;
             right: 15px;
@@ -620,17 +620,17 @@
             display: none;
         }
 
-        .list-toggle-btn.has-items {
+        .ml-list-toggle-btn.ml-has-items {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .list-toggle-btn:active {
+        .ml-list-toggle-btn:active {
             transform: scale(0.9);
         }
 
-        .list-badge {
+        .ml-list-badge {
             position: absolute;
             top: -5px;
             right: -5px;
@@ -647,7 +647,7 @@
         }
 
         /* Bottom Navigation */
-        .bottom-nav {
+        .ml-bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -661,7 +661,7 @@
             z-index: 200;
         }
 
-        .nav-item {
+        .ml-nav-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -673,21 +673,21 @@
             position: relative;
         }
 
-        .nav-item.active {
+        .ml-nav-item.ml-active {
             background: rgba(0, 245, 255, 0.1);
             color: var(--neon-blue);
         }
 
-        .nav-icon {
+        .ml-nav-icon {
             font-size: 20px;
         }
 
-        .nav-label {
+        .ml-nav-label {
             font-size: 10px;
             font-weight: 500;
         }
 
-        .nav-badge {
+        .ml-nav-badge {
             position: absolute;
             top: 2px;
             right: 8px;
@@ -704,7 +704,7 @@
         }
 
         /* Mobile Category Menu Overlay */
-        .category-overlay {
+        .ml-category-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -718,11 +718,11 @@
             padding: 40px 20px;
         }
 
-        .category-overlay.active {
+        .ml-category-overlay.ml-active {
             display: flex;
         }
 
-        .category-menu {
+        .ml-category-menu {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-glow);
@@ -734,20 +734,20 @@
             overflow-y: auto;
         }
 
-        .category-menu-title {
+        .ml-category-menu-title {
             text-align: center;
             font-size: 1.3rem;
             color: var(--neon-green);
             margin-bottom: 25px;
         }
 
-        .category-grid {
+        .ml-category-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
-        .category-item {
+        .ml-category-item {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -757,34 +757,34 @@
             transition: all 0.3s ease;
         }
 
-        .category-item:active {
+        .ml-category-item:active {
             transform: scale(0.95);
         }
 
-        .category-item:hover {
+        .ml-category-item:hover {
             border-color: var(--item-color);
             background: rgba(0, 245, 255, 0.1);
         }
 
-        .category-item-icon {
+        .ml-category-item-icon {
             font-size: 2.5rem;
             margin-bottom: 8px;
             filter: drop-shadow(0 0 8px var(--item-color));
         }
 
-        .category-item-name {
+        .ml-category-item-name {
             font-size: 12px;
             font-weight: 600;
             color: var(--item-color);
             margin-bottom: 3px;
         }
 
-        .category-item-count {
+        .ml-category-item-count {
             font-size: 10px;
             color: var(--text-muted);
         }
 
-        .close-menu {
+        .ml-close-menu {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -796,14 +796,14 @@
         }
 
         /* Loading States */
-        .loading {
+        .ml-loading {
             text-align: center;
             padding: 60px 20px;
             color: var(--text-muted);
             grid-column: 1/-1;
         }
 
-        .spinner {
+        .ml-spinner {
             border: 3px solid rgba(0, 245, 255, 0.1);
             border-top: 3px solid var(--neon-blue);
             border-radius: 50%;
@@ -819,7 +819,7 @@
         }
 
         /* Pull to refresh indicator */
-        .pull-indicator {
+        .ml-pull-indicator {
             text-align: center;
             padding: 10px;
             color: var(--text-muted);
@@ -828,7 +828,7 @@
             transition: transform 0.3s ease;
         }
 
-        .pull-indicator.active {
+        .ml-pull-indicator.ml-active {
             transform: translateY(0);
         }
 
@@ -839,1268 +839,1293 @@
             100% { transform: scale(1); }
         }
 
-        .haptic {
+        .ml-haptic {
             animation: haptic 0.1s ease;
         }
     </style>
 </head>
 <body>
     <!-- Pull to refresh indicator -->
-    <div class="pull-indicator" id="pullIndicator">
+    <div class="ml-pull-indicator" id="pullIndicator">
         ↓ Pull to refresh
     </div>
 
     <!-- Mobile Header -->
-    <header class="mobile-header">
-        <div class="header-row">
-            <div class="logo">MISSION LINEN</div>
-            <div class="header-actions">
-                <button class="menu-btn" onclick="showCategoryMenu()">☰</button>
-                <button class="cart-btn" onclick="viewCart()">
+    <header class="ml-header">
+        <div class="ml-header-row">
+            <div class="ml-logo">MISSION LINEN</div>
+            <div class="ml-header-actions">
+                <button class="ml-menu-btn" onclick="MissionLinen.showCategoryMenu()">☰</button>
+                <button class="ml-cart-btn" onclick="MissionLinen.viewCart()">
                     🛒
-                    <span class="cart-count" id="cartCount">0</span>
+                    <span class="ml-cart-count" id="cartCount">0</span>
                 </button>
             </div>
         </div>
         
-        <div class="search-bar">
-            <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
-            <button class="search-btn">🔍</button>
+        <div class="ml-search-bar">
+            <input type="text" class="ml-search-input" id="searchInput" placeholder="Search products...">
+            <button class="ml-search-btn">🔍</button>
         </div>
     </header>
 
     <!-- Category Pills -->
-    <div class="category-pills" id="categoryPills">
+    <div class="ml-category-pills" id="categoryPills">
         <!-- Category pills will be loaded here -->
     </div>
 
     <!-- Content -->
-    <main class="content">
-        <div class="content-header">
+    <main class="ml-content">
+        <div class="ml-content-header">
             <div>
-                <h1 class="page-title" id="pageTitle">
+                <h1 class="ml-page-title" id="pageTitle">
                     <span id="pageTitleIcon">🏠</span>
                     All Products
                 </h1>
-                <div class="results-count" id="resultsCount">Loading...</div>
+                <div class="ml-results-count" id="resultsCount">Loading...</div>
             </div>
-            <button class="sort-btn" onclick="toggleSort()">
+            <button class="ml-sort-btn" onclick="MissionLinen.toggleSort()">
                 <span id="sortLabel">Popular</span> ↕
             </button>
         </div>
 
-        <div class="products-grid" id="productsGrid">
-            <div class="loading">
-                <div class="spinner"></div>
+        <div class="ml-products-grid" id="productsGrid">
+            <div class="ml-loading">
+                <div class="ml-spinner"></div>
                 <p>Loading products...</p>
             </div>
         </div>
     </main>
 
     <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <div class="nav-item active" onclick="bottomNav('home', this)">
-            <div class="nav-icon">🏠</div>
-            <div class="nav-label">Home</div>
+    <nav class="ml-bottom-nav">
+        <div class="ml-nav-item ml-active" onclick="MissionLinen.bottomNav('home', this)">
+            <div class="ml-nav-icon">🏠</div>
+            <div class="ml-nav-label">Home</div>
         </div>
-        <div class="nav-item" onclick="bottomNav('categories', this)">
-            <div class="nav-icon">📦</div>
-            <div class="nav-label">Categories</div>
+        <div class="ml-nav-item" onclick="MissionLinen.bottomNav('categories', this)">
+            <div class="ml-nav-icon">📦</div>
+            <div class="ml-nav-label">Categories</div>
         </div>
-        <div class="nav-item" onclick="bottomNav('bestsellers', this)">
-            <div class="nav-icon">🔥</div>
-            <div class="nav-label">Best Sellers</div>
-            <div class="nav-badge">15</div>
+        <div class="ml-nav-item" onclick="MissionLinen.bottomNav('bestsellers', this)">
+            <div class="ml-nav-icon">🔥</div>
+            <div class="ml-nav-label">Best Sellers</div>
+            <div class="ml-nav-badge">15</div>
         </div>
-        <div class="nav-item" onclick="bottomNav('search', this)">
-            <div class="nav-icon">🔍</div>
-            <div class="nav-label">Search</div>
+        <div class="ml-nav-item" onclick="MissionLinen.bottomNav('search', this)">
+            <div class="ml-nav-icon">🔍</div>
+            <div class="ml-nav-label">Search</div>
         </div>
-        <div class="nav-item" onclick="bottomNav('cart', this)">
-            <div class="nav-icon">🛒</div>
-            <div class="nav-label">Cart</div>
-            <div class="nav-badge" id="bottomCartCount">0</div>
+        <div class="ml-nav-item" onclick="MissionLinen.bottomNav('cart', this)">
+            <div class="ml-nav-icon">🛒</div>
+            <div class="ml-nav-label">Cart</div>
+            <div class="ml-nav-badge" id="bottomCartCount">0</div>
         </div>
     </nav>
 
     <!-- List Panel -->
-    <div class="list-panel" id="listPanel">
-        <div class="list-panel-header">
-            <div class="list-panel-title">
+    <div class="ml-list-panel" id="listPanel">
+        <div class="ml-list-panel-header">
+            <div class="ml-list-panel-title">
                 📋 Order List <span id="listCount">(0)</span>
             </div>
-            <div class="list-panel-actions">
-                <button class="list-clear-btn" onclick="clearList()">Clear</button>
-                <button class="list-minimize-btn" onclick="toggleListPanel()">⌄</button>
+            <div class="ml-list-panel-actions">
+                <button class="ml-list-clear-btn" onclick="MissionLinen.clearList()">Clear</button>
+                <button class="ml-list-minimize-btn" onclick="MissionLinen.toggleListPanel()">⌄</button>
             </div>
         </div>
-        <div class="list-items-container" id="listItems">
+        <div class="ml-list-items-container" id="listItems">
             <!-- List items will appear here -->
         </div>
-        <div class="list-total">
-            <span class="list-total-label">Total:</span>
-            <span class="list-total-amount" id="listTotal">$0.00</span>
+        <div class="ml-list-total">
+            <span class="ml-list-total-label">Total:</span>
+            <span class="ml-list-total-amount" id="listTotal">$0.00</span>
         </div>
-        <div class="copy-button-bar">
-            <button class="copy-btn" onclick="copyFormat('boss')">📋 For Boss</button>
-            <button class="copy-btn" onclick="copyFormat('team')">👥 For Team</button>
-            <button class="copy-btn" onclick="copyFormat('customer')">📄 Quote</button>
-            <button class="copy-btn" onclick="copyFormat('skus')">🔢 SKUs Only</button>
-            <button class="copy-btn" onclick="shareList()">📤 Share</button>
+        <div class="ml-copy-button-bar">
+            <button class="ml-copy-btn" onclick="MissionLinen.copyFormat('boss')">📋 For Boss</button>
+            <button class="ml-copy-btn" onclick="MissionLinen.copyFormat('team')">👥 For Team</button>
+            <button class="ml-copy-btn" onclick="MissionLinen.copyFormat('customer')">📄 Quote</button>
+            <button class="ml-copy-btn" onclick="MissionLinen.copyFormat('skus')">🔢 SKUs Only</button>
+            <button class="ml-copy-btn" onclick="MissionLinen.shareList()">📤 Share</button>
         </div>
     </div>
 
     <!-- List Toggle Button -->
-    <button class="list-toggle-btn" id="listToggleBtn" onclick="toggleListPanel()">
+    <button class="ml-list-toggle-btn" id="listToggleBtn" onclick="MissionLinen.toggleListPanel()">
         📋
-        <span class="list-badge" id="listToggleBadge">0</span>
+        <span class="ml-list-badge" id="listToggleBadge">0</span>
     </button>
 
     <!-- Category Menu Overlay -->
-    <div class="category-overlay" id="categoryOverlay">
-        <div class="category-menu">
-            <button class="close-menu" onclick="hideCategoryMenu()">×</button>
-            <h2 class="category-menu-title">Select Category</h2>
-            <div class="category-grid" id="categoryGrid">
+    <div class="ml-category-overlay" id="categoryOverlay">
+        <div class="ml-category-menu">
+            <button class="ml-close-menu" onclick="MissionLinen.hideCategoryMenu()">×</button>
+            <h2 class="ml-category-menu-title">Select Category</h2>
+            <div class="ml-category-grid" id="categoryGrid">
                 <!-- Category grid will be loaded here -->
             </div>
         </div>
     </div>
 
     <script>
-        // Global state
-        let catalog = null;
-        let cart = JSON.parse(localStorage.getItem('missionLinenCart')) || [];
-        let orderList = JSON.parse(localStorage.getItem('missionLinenOrderList')) || [];
-        let currentView = 'all';
-        let currentProducts = [];
-        let currentSort = 'popularity';
-        let customerInfo = JSON.parse(localStorage.getItem('missionLinenCustomer')) || {
-            name: 'Customer',
-            account: '000000'
-        };
-        
-        // Favorites system
-        let favorites = JSON.parse(localStorage.getItem('missionLinenFavorites')) || {
-            bestDeals: [],
-            customerFaves: [],
-            quickRef: [],
-            recentlyViewed: []
-        };
+        // MissionLinen namespace to prevent global conflicts
+        const MissionLinen = {
+            // State variables
+            catalog: null,
+            cart: [],
+            orderList: [],
+            currentView: 'all',
+            currentProducts: [],
+            currentSort: 'popularity',
+            customerInfo: {
+                name: 'Customer',
+                account: '000000'
+            },
+            favorites: {
+                bestDeals: [],
+                customerFaves: [],
+                quickRef: [],
+                recentlyViewed: []
+            },
+            categoryConfig: {
+                'safety-ppe': { color: '#ff00aa', icon: '🧤', name: 'Safety & PPE' },
+                'food-packaging': { color: '#00f5ff', icon: '📦', name: 'Food Packaging' },
+                'paper-products': { color: '#39ff14', icon: '🧻', name: 'Paper Products' },
+                'janitorial': { color: '#ff6600', icon: '🧹', name: 'Janitorial' },
+                'drinkware': { color: '#9d4edd', icon: '🥤', name: 'Drinkware' },
+                'tableware': { color: '#f72585', icon: '🍴', name: 'Tableware' },
+                'food-wrap': { color: '#4cc9f0', icon: '🎁', name: 'Food Wrap' }
+            },
 
-        // Category configuration
-        const categoryConfig = {
-            'safety-ppe': { color: '#ff00aa', icon: '🧤', name: 'Safety & PPE' },
-            'food-packaging': { color: '#00f5ff', icon: '📦', name: 'Food Packaging' },
-            'paper-products': { color: '#39ff14', icon: '🧻', name: 'Paper Products' },
-            'janitorial': { color: '#ff6600', icon: '🧹', name: 'Janitorial' },
-            'drinkware': { color: '#9d4edd', icon: '🥤', name: 'Drinkware' },
-            'tableware': { color: '#f72585', icon: '🍴', name: 'Tableware' },
-            'food-wrap': { color: '#4cc9f0', icon: '🎁', name: 'Food Wrap' }
-        };
-
-        // Initialize
-        async function init() {
-            try {
-                // Show loading state
-                const productsGrid = document.getElementById('productsGrid');
-                if (productsGrid) {
-                    productsGrid.innerHTML = `
-                        <div class="loading">
-                            <div class="spinner"></div>
-                            <p>Loading catalog...</p>
-                        </div>
-                    `;
-                }
-                
-                // Fetch catalog with timeout
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-                
-                const response = await fetch('data/catalog.json', {
-                    signal: controller.signal
-                });
-                
-                clearTimeout(timeoutId);
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const catalogData = await response.json();
-                
-                // Validate catalog structure
-                if (!catalogData || !catalogData.products || !Array.isArray(catalogData.products)) {
-                    throw new Error('Invalid catalog data structure');
-                }
-                
-                catalog = catalogData;
-                
-                // Load cart from localStorage with error handling
+            // Initialize
+            async init() {
                 try {
-                    const savedCart = localStorage.getItem('missionLinenCart');
-                    if (savedCart) {
-                        const parsedCart = JSON.parse(savedCart);
-                        if (Array.isArray(parsedCart)) {
-                            cart = parsedCart;
-                        }
-                    }
-                } catch (cartError) {
-                    console.warn('Failed to load saved cart:', cartError);
-                    cart = []; // Reset to empty cart
-                }
-                
-                // Load order list from localStorage
-                try {
-                    const savedList = localStorage.getItem('missionLinenOrderList');
-                    if (savedList) {
-                        const parsedList = JSON.parse(savedList);
-                        if (Array.isArray(parsedList)) {
-                            orderList = parsedList;
-                        }
-                    }
-                } catch (listError) {
-                    console.warn('Failed to load saved list:', listError);
-                    orderList = []; // Reset to empty list
-                }
-                
-                // Initialize UI components
-                renderCategoryPills();
-                renderCategoryGrid();
-                loadView('all');
-                updateCartCount();
-                updateListPanel();
-                setupSearch();
-                setupPullToRefresh();
-                
-            } catch (error) {
-                console.error('Error loading catalog:', error);
-                
-                // Show user-friendly error message
-                const productsGrid = document.getElementById('productsGrid');
-                if (productsGrid) {
-                    let errorMessage = 'Unable to load catalog. ';
-                    
-                    if (error.name === 'AbortError') {
-                        errorMessage += 'Request timed out. Please check your connection and try again.';
-                    } else if (error.message.includes('HTTP')) {
-                        errorMessage += 'Server error. Please try again later.';
-                    } else if (error.message.includes('Invalid catalog')) {
-                        errorMessage += 'Catalog data is corrupted. Please contact support.';
-                    } else {
-                        errorMessage += 'Please check your connection and refresh the page.';
-                    }
-                    
-                    productsGrid.innerHTML = `
-                        <div class="loading" style="grid-column: 1/-1;">
-                            <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
-                            <p style="color: #ff6666; font-weight: bold; margin-bottom: 10px;">Error Loading Catalog</p>
-                            <p style="color: #888; margin-bottom: 20px;">${errorMessage}</p>
-                            <button onclick="location.reload()" style="background: var(--neon-blue); color: var(--cyber-black); border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
-                                Retry
-                            </button>
-                        </div>
-                    `;
-                }
-            }
-        }
-
-        // Render category pills
-        function renderCategoryPills() {
-            const pills = document.getElementById('categoryPills');
-            let html = `
-                <div class="category-pill active" data-category="all" style="--pill-color: var(--neon-green)" onclick="selectCategory('all')">
-                    <span class="pill-icon">🏠</span>
-                    <span>All</span>
-                    <span class="pill-count">107</span>
-                </div>
-            `;
-            
-            Object.entries(categoryConfig).forEach(([key, config]) => {
-                const products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
-                if (products.length > 0) {
-                    html += `
-                        <div class="category-pill" data-category="${key}" style="--pill-color: ${config.color}" onclick="selectCategory('${key}')">
-                            <span class="pill-icon">${config.icon}</span>
-                            <span>${config.name.split(' ')[0]}</span>
-                            <span class="pill-count">${products.length}</span>
-                        </div>
-                    `;
-                }
-            });
-
-            html += `
-                <div class="category-pill" data-category="bestsellers" style="--pill-color: var(--neon-orange)" onclick="selectCategory('bestsellers')">
-                    <span class="pill-icon">🔥</span>
-                    <span>Best</span>
-                    <span class="pill-count">15</span>
-                </div>
-                <div class="category-pill" data-category="favorites" style="--pill-color: var(--neon-pink)" onclick="selectCategory('favorites')">
-                    <span class="pill-icon">⭐</span>
-                    <span>Favorites</span>
-                    <span class="pill-count">${getTotalFavorites()}</span>
-                </div>
-                <div class="category-pill" data-category="bestdeals" style="--pill-color: var(--neon-green)" onclick="selectCategory('bestdeals')">
-                    <span class="pill-icon">💰</span>
-                    <span>Best Deals</span>
-                    <span class="pill-count">${favorites.bestDeals.length}</span>
-                </div>
-                <div class="category-pill" data-category="quickref" style="--pill-color: var(--neon-purple)" onclick="selectCategory('quickref')">
-                    <span class="pill-icon">⚡</span>
-                    <span>Quick Ref</span>
-                    <span class="pill-count">${favorites.quickRef.length}</span>
-                </div>
-            `;
-            
-            pills.innerHTML = html;
-        }
-
-        // Render category grid for overlay
-        function renderCategoryGrid() {
-            const grid = document.getElementById('categoryGrid');
-            let html = '';
-            
-            Object.entries(categoryConfig).forEach(([key, config]) => {
-                const products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
-                if (products.length > 0) {
-                    html += `
-                        <div class="category-item" style="--item-color: ${config.color}" onclick="selectCategoryFromMenu('${key}')">
-                            <div class="category-item-icon">${config.icon}</div>
-                            <div class="category-item-name">${config.name}</div>
-                            <div class="category-item-count">${products.length} products</div>
-                        </div>
-                    `;
-                }
-            });
-            
-            grid.innerHTML = html;
-        }
-
-        // Select category
-        function selectCategory(category) {
-            // Update pill states
-            document.querySelectorAll('.category-pill').forEach(pill => {
-                pill.classList.remove('active');
-            });
-            document.querySelector(`[data-category="${category}"]`).classList.add('active');
-            
-            // Scroll pill into view
-            const selectedPill = document.querySelector(`[data-category="${category}"]`);
-            selectedPill.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            
-            // Load content
-            loadView(category);
-            
-            // Haptic feedback
-            addHapticFeedback(selectedPill);
-        }
-
-        // Select from category menu
-        function selectCategoryFromMenu(category) {
-            hideCategoryMenu();
-            selectCategory(category);
-        }
-
-        // Get total favorites count
-        function getTotalFavorites() {
-            return favorites.bestDeals.length + favorites.customerFaves.length + favorites.quickRef.length;
-        }
-
-        // Load view content
-        function loadView(category) {
-            currentView = category;
-            let products = [];
-            let title = '';
-            let icon = '';
-            
-            switch(category) {
-                case 'all':
-                    products = catalog.products;
-                    title = 'All Products';
-                    icon = '🏠';
-                    break;
-                case 'bestsellers':
-                    products = catalog.products.filter(p => p.times_sold >= 10).sort((a, b) => b.times_sold - a.times_sold);
-                    title = 'Best Sellers';
-                    icon = '🔥';
-                    break;
-                case 'favorites':
-                    const allFavSkus = [...favorites.bestDeals, ...favorites.customerFaves, ...favorites.quickRef];
-                    products = catalog.products.filter(p => allFavSkus.includes(p.sku));
-                    title = 'All Favorites';
-                    icon = '⭐';
-                    break;
-                case 'bestdeals':
-                    products = catalog.products.filter(p => favorites.bestDeals.includes(p.sku));
-                    title = 'Best Deals';
-                    icon = '💰';
-                    break;
-                case 'quickref':
-                    products = catalog.products.filter(p => favorites.quickRef.includes(p.sku));
-                    title = 'Quick Reference';
-                    icon = '⚡';
-                    break;
-                default:
-                    products = catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === category);
-                    const config = categoryConfig[category];
-                    title = config ? config.name : 'Category';
-                    icon = config ? config.icon : '📦';
-            }
-            
-            // Update header
-            document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">${icon}</span> ${title}`;
-            
-            // Render products
-            renderProducts(products);
-        }
-
-        // Render products
-        function renderProducts(products) {
-            try {
-                // Input validation
-                if (!Array.isArray(products)) {
-                    console.error('Invalid products array provided to renderProducts');
-                    return false;
-                }
-                
-                currentProducts = products;
-                
-                // Sort products with error handling
-                const sorted = [...products];
-                try {
-                    switch(currentSort) {
-                        case 'popularity':
-                            sorted.sort((a, b) => (b.times_sold || 0) - (a.times_sold || 0));
-                            break;
-                        case 'price-low':
-                            sorted.sort((a, b) => (a.case_price || 0) - (b.case_price || 0));
-                            break;
-                        case 'price-high':
-                            sorted.sort((a, b) => (b.case_price || 0) - (a.case_price || 0));
-                            break;
-                        case 'name':
-                            sorted.sort((a, b) => {
-                                const nameA = a.name || '';
-                                const nameB = b.name || '';
-                                return nameA.localeCompare(nameB);
-                            });
-                            break;
-                        default:
-                            console.warn('Unknown sort value:', currentSort);
-                    }
-                } catch (sortError) {
-                    console.warn('Error sorting products:', sortError);
-                }
-                
-                // Update count safely
-                const resultsCount = document.getElementById('resultsCount');
-                if (resultsCount) {
-                    resultsCount.textContent = 
-                        `${sorted.length} product${sorted.length !== 1 ? 's' : ''}`;
-                }
-                
-                // Render grid safely
-                const grid = document.getElementById('productsGrid');
-                if (!grid) {
-                    console.error('Products grid element not found');
-                    return false;
-                }
-                
-                if (sorted.length === 0) {
-                    grid.innerHTML = `
-                        <div class="loading" style="grid-column: 1/-1;">
-                            <div style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;">📋</div>
-                            <p>No products found</p>
-                        </div>
-                    `;
-                    return true;
-                }
-                
-                try {
-                    const productCards = sorted.map(product => {
-                        try {
-                            return renderProductCard(product);
-                        } catch (cardError) {
-                            console.warn('Error rendering product card:', cardError, product);
-                            return ''; // Skip problematic products
-                        }
-                    }).filter(card => card.length > 0);
-                    
-                    grid.innerHTML = productCards.join('');
-                } catch (renderError) {
-                    console.error('Error rendering product grid:', renderError);
-                    grid.innerHTML = `
-                        <div class="loading" style="grid-column: 1/-1;">
-                            <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
-                            <p style="color: #ff6666;">Error displaying products</p>
-                        </div>
-                    `;
-                    return false;
-                }
-                
-                return true;
-            } catch (error) {
-                console.error('Error in renderProducts:', error);
-                return false;
-            }
-        }
-
-        // Render product card
-        function renderProductCard(product) {
-            const categoryKey = product.categoryPath ? product.categoryPath[0] : 'default';
-            const config = categoryConfig[categoryKey] || { color: '#00f5ff', icon: '📦' };
-            const isBestSeller = product.times_sold >= 20;
-            const isFavorited = isInAnyFavorites(product.sku);
-            const favCategory = getFavoriteCategory(product.sku);
-            
-            return `
-                <div class="product-card" style="--product-color: ${config.color}20">
-                    <div class="product-image">
-                        ${isBestSeller ? '<span class="bestseller-badge">BEST SELLER</span>' : ''}
-                        <button class="favorite-btn ${isFavorited ? 'favorited' : ''}" 
-                                onclick="toggleFavorite('${product.sku}', this)" 
-                                title="${isFavorited ? `Remove from ${favCategory}` : 'Add to favorites'}"
-                                style="
-                                    position: absolute;
-                                    top: 8px;
-                                    right: 8px;
-                                    background: ${isFavorited ? 'var(--neon-pink)' : 'rgba(0, 0, 0, 0.5)'};
-                                    border: none;
-                                    color: ${isFavorited ? 'black' : 'white'};
-                                    width: 28px;
-                                    height: 28px;
-                                    border-radius: 50%;
-                                    cursor: pointer;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    font-size: 14px;
-                                    z-index: 10;
-                                    transition: all 0.3s;
-                                ">
-                            ${isFavorited ? '⭐' : '☆'}
-                        </button>
-                        <span style="color: ${config.color};">${config.icon}</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-sku">SKU: ${product.sku}</div>
-                        <div class="product-price">$${product.case_price.toFixed(2)}</div>
-                        <div class="product-unit">per case</div>
-                        <div class="product-actions">
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty('${product.sku}', -1)">−</button>
-                                <input type="text" class="qty-input" id="qty-${product.sku}" value="1" readonly>
-                                <button class="qty-btn" onclick="changeQty('${product.sku}', 1)">+</button>
+                    // Show loading state
+                    const productsGrid = document.getElementById('productsGrid');
+                    if (productsGrid) {
+                        productsGrid.innerHTML = `
+                            <div class="ml-loading">
+                                <div class="ml-spinner"></div>
+                                <p>Loading catalog...</p>
                             </div>
-                            <button class="add-btn" onclick="addToList('${product.sku}', this)">+</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Bottom navigation
-        function bottomNav(section, navElement = null) {
-            try {
-                // Input validation
-                if (!section || typeof section !== 'string') {
-                    console.error('Invalid section provided to bottomNav');
-                    return false;
-                }
-                
-                // Update nav states
-                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-                
-                // Use passed element or find the clicked one
-                const activeElement = navElement || document.querySelector(`[onclick*="bottomNav('${section}')"]`);
-                if (activeElement) {
-                    activeElement.classList.add('active');
-                }
-                
-                switch(section) {
-                    case 'home':
-                        selectCategory('all');
-                        break;
-                    case 'categories':
-                        showCategoryMenu();
-                        break;
-                    case 'bestsellers':
-                        selectCategory('bestsellers');
-                        break;
-                    case 'search':
-                        const searchInput = document.getElementById('searchInput');
-                        if (searchInput) {
-                            searchInput.focus();
-                        }
-                        break;
-                    case 'cart':
-                        viewCart();
-                        break;
-                    default:
-                        console.warn('Unknown navigation section:', section);
-                        return false;
-                }
-                
-                return true;
-            } catch (error) {
-                console.error('Error in bottomNav:', error);
-                return false;
-            }
-        }
-
-        // Category menu functions
-        function showCategoryMenu() {
-            document.getElementById('categoryOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideCategoryMenu() {
-            document.getElementById('categoryOverlay').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Sort toggle
-        function toggleSort() {
-            const sorts = ['popularity', 'price-low', 'price-high', 'name'];
-            const labels = ['Popular', 'Price ↑', 'Price ↓', 'Name'];
-            
-            const currentIndex = sorts.indexOf(currentSort);
-            const nextIndex = (currentIndex + 1) % sorts.length;
-            
-            currentSort = sorts[nextIndex];
-            document.getElementById('sortLabel').textContent = labels[nextIndex];
-            
-            renderProducts(currentProducts);
-        }
-
-        // Cart functions
-        function changeQty(sku, delta) {
-            const input = document.getElementById(`qty-${sku}`);
-            let value = parseInt(input.value) + delta;
-            if (value < 1) value = 1;
-            if (value > 99) value = 99;
-            input.value = value;
-        }
-
-        function addToList(sku, buttonElement = null) {
-            try {
-                // Input validation
-                if (!sku || typeof sku !== 'string') {
-                    console.error('Invalid SKU provided to addToList');
-                    return false;
-                }
-                
-                const product = catalog.products.find(p => p.sku === sku);
-                if (!product) {
-                    console.error('Product not found:', sku);
-                    return false;
-                }
-                
-                const qtyElement = document.getElementById(`qty-${sku}`);
-                if (!qtyElement) {
-                    console.error('Quantity element not found for SKU:', sku);
-                    return false;
-                }
-                
-                const qty = parseInt(qtyElement.value) || 1;
-                
-                // Check if item already in list
-                const existing = orderList.find(item => item.sku === sku);
-                if (existing) {
-                    existing.quantity += qty;
-                } else {
-                    orderList.push({
-                        sku: product.sku,
-                        name: product.name,
-                        price: product.case_price,
-                        quantity: qty
+                        `;
+                    }
+                    
+                    // Fetch catalog with timeout
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                    
+                    const response = await fetch('data/catalog.json', {
+                        signal: controller.signal
                     });
-                }
-                
-                // Save to localStorage
-                try {
-                    localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
-                } catch (storageError) {
-                    console.error('Failed to save list:', storageError);
-                }
-                
-                // Update UI
-                updateListPanel();
-                showListPanel();
-                
-                // Reset quantity
-                qtyElement.value = 1;
-                
-                // Visual feedback
-                const btn = buttonElement || document.querySelector(`[onclick*="addToList('${sku}')"]`);
-                if (btn) {
-                    const originalText = btn.innerHTML;
-                    btn.innerHTML = '✓';
-                    btn.style.background = 'var(--neon-green)';
                     
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.style.background = '';
-                    }, 1000);
+                    clearTimeout(timeoutId);
                     
-                    // Haptic feedback
-                    addHapticFeedback(btn);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    const catalogData = await response.json();
+                    
+                    // Validate catalog structure
+                    if (!catalogData || !catalogData.products || !Array.isArray(catalogData.products)) {
+                        throw new Error('Invalid catalog data structure');
+                    }
+                    
+                    this.catalog = catalogData;
+                    
+                    // Load cart from localStorage with error handling
+                    try {
+                        const savedCart = localStorage.getItem('missionLinenCart');
+                        if (savedCart) {
+                            const parsedCart = JSON.parse(savedCart);
+                            if (Array.isArray(parsedCart)) {
+                                this.cart = parsedCart;
+                            }
+                        }
+                    } catch (cartError) {
+                        console.warn('Failed to load saved cart:', cartError);
+                        this.cart = []; // Reset to empty cart
+                    }
+                    
+                    // Load order list from localStorage
+                    try {
+                        const savedList = localStorage.getItem('missionLinenOrderList');
+                        if (savedList) {
+                            const parsedList = JSON.parse(savedList);
+                            if (Array.isArray(parsedList)) {
+                                this.orderList = parsedList;
+                            }
+                        }
+                    } catch (listError) {
+                        console.warn('Failed to load saved list:', listError);
+                        this.orderList = []; // Reset to empty list
+                    }
+                    
+                    // Load favorites
+                    try {
+                        const savedFavorites = localStorage.getItem('missionLinenFavorites');
+                        if (savedFavorites) {
+                            this.favorites = JSON.parse(savedFavorites);
+                        }
+                    } catch (favError) {
+                        console.warn('Failed to load favorites:', favError);
+                    }
+                    
+                    // Load customer info
+                    try {
+                        const savedCustomer = localStorage.getItem('missionLinenCustomer');
+                        if (savedCustomer) {
+                            this.customerInfo = JSON.parse(savedCustomer);
+                        }
+                    } catch (custError) {
+                        console.warn('Failed to load customer info:', custError);
+                    }
+                    
+                    // Initialize UI components
+                    this.renderCategoryPills();
+                    this.renderCategoryGrid();
+                    this.loadView('all');
+                    this.updateCartCount();
+                    this.updateListPanel();
+                    this.setupSearch();
+                    this.setupPullToRefresh();
+                    
+                } catch (error) {
+                    console.error('Error loading catalog:', error);
+                    
+                    // Show user-friendly error message
+                    const productsGrid = document.getElementById('productsGrid');
+                    if (productsGrid) {
+                        let errorMessage = 'Unable to load catalog. ';
+                        
+                        if (error.name === 'AbortError') {
+                            errorMessage += 'Request timed out. Please check your connection and try again.';
+                        } else if (error.message.includes('HTTP')) {
+                            errorMessage += 'Server error. Please try again later.';
+                        } else if (error.message.includes('Invalid catalog')) {
+                            errorMessage += 'Catalog data is corrupted. Please contact support.';
+                        } else {
+                            errorMessage += 'Please check your connection and refresh the page.';
+                        }
+                        
+                        productsGrid.innerHTML = `
+                            <div class="ml-loading" style="grid-column: 1/-1;">
+                                <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
+                                <p style="color: #ff6666; font-weight: bold; margin-bottom: 10px;">Error Loading Catalog</p>
+                                <p style="color: #888; margin-bottom: 20px;">${errorMessage}</p>
+                                <button onclick="location.reload()" style="background: var(--neon-blue); color: var(--cyber-black); border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
+                                    Retry
+                                </button>
+                            </div>
+                        `;
+                    }
                 }
-                
-                return true;
-            } catch (error) {
-                console.error('Error in addToList:', error);
-                return false;
-            }
-        }
+            },
 
-        // Keep old addToCart for compatibility but redirect to addToList
-        function addToCart(sku, buttonElement = null) {
-            return addToList(sku, buttonElement);
-        }
-
-        function updateCartCount() {
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartCount').textContent = count;
-            document.getElementById('bottomCartCount').textContent = count;
-            
-            // Hide badge if empty
-            const badges = document.querySelectorAll('#bottomCartCount');
-            badges.forEach(badge => {
-                badge.style.display = count > 0 ? 'flex' : 'none';
-            });
-        }
-
-        function viewCart() {
-            toggleListPanel();
-        }
-
-        // List Panel Functions
-        function updateListPanel() {
-            const listItems = document.getElementById('listItems');
-            const listCount = document.getElementById('listCount');
-            const listTotal = document.getElementById('listTotal');
-            const toggleBtn = document.getElementById('listToggleBtn');
-            const toggleBadge = document.getElementById('listToggleBadge');
-            
-            if (orderList.length === 0) {
-                listItems.innerHTML = `
-                    <div style="text-align: center; padding: 40px; color: #666;">
-                        <div style="font-size: 32px; margin-bottom: 10px;">📋</div>
-                        <div>No items in list</div>
-                        <div style="font-size: 11px; margin-top: 5px;">Add items to build your order</div>
+            // Render category pills
+            renderCategoryPills() {
+                const pills = document.getElementById('categoryPills');
+                let html = `
+                    <div class="ml-category-pill ml-active" data-category="all" style="--pill-color: var(--neon-green)" onclick="MissionLinen.selectCategory('all')">
+                        <span class="ml-pill-icon">🏠</span>
+                        <span>All</span>
+                        <span class="ml-pill-count">107</span>
                     </div>
                 `;
-                listCount.textContent = '(0)';
-                listTotal.textContent = '$0.00';
-                toggleBtn.classList.remove('has-items');
-            } else {
-                // Render list items
-                let html = '';
-                let total = 0;
                 
-                orderList.forEach((item, index) => {
-                    const subtotal = item.price * item.quantity;
-                    total += subtotal;
-                    
-                    html += `
-                        <div class="list-item">
-                            <div class="list-item-info">
-                                <div class="list-item-name">${item.name}</div>
-                                <div class="list-item-sku">SKU: ${item.sku}</div>
-                                <div class="list-item-price">${item.quantity} × $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}</div>
+                Object.entries(this.categoryConfig).forEach(([key, config]) => {
+                    const products = this.catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
+                    if (products.length > 0) {
+                        html += `
+                            <div class="ml-category-pill" data-category="${key}" style="--pill-color: ${config.color}" onclick="MissionLinen.selectCategory('${key}')">
+                                <span class="ml-pill-icon">${config.icon}</span>
+                                <span>${config.name.split(' ')[0]}</span>
+                                <span class="ml-pill-count">${products.length}</span>
                             </div>
-                            <div class="list-item-controls">
-                                <button class="list-item-remove" onclick="removeFromList(${index})">×</button>
+                        `;
+                    }
+                });
+
+                html += `
+                    <div class="ml-category-pill" data-category="bestsellers" style="--pill-color: var(--neon-orange)" onclick="MissionLinen.selectCategory('bestsellers')">
+                        <span class="ml-pill-icon">🔥</span>
+                        <span>Best</span>
+                        <span class="ml-pill-count">15</span>
+                    </div>
+                    <div class="ml-category-pill" data-category="favorites" style="--pill-color: var(--neon-pink)" onclick="MissionLinen.selectCategory('favorites')">
+                        <span class="ml-pill-icon">⭐</span>
+                        <span>Favorites</span>
+                        <span class="ml-pill-count">${this.getTotalFavorites()}</span>
+                    </div>
+                    <div class="ml-category-pill" data-category="bestdeals" style="--pill-color: var(--neon-green)" onclick="MissionLinen.selectCategory('bestdeals')">
+                        <span class="ml-pill-icon">💰</span>
+                        <span>Best Deals</span>
+                        <span class="ml-pill-count">${this.favorites.bestDeals.length}</span>
+                    </div>
+                    <div class="ml-category-pill" data-category="quickref" style="--pill-color: var(--neon-purple)" onclick="MissionLinen.selectCategory('quickref')">
+                        <span class="ml-pill-icon">⚡</span>
+                        <span>Quick Ref</span>
+                        <span class="ml-pill-count">${this.favorites.quickRef.length}</span>
+                    </div>
+                `;
+                
+                pills.innerHTML = html;
+            },
+
+            // Render category grid for overlay
+            renderCategoryGrid() {
+                const grid = document.getElementById('categoryGrid');
+                let html = '';
+                
+                Object.entries(this.categoryConfig).forEach(([key, config]) => {
+                    const products = this.catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === key);
+                    if (products.length > 0) {
+                        html += `
+                            <div class="ml-category-item" style="--item-color: ${config.color}" onclick="MissionLinen.selectCategoryFromMenu('${key}')">
+                                <div class="ml-category-item-icon">${config.icon}</div>
+                                <div class="ml-category-item-name">${config.name}</div>
+                                <div class="ml-category-item-count">${products.length} products</div>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    }
                 });
                 
-                listItems.innerHTML = html;
-                listCount.textContent = `(${orderList.length})`;
-                listTotal.textContent = `$${total.toFixed(2)}`;
+                grid.innerHTML = html;
+            },
+
+            // Select category
+            selectCategory(category) {
+                // Update pill states
+                document.querySelectorAll('.ml-category-pill').forEach(pill => {
+                    pill.classList.remove('ml-active');
+                });
+                document.querySelector(`[data-category="${category}"]`).classList.add('ml-active');
                 
-                // Show toggle button with badge
-                toggleBtn.classList.add('has-items');
-                toggleBadge.textContent = orderList.length;
-            }
-        }
+                // Scroll pill into view
+                const selectedPill = document.querySelector(`[data-category="${category}"]`);
+                selectedPill.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                
+                // Load content
+                this.loadView(category);
+                
+                // Haptic feedback
+                this.addHapticFeedback(selectedPill);
+            },
 
-        function removeFromList(index) {
-            orderList.splice(index, 1);
-            
-            // Save to localStorage
-            try {
-                localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
-            } catch (e) {
-                console.error('Failed to save list:', e);
-            }
-            
-            updateListPanel();
-            
-            // Hide panel if empty
-            if (orderList.length === 0) {
-                setTimeout(() => {
-                    document.getElementById('listPanel').classList.remove('active');
-                }, 500);
-            }
-        }
+            // Select from category menu
+            selectCategoryFromMenu(category) {
+                this.hideCategoryMenu();
+                this.selectCategory(category);
+            },
 
-        function clearList() {
-            if (orderList.length === 0) return;
-            
-            if (confirm('Clear all items from the list?')) {
-                orderList = [];
+            // Get total favorites count
+            getTotalFavorites() {
+                return this.favorites.bestDeals.length + this.favorites.customerFaves.length + this.favorites.quickRef.length;
+            },
+
+            // Load view content
+            loadView(category) {
+                this.currentView = category;
+                let products = [];
+                let title = '';
+                let icon = '';
+                
+                switch(category) {
+                    case 'all':
+                        products = this.catalog.products;
+                        title = 'All Products';
+                        icon = '🏠';
+                        break;
+                    case 'bestsellers':
+                        products = this.catalog.products.filter(p => p.times_sold >= 10).sort((a, b) => b.times_sold - a.times_sold);
+                        title = 'Best Sellers';
+                        icon = '🔥';
+                        break;
+                    case 'favorites':
+                        const allFavSkus = [...this.favorites.bestDeals, ...this.favorites.customerFaves, ...this.favorites.quickRef];
+                        products = this.catalog.products.filter(p => allFavSkus.includes(p.sku));
+                        title = 'All Favorites';
+                        icon = '⭐';
+                        break;
+                    case 'bestdeals':
+                        products = this.catalog.products.filter(p => this.favorites.bestDeals.includes(p.sku));
+                        title = 'Best Deals';
+                        icon = '💰';
+                        break;
+                    case 'quickref':
+                        products = this.catalog.products.filter(p => this.favorites.quickRef.includes(p.sku));
+                        title = 'Quick Reference';
+                        icon = '⚡';
+                        break;
+                    default:
+                        products = this.catalog.products.filter(p => p.categoryPath && p.categoryPath[0] === category);
+                        const config = this.categoryConfig[category];
+                        title = config ? config.name : 'Category';
+                        icon = config ? config.icon : '📦';
+                }
+                
+                // Update header
+                document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">${icon}</span> ${title}`;
+                
+                // Render products
+                this.renderProducts(products);
+            },
+
+            // Render products
+            renderProducts(products) {
+                try {
+                    // Input validation
+                    if (!Array.isArray(products)) {
+                        console.error('Invalid products array provided to renderProducts');
+                        return false;
+                    }
+                    
+                    this.currentProducts = products;
+                    
+                    // Sort products with error handling
+                    const sorted = [...products];
+                    try {
+                        switch(this.currentSort) {
+                            case 'popularity':
+                                sorted.sort((a, b) => (b.times_sold || 0) - (a.times_sold || 0));
+                                break;
+                            case 'price-low':
+                                sorted.sort((a, b) => (a.case_price || 0) - (b.case_price || 0));
+                                break;
+                            case 'price-high':
+                                sorted.sort((a, b) => (b.case_price || 0) - (a.case_price || 0));
+                                break;
+                            case 'name':
+                                sorted.sort((a, b) => {
+                                    const nameA = a.name || '';
+                                    const nameB = b.name || '';
+                                    return nameA.localeCompare(nameB);
+                                });
+                                break;
+                            default:
+                                console.warn('Unknown sort value:', this.currentSort);
+                        }
+                    } catch (sortError) {
+                        console.warn('Error sorting products:', sortError);
+                    }
+                    
+                    // Update count safely
+                    const resultsCount = document.getElementById('resultsCount');
+                    if (resultsCount) {
+                        resultsCount.textContent = 
+                            `${sorted.length} product${sorted.length !== 1 ? 's' : ''}`;
+                    }
+                    
+                    // Render grid safely
+                    const grid = document.getElementById('productsGrid');
+                    if (!grid) {
+                        console.error('Products grid element not found');
+                        return false;
+                    }
+                    
+                    if (sorted.length === 0) {
+                        grid.innerHTML = `
+                            <div class="ml-loading" style="grid-column: 1/-1;">
+                                <div style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;">📋</div>
+                                <p>No products found</p>
+                            </div>
+                        `;
+                        return true;
+                    }
+                    
+                    try {
+                        const productCards = sorted.map(product => {
+                            try {
+                                return this.renderProductCard(product);
+                            } catch (cardError) {
+                                console.warn('Error rendering product card:', cardError, product);
+                                return ''; // Skip problematic products
+                            }
+                        }).filter(card => card.length > 0);
+                        
+                        grid.innerHTML = productCards.join('');
+                    } catch (renderError) {
+                        console.error('Error rendering product grid:', renderError);
+                        grid.innerHTML = `
+                            <div class="ml-loading" style="grid-column: 1/-1;">
+                                <div style="color: #ff6666; font-size: 2rem; margin-bottom: 20px;">⚠️</div>
+                                <p style="color: #ff6666;">Error displaying products</p>
+                            </div>
+                        `;
+                        return false;
+                    }
+                    
+                    return true;
+                } catch (error) {
+                    console.error('Error in renderProducts:', error);
+                    return false;
+                }
+            },
+
+            // Render product card
+            renderProductCard(product) {
+                const categoryKey = product.categoryPath ? product.categoryPath[0] : 'default';
+                const config = this.categoryConfig[categoryKey] || { color: '#00f5ff', icon: '📦' };
+                const isBestSeller = product.times_sold >= 20;
+                const isFavorited = this.isInAnyFavorites(product.sku);
+                const favCategory = this.getFavoriteCategory(product.sku);
+                
+                return `
+                    <div class="ml-product-card" style="--product-color: ${config.color}20">
+                        <div class="ml-product-image">
+                            ${isBestSeller ? '<span class="ml-bestseller-badge">BEST SELLER</span>' : ''}
+                            <button class="ml-favorite-btn ${isFavorited ? 'ml-favorited' : ''}" 
+                                    onclick="MissionLinen.toggleFavorite('${product.sku}', this)" 
+                                    title="${isFavorited ? `Remove from ${favCategory}` : 'Add to favorites'}"
+                                    style="
+                                        position: absolute;
+                                        top: 8px;
+                                        right: 8px;
+                                        background: ${isFavorited ? 'var(--neon-pink)' : 'rgba(0, 0, 0, 0.5)'};
+                                        border: none;
+                                        color: ${isFavorited ? 'black' : 'white'};
+                                        width: 28px;
+                                        height: 28px;
+                                        border-radius: 50%;
+                                        cursor: pointer;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 14px;
+                                        z-index: 10;
+                                        transition: all 0.3s;
+                                    ">
+                                ${isFavorited ? '⭐' : '☆'}
+                            </button>
+                            <span style="color: ${config.color};">${config.icon}</span>
+                        </div>
+                        <div class="ml-product-info">
+                            <div class="ml-product-name">${product.name}</div>
+                            <div class="ml-product-sku">SKU: ${product.sku}</div>
+                            <div class="ml-product-price">$${product.case_price.toFixed(2)}</div>
+                            <div class="ml-product-unit">per case</div>
+                            <div class="ml-product-actions">
+                                <div class="ml-qty-control">
+                                    <button class="ml-qty-btn" onclick="MissionLinen.changeQty('${product.sku}', -1)">−</button>
+                                    <input type="text" class="ml-qty-input" id="qty-${product.sku}" value="1" readonly>
+                                    <button class="ml-qty-btn" onclick="MissionLinen.changeQty('${product.sku}', 1)">+</button>
+                                </div>
+                                <button class="ml-add-btn" onclick="MissionLinen.addToList('${product.sku}', this)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+
+            // Bottom navigation
+            bottomNav(section, navElement = null) {
+                try {
+                    // Input validation
+                    if (!section || typeof section !== 'string') {
+                        console.error('Invalid section provided to bottomNav');
+                        return false;
+                    }
+                    
+                    // Update nav states
+                    document.querySelectorAll('.ml-nav-item').forEach(item => item.classList.remove('ml-active'));
+                    
+                    // Use passed element or find the clicked one
+                    const activeElement = navElement || document.querySelector(`[onclick*="bottomNav('${section}')"]`);
+                    if (activeElement) {
+                        activeElement.classList.add('ml-active');
+                    }
+                    
+                    switch(section) {
+                        case 'home':
+                            this.selectCategory('all');
+                            break;
+                        case 'categories':
+                            this.showCategoryMenu();
+                            break;
+                        case 'bestsellers':
+                            this.selectCategory('bestsellers');
+                            break;
+                        case 'search':
+                            const searchInput = document.getElementById('searchInput');
+                            if (searchInput) {
+                                searchInput.focus();
+                            }
+                            break;
+                        case 'cart':
+                            this.viewCart();
+                            break;
+                        default:
+                            console.warn('Unknown navigation section:', section);
+                            return false;
+                    }
+                    
+                    return true;
+                } catch (error) {
+                    console.error('Error in bottomNav:', error);
+                    return false;
+                }
+            },
+
+            // Category menu functions
+            showCategoryMenu() {
+                document.getElementById('categoryOverlay').classList.add('ml-active');
+                document.body.style.overflow = 'hidden';
+            },
+
+            hideCategoryMenu() {
+                document.getElementById('categoryOverlay').classList.remove('ml-active');
+                document.body.style.overflow = '';
+            },
+
+            // Sort toggle
+            toggleSort() {
+                const sorts = ['popularity', 'price-low', 'price-high', 'name'];
+                const labels = ['Popular', 'Price ↑', 'Price ↓', 'Name'];
+                
+                const currentIndex = sorts.indexOf(this.currentSort);
+                const nextIndex = (currentIndex + 1) % sorts.length;
+                
+                this.currentSort = sorts[nextIndex];
+                document.getElementById('sortLabel').textContent = labels[nextIndex];
+                
+                this.renderProducts(this.currentProducts);
+            },
+
+            // Cart functions
+            changeQty(sku, delta) {
+                const input = document.getElementById(`qty-${sku}`);
+                let value = parseInt(input.value) + delta;
+                if (value < 1) value = 1;
+                if (value > 99) value = 99;
+                input.value = value;
+            },
+
+            addToList(sku, buttonElement = null) {
+                try {
+                    // Input validation
+                    if (!sku || typeof sku !== 'string') {
+                        console.error('Invalid SKU provided to addToList');
+                        return false;
+                    }
+                    
+                    const product = this.catalog.products.find(p => p.sku === sku);
+                    if (!product) {
+                        console.error('Product not found:', sku);
+                        return false;
+                    }
+                    
+                    const qtyElement = document.getElementById(`qty-${sku}`);
+                    if (!qtyElement) {
+                        console.error('Quantity element not found for SKU:', sku);
+                        return false;
+                    }
+                    
+                    const qty = parseInt(qtyElement.value) || 1;
+                    
+                    // Check if item already in list
+                    const existing = this.orderList.find(item => item.sku === sku);
+                    if (existing) {
+                        existing.quantity += qty;
+                    } else {
+                        this.orderList.push({
+                            sku: product.sku,
+                            name: product.name,
+                            price: product.case_price,
+                            quantity: qty
+                        });
+                    }
+                    
+                    // Save to localStorage
+                    try {
+                        localStorage.setItem('missionLinenOrderList', JSON.stringify(this.orderList));
+                    } catch (storageError) {
+                        console.error('Failed to save list:', storageError);
+                    }
+                    
+                    // Update UI
+                    this.updateListPanel();
+                    this.showListPanel();
+                    
+                    // Reset quantity
+                    qtyElement.value = 1;
+                    
+                    // Visual feedback
+                    const btn = buttonElement || document.querySelector(`[onclick*="addToList('${sku}')"]`);
+                    if (btn) {
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '✓';
+                        btn.style.background = 'var(--neon-green)';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.background = '';
+                        }, 1000);
+                        
+                        // Haptic feedback
+                        this.addHapticFeedback(btn);
+                    }
+                    
+                    return true;
+                } catch (error) {
+                    console.error('Error in addToList:', error);
+                    return false;
+                }
+            },
+
+            // Keep old addToCart for compatibility but redirect to addToList
+            addToCart(sku, buttonElement = null) {
+                return this.addToList(sku, buttonElement);
+            },
+
+            updateCartCount() {
+                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById('cartCount').textContent = count;
+                document.getElementById('bottomCartCount').textContent = count;
+                
+                // Hide badge if empty
+                const badges = document.querySelectorAll('#bottomCartCount');
+                badges.forEach(badge => {
+                    badge.style.display = count > 0 ? 'flex' : 'none';
+                });
+            },
+
+            viewCart() {
+                this.toggleListPanel();
+            },
+
+            // List Panel Functions
+            updateListPanel() {
+                const listItems = document.getElementById('listItems');
+                const listCount = document.getElementById('listCount');
+                const listTotal = document.getElementById('listTotal');
+                const toggleBtn = document.getElementById('listToggleBtn');
+                const toggleBadge = document.getElementById('listToggleBadge');
+                
+                if (this.orderList.length === 0) {
+                    listItems.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #666;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">📋</div>
+                            <div>No items in list</div>
+                            <div style="font-size: 11px; margin-top: 5px;">Add items to build your order</div>
+                        </div>
+                    `;
+                    listCount.textContent = '(0)';
+                    listTotal.textContent = '$0.00';
+                    toggleBtn.classList.remove('ml-has-items');
+                } else {
+                    // Render list items
+                    let html = '';
+                    let total = 0;
+                    
+                    this.orderList.forEach((item, index) => {
+                        const subtotal = item.price * item.quantity;
+                        total += subtotal;
+                        
+                        html += `
+                            <div class="ml-list-item">
+                                <div class="ml-list-item-info">
+                                    <div class="ml-list-item-name">${item.name}</div>
+                                    <div class="ml-list-item-sku">SKU: ${item.sku}</div>
+                                    <div class="ml-list-item-price">${item.quantity} × $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}</div>
+                                </div>
+                                <div class="ml-list-item-controls">
+                                    <button class="ml-list-item-remove" onclick="MissionLinen.removeFromList(${index})">×</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    listItems.innerHTML = html;
+                    listCount.textContent = `(${this.orderList.length})`;
+                    listTotal.textContent = `$${total.toFixed(2)}`;
+                    
+                    // Show toggle button with badge
+                    toggleBtn.classList.add('ml-has-items');
+                    toggleBadge.textContent = this.orderList.length;
+                }
+            },
+
+            removeFromList(index) {
+                this.orderList.splice(index, 1);
                 
                 // Save to localStorage
                 try {
-                    localStorage.setItem('missionLinenOrderList', JSON.stringify(orderList));
+                    localStorage.setItem('missionLinenOrderList', JSON.stringify(this.orderList));
                 } catch (e) {
                     console.error('Failed to save list:', e);
                 }
                 
-                updateListPanel();
+                this.updateListPanel();
                 
-                // Hide panel
-                setTimeout(() => {
-                    document.getElementById('listPanel').classList.remove('active');
-                }, 500);
-            }
-        }
-
-        function toggleListPanel() {
-            const panel = document.getElementById('listPanel');
-            panel.classList.toggle('active');
-        }
-
-        function showListPanel() {
-            const panel = document.getElementById('listPanel');
-            if (!panel.classList.contains('active')) {
-                panel.classList.add('active');
-            }
-        }
-
-        // Search
-        function setupSearch() {
-            const searchInput = document.getElementById('searchInput');
-            let searchTimeout;
-            
-            searchInput.addEventListener('input', (e) => {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    const query = e.target.value.trim();
-                    if (query) {
-                        searchProducts(query);
-                    } else {
-                        loadView('all');
-                    }
-                }, 300);
-            });
-        }
-
-        function searchProducts(query) {
-            const results = catalog.products.filter(p => 
-                p.name.toLowerCase().includes(query.toLowerCase()) ||
-                p.sku.includes(query)
-            );
-            
-            document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">🔍</span> Search Results`;
-            renderProducts(results);
-        }
-
-        // Utility functions
-        function addHapticFeedback(element) {
-            element.classList.add('haptic');
-            setTimeout(() => element.classList.remove('haptic'), 100);
-        }
-
-        function setupPullToRefresh() {
-            let startY = 0;
-            let currentY = 0;
-            let isPulling = false;
-            
-            document.addEventListener('touchstart', (e) => {
-                if (window.pageYOffset === 0) {
-                    startY = e.touches[0].pageY;
-                    isPulling = true;
+                // Hide panel if empty
+                if (this.orderList.length === 0) {
+                    setTimeout(() => {
+                        document.getElementById('listPanel').classList.remove('ml-active');
+                    }, 500);
                 }
-            });
-            
-            document.addEventListener('touchmove', (e) => {
-                if (isPulling) {
-                    currentY = e.touches[0].pageY;
-                    const pullDistance = currentY - startY;
+            },
+
+            clearList() {
+                if (this.orderList.length === 0) return;
+                
+                if (confirm('Clear all items from the list?')) {
+                    this.orderList = [];
                     
-                    if (pullDistance > 50) {
-                        document.getElementById('pullIndicator').classList.add('active');
+                    // Save to localStorage
+                    try {
+                        localStorage.setItem('missionLinenOrderList', JSON.stringify(this.orderList));
+                    } catch (e) {
+                        console.error('Failed to save list:', e);
                     }
+                    
+                    this.updateListPanel();
+                    
+                    // Hide panel
+                    setTimeout(() => {
+                        document.getElementById('listPanel').classList.remove('ml-active');
+                    }, 500);
                 }
-            });
-            
-            document.addEventListener('touchend', () => {
-                if (isPulling) {
-                    const pullDistance = currentY - startY;
-                    if (pullDistance > 100) {
-                        // Trigger refresh
-                        location.reload();
+            },
+
+            toggleListPanel() {
+                const panel = document.getElementById('listPanel');
+                panel.classList.toggle('ml-active');
+            },
+
+            showListPanel() {
+                const panel = document.getElementById('listPanel');
+                if (!panel.classList.contains('ml-active')) {
+                    panel.classList.add('ml-active');
+                }
+            },
+
+            // Search
+            setupSearch() {
+                const searchInput = document.getElementById('searchInput');
+                let searchTimeout;
+                
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        const query = e.target.value.trim();
+                        if (query) {
+                            this.searchProducts(query);
+                        } else {
+                            this.loadView('all');
+                        }
+                    }, 300);
+                });
+            },
+
+            searchProducts(query) {
+                const results = this.catalog.products.filter(p => 
+                    p.name.toLowerCase().includes(query.toLowerCase()) ||
+                    p.sku.includes(query)
+                );
+                
+                document.getElementById('pageTitle').innerHTML = `<span id="pageTitleIcon">🔍</span> Search Results`;
+                this.renderProducts(results);
+            },
+
+            // Utility functions
+            addHapticFeedback(element) {
+                element.classList.add('ml-haptic');
+                setTimeout(() => element.classList.remove('ml-haptic'), 100);
+            },
+
+            setupPullToRefresh() {
+                let startY = 0;
+                let currentY = 0;
+                let isPulling = false;
+                
+                document.addEventListener('touchstart', (e) => {
+                    if (window.pageYOffset === 0) {
+                        startY = e.touches[0].pageY;
+                        isPulling = true;
                     }
-                    document.getElementById('pullIndicator').classList.remove('active');
-                    isPulling = false;
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    if (isPulling) {
+                        currentY = e.touches[0].pageY;
+                        const pullDistance = currentY - startY;
+                        
+                        if (pullDistance > 50) {
+                            document.getElementById('pullIndicator').classList.add('ml-active');
+                        }
+                    }
+                });
+                
+                document.addEventListener('touchend', () => {
+                    if (isPulling) {
+                        const pullDistance = currentY - startY;
+                        if (pullDistance > 100) {
+                            // Trigger refresh
+                            location.reload();
+                        }
+                        document.getElementById('pullIndicator').classList.remove('ml-active');
+                        isPulling = false;
+                    }
+                });
+            },
+
+            // Favorites Management Functions
+            isInAnyFavorites(sku) {
+                return this.favorites.bestDeals.includes(sku) || 
+                       this.favorites.customerFaves.includes(sku) || 
+                       this.favorites.quickRef.includes(sku);
+            },
+
+            getFavoriteCategory(sku) {
+                if (this.favorites.bestDeals.includes(sku)) return 'Best Deals';
+                if (this.favorites.customerFaves.includes(sku)) return 'Customer Favorites';
+                if (this.favorites.quickRef.includes(sku)) return 'Quick Reference';
+                return null;
+            },
+
+            toggleFavorite(sku, buttonElement) {
+                // Add to recently viewed
+                this.addToRecentlyViewed(sku);
+                
+                // Check if already favorited
+                const currentCategory = this.getFavoriteCategory(sku);
+                
+                if (currentCategory) {
+                    // Remove from current category
+                    this.removeFromFavorites(sku);
+                    
+                    // Update button appearance
+                    buttonElement.style.background = 'rgba(0, 0, 0, 0.5)';
+                    buttonElement.style.color = 'white';
+                    buttonElement.innerHTML = '☆';
+                    buttonElement.title = 'Add to favorites';
+                    buttonElement.classList.remove('ml-favorited');
+                    
+                    this.showFavoriteFeedback('Removed from favorites', 'var(--neon-orange)');
+                } else {
+                    // Show category selection menu
+                    this.showFavoriteCategoryMenu(sku, buttonElement);
                 }
-            });
-        }
-
-        // Favorites Management Functions
-        function isInAnyFavorites(sku) {
-            return favorites.bestDeals.includes(sku) || 
-                   favorites.customerFaves.includes(sku) || 
-                   favorites.quickRef.includes(sku);
-        }
-
-        function getFavoriteCategory(sku) {
-            if (favorites.bestDeals.includes(sku)) return 'Best Deals';
-            if (favorites.customerFaves.includes(sku)) return 'Customer Favorites';
-            if (favorites.quickRef.includes(sku)) return 'Quick Reference';
-            return null;
-        }
-
-        function toggleFavorite(sku, buttonElement) {
-            // Add to recently viewed
-            addToRecentlyViewed(sku);
-            
-            // Check if already favorited
-            const currentCategory = getFavoriteCategory(sku);
-            
-            if (currentCategory) {
-                // Remove from current category
-                removeFromFavorites(sku);
                 
-                // Update button appearance
-                buttonElement.style.background = 'rgba(0, 0, 0, 0.5)';
-                buttonElement.style.color = 'white';
-                buttonElement.innerHTML = '☆';
-                buttonElement.title = 'Add to favorites';
-                buttonElement.classList.remove('favorited');
+                // Save to storage and update UI
+                this.saveFavorites();
+                this.updateFavoriteCounts();
+            },
+
+            showFavoriteCategoryMenu(sku, buttonElement) {
+                const menu = document.createElement('div');
+                menu.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--dark-bg);
+                    border: 2px solid var(--neon-cyan);
+                    border-radius: 15px;
+                    padding: 20px;
+                    z-index: 10000;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+                    max-width: 300px;
+                    width: 90%;
+                `;
                 
-                showFavoriteFeedback('Removed from favorites', 'var(--neon-orange)');
-            } else {
-                // Show category selection menu
-                showFavoriteCategoryMenu(sku, buttonElement);
-            }
-            
-            // Save to storage and update UI
-            saveFavorites();
-            updateFavoriteCounts();
-        }
+                menu.innerHTML = `
+                    <div style="color: var(--neon-green); font-size: 16px; margin-bottom: 15px; text-align: center;">
+                        <strong>⭐ Add to Favorites</strong>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <button onclick="MissionLinen.addToFavoriteCategory('${sku}', 'bestDeals', this.parentElement.parentElement)" 
+                                style="background: var(--neon-green); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                            💰 Best Deals
+                        </button>
+                        <button onclick="MissionLinen.addToFavoriteCategory('${sku}', 'customerFaves', this.parentElement.parentElement)" 
+                                style="background: var(--neon-pink); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                            👥 Customer Favorites
+                        </button>
+                        <button onclick="MissionLinen.addToFavoriteCategory('${sku}', 'quickRef', this.parentElement.parentElement)" 
+                                style="background: var(--neon-purple); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
+                            ⚡ Quick Reference
+                        </button>
+                        <button onclick="this.parentElement.parentElement.remove()" 
+                                style="background: rgba(255, 255, 255, 0.1); color: white; border: none; padding: 8px; border-radius: 8px; cursor: pointer; margin-top: 5px;">
+                            Cancel
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(menu);
+                
+                // Store button reference for later update
+                menu.dataset.buttonId = buttonElement.id || `btn-${sku}`;
+                if (!buttonElement.id) {
+                    buttonElement.id = `btn-${sku}`;
+                }
+            },
 
-        function showFavoriteCategoryMenu(sku, buttonElement) {
-            const menu = document.createElement('div');
-            menu.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: var(--dark-bg);
-                border: 2px solid var(--neon-cyan);
-                border-radius: 15px;
-                padding: 20px;
-                z-index: 10000;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-                max-width: 300px;
-                width: 90%;
-            `;
-            
-            menu.innerHTML = `
-                <div style="color: var(--neon-green); font-size: 16px; margin-bottom: 15px; text-align: center;">
-                    <strong>⭐ Add to Favorites</strong>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <button onclick="addToFavoriteCategory('${sku}', 'bestDeals', this.parentElement.parentElement)" 
-                            style="background: var(--neon-green); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
-                        💰 Best Deals
-                    </button>
-                    <button onclick="addToFavoriteCategory('${sku}', 'customerFaves', this.parentElement.parentElement)" 
-                            style="background: var(--neon-pink); color: black; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
-                        👥 Customer Favorites
-                    </button>
-                    <button onclick="addToFavoriteCategory('${sku}', 'quickRef', this.parentElement.parentElement)" 
-                            style="background: var(--neon-purple); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">
-                        ⚡ Quick Reference
-                    </button>
-                    <button onclick="this.parentElement.parentElement.remove()" 
-                            style="background: rgba(255, 255, 255, 0.1); color: white; border: none; padding: 8px; border-radius: 8px; cursor: pointer; margin-top: 5px;">
-                        Cancel
-                    </button>
-                </div>
-            `;
-            
-            document.body.appendChild(menu);
-            
-            // Store button reference for later update
-            menu.dataset.buttonId = buttonElement.id || `btn-${sku}`;
-            if (!buttonElement.id) {
-                buttonElement.id = `btn-${sku}`;
-            }
-        }
-
-        function addToFavoriteCategory(sku, category, menuElement) {
-            // Add to the specified category
-            if (!favorites[category].includes(sku)) {
-                favorites[category].push(sku);
-            }
-            
-            // Update the button that triggered this
-            const buttonId = menuElement.dataset.buttonId;
-            const button = document.getElementById(buttonId);
-            
-            if (button) {
-                button.style.background = 'var(--neon-pink)';
-                button.style.color = 'black';
-                button.innerHTML = '⭐';
-                button.classList.add('favorited');
+            addToFavoriteCategory(sku, category, menuElement) {
+                // Add to the specified category
+                if (!this.favorites[category].includes(sku)) {
+                    this.favorites[category].push(sku);
+                }
+                
+                // Update the button that triggered this
+                const buttonId = menuElement.dataset.buttonId;
+                const button = document.getElementById(buttonId);
+                
+                if (button) {
+                    button.style.background = 'var(--neon-pink)';
+                    button.style.color = 'black';
+                    button.innerHTML = '⭐';
+                    button.classList.add('ml-favorited');
+                    
+                    const categoryNames = {
+                        'bestDeals': 'Best Deals',
+                        'customerFaves': 'Customer Favorites', 
+                        'quickRef': 'Quick Reference'
+                    };
+                    button.title = `Remove from ${categoryNames[category]}`;
+                }
+                
+                // Remove menu
+                menuElement.remove();
+                
+                // Save and update
+                this.saveFavorites();
+                this.updateFavoriteCounts();
+                
+                const categoryIcons = {
+                    'bestDeals': '💰',
+                    'customerFaves': '👥',
+                    'quickRef': '⚡'
+                };
                 
                 const categoryNames = {
                     'bestDeals': 'Best Deals',
                     'customerFaves': 'Customer Favorites', 
                     'quickRef': 'Quick Reference'
                 };
-                button.title = `Remove from ${categoryNames[category]}`;
-            }
-            
-            // Remove menu
-            menuElement.remove();
-            
-            // Save and update
-            saveFavorites();
-            updateFavoriteCounts();
-            
-            const categoryIcons = {
-                'bestDeals': '💰',
-                'customerFaves': '👥',
-                'quickRef': '⚡'
-            };
-            
-            showFavoriteFeedback(`${categoryIcons[category]} Added to ${categoryNames[category]}!`, 'var(--neon-green)');
-        }
-
-        function removeFromFavorites(sku) {
-            favorites.bestDeals = favorites.bestDeals.filter(id => id !== sku);
-            favorites.customerFaves = favorites.customerFaves.filter(id => id !== sku);
-            favorites.quickRef = favorites.quickRef.filter(id => id !== sku);
-        }
-
-        function addToRecentlyViewed(sku) {
-            // Remove if already exists
-            favorites.recentlyViewed = favorites.recentlyViewed.filter(id => id !== sku);
-            
-            // Add to beginning
-            favorites.recentlyViewed.unshift(sku);
-            
-            // Keep only last 20 items
-            if (favorites.recentlyViewed.length > 20) {
-                favorites.recentlyViewed = favorites.recentlyViewed.slice(0, 20);
-            }
-        }
-
-        function saveFavorites() {
-            try {
-                localStorage.setItem('missionLinenFavorites', JSON.stringify(favorites));
-            } catch (error) {
-                console.error('Failed to save favorites:', error);
-            }
-        }
-
-        function updateFavoriteCounts() {
-            // Update category pill counts
-            const pills = document.querySelectorAll('.category-pill');
-            pills.forEach(pill => {
-                const category = pill.dataset.category;
-                const countSpan = pill.querySelector('.pill-count');
                 
-                if (countSpan) {
-                    switch(category) {
-                        case 'favorites':
-                            countSpan.textContent = getTotalFavorites();
-                            break;
-                        case 'bestdeals':
-                            countSpan.textContent = favorites.bestDeals.length;
-                            break;
-                        case 'quickref':
-                            countSpan.textContent = favorites.quickRef.length;
-                            break;
+                this.showFavoriteFeedback(`${categoryIcons[category]} Added to ${categoryNames[category]}!`, 'var(--neon-green)');
+            },
+
+            removeFromFavorites(sku) {
+                this.favorites.bestDeals = this.favorites.bestDeals.filter(id => id !== sku);
+                this.favorites.customerFaves = this.favorites.customerFaves.filter(id => id !== sku);
+                this.favorites.quickRef = this.favorites.quickRef.filter(id => id !== sku);
+            },
+
+            addToRecentlyViewed(sku) {
+                // Remove if already exists
+                this.favorites.recentlyViewed = this.favorites.recentlyViewed.filter(id => id !== sku);
+                
+                // Add to beginning
+                this.favorites.recentlyViewed.unshift(sku);
+                
+                // Keep only last 20 items
+                if (this.favorites.recentlyViewed.length > 20) {
+                    this.favorites.recentlyViewed = this.favorites.recentlyViewed.slice(0, 20);
+                }
+            },
+
+            saveFavorites() {
+                try {
+                    localStorage.setItem('missionLinenFavorites', JSON.stringify(this.favorites));
+                } catch (error) {
+                    console.error('Failed to save favorites:', error);
+                }
+            },
+
+            updateFavoriteCounts() {
+                // Update category pill counts
+                const pills = document.querySelectorAll('.ml-category-pill');
+                pills.forEach(pill => {
+                    const category = pill.dataset.category;
+                    const countSpan = pill.querySelector('.ml-pill-count');
+                    
+                    if (countSpan) {
+                        switch(category) {
+                            case 'favorites':
+                                countSpan.textContent = this.getTotalFavorites();
+                                break;
+                            case 'bestdeals':
+                                countSpan.textContent = this.favorites.bestDeals.length;
+                                break;
+                            case 'quickref':
+                                countSpan.textContent = this.favorites.quickRef.length;
+                                break;
+                        }
                     }
-                }
-            });
-        }
+                });
+            },
 
-        function showFavoriteFeedback(message, color) {
-            const feedback = document.createElement('div');
-            feedback.style.cssText = `
-                position: fixed;
-                top: 20%;
-                left: 50%;
-                transform: translateX(-50%);
-                background: ${color};
-                color: black;
-                padding: 10px 20px;
-                border-radius: 25px;
-                z-index: 10001;
-                font-weight: bold;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-                animation: fadeInOut 2s ease-in-out;
-            `;
-            
-            feedback.innerHTML = message;
-            document.body.appendChild(feedback);
-            
-            setTimeout(() => {
-                if (feedback.parentNode) {
-                    feedback.remove();
-                }
-            }, 2000);
-        }
-
-        // Copy Functions
-        function copyFormat(format) {
-            if (orderList.length === 0) {
-                alert('No items in list to copy');
-                return;
-            }
-            
-            let text = '';
-            
-            switch(format) {
-                case 'boss':
-                    text = formatForBoss();
-                    break;
-                case 'team':
-                    text = formatForTeam();
-                    break;
-                case 'customer':
-                    text = formatForCustomer();
-                    break;
-                case 'skus':
-                    text = formatSKUsOnly();
-                    break;
-                default:
-                    text = formatForBoss();
-            }
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(text).then(() => {
-                // Visual feedback
-                const btn = event.target;
-                btn.classList.add('copied');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '✓ Copied!';
+            showFavoriteFeedback(message, color) {
+                const feedback = document.createElement('div');
+                feedback.style.cssText = `
+                    position: fixed;
+                    top: 20%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: ${color};
+                    color: black;
+                    padding: 10px 20px;
+                    border-radius: 25px;
+                    z-index: 10001;
+                    font-weight: bold;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                    animation: fadeInOut 2s ease-in-out;
+                `;
+                
+                feedback.innerHTML = message;
+                document.body.appendChild(feedback);
                 
                 setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = originalText;
+                    if (feedback.parentNode) {
+                        feedback.remove();
+                    }
                 }, 2000);
+            },
+
+            // Copy Functions
+            copyFormat(format) {
+                if (this.orderList.length === 0) {
+                    alert('No items in list to copy');
+                    return;
+                }
                 
-                // Haptic feedback
-                if (navigator.vibrate) {
-                    navigator.vibrate(50);
+                let text = '';
+                
+                switch(format) {
+                    case 'boss':
+                        text = this.formatForBoss();
+                        break;
+                    case 'team':
+                        text = this.formatForTeam();
+                        break;
+                    case 'customer':
+                        text = this.formatForCustomer();
+                        break;
+                    case 'skus':
+                        text = this.formatSKUsOnly();
+                        break;
+                    default:
+                        text = this.formatForBoss();
                 }
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                textArea.style.position = 'fixed';
-                textArea.style.left = '-999999px';
-                document.body.appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    alert('Copied to clipboard!');
-                } catch (err) {
-                    alert('Failed to copy. Please try again.');
-                }
-                document.body.removeChild(textArea);
-            });
-        }
-
-        function formatForBoss() {
-            const date = new Date().toLocaleDateString();
-            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            let total = 0;
-            
-            let text = `ORDER REQUEST\n`;
-            text += `Customer: ${customerInfo.name} #${customerInfo.account}\n`;
-            text += `Date: ${date} ${time}\n`;
-            text += `---\n`;
-            
-            orderList.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                text += `${item.sku} | ${item.name} | ${item.quantity}cs @ $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}\n`;
-            });
-            
-            text += `---\n`;
-            text += `TOTAL: $${total.toFixed(2)}`;
-            
-            return text;
-        }
-
-        function formatForTeam() {
-            let text = '🔥 CHECK THESE DEALS!\n\n';
-            
-            orderList.forEach(item => {
-                text += `${item.name}\n`;
-                text += `SKU: ${item.sku}\n`;
-                text += `Price: $${item.price.toFixed(2)}/case\n`;
-                text += `Qty Available: ${item.quantity} cases\n`;
-                text += `---\n`;
-            });
-            
-            return text;
-        }
-
-        function formatForCustomer() {
-            const date = new Date();
-            const quoteNum = `Q${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}-${String(Math.floor(Math.random()*1000)).padStart(3,'0')}`;
-            const validUntil = new Date(date.getTime() + 7*24*60*60*1000).toLocaleDateString();
-            let total = 0;
-            
-            let text = `QUOTE #${quoteNum}\n`;
-            text += `Valid Until: ${validUntil}\n\n`;
-            
-            orderList.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                text += `${item.quantity} cases - ${item.name}\n`;
-            });
-            
-            text += `\nEstimated Total: $${total.toFixed(2)}\n`;
-            text += `*Pricing subject to final confirmation`;
-            
-            return text;
-        }
-
-        function formatSKUsOnly() {
-            return orderList.map(item => `${item.sku} x${item.quantity}`).join('\n');
-        }
-
-        function shareList() {
-            const text = formatForBoss();
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Mission Linen Order',
-                    text: text
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(text).then(() => {
+                    // Visual feedback
+                    const btn = event.target;
+                    btn.classList.add('ml-copied');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '✓ Copied!';
+                    
+                    setTimeout(() => {
+                        btn.classList.remove('ml-copied');
+                        btn.innerHTML = originalText;
+                    }, 2000);
+                    
+                    // Haptic feedback
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
                 }).catch(err => {
-                    console.log('Share cancelled or failed', err);
+                    console.error('Failed to copy:', err);
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('Copied to clipboard!');
+                    } catch (err) {
+                        alert('Failed to copy. Please try again.');
+                    }
+                    document.body.removeChild(textArea);
                 });
-            } else {
-                // Fallback to copy
-                copyFormat('boss');
+            },
+
+            formatForBoss() {
+                const date = new Date().toLocaleDateString();
+                const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                let total = 0;
+                
+                let text = `ORDER REQUEST\n`;
+                text += `Customer: ${this.customerInfo.name} #${this.customerInfo.account}\n`;
+                text += `Date: ${date} ${time}\n`;
+                text += `---\n`;
+                
+                this.orderList.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    text += `${item.sku} | ${item.name} | ${item.quantity}cs @ $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}\n`;
+                });
+                
+                text += `---\n`;
+                text += `TOTAL: $${total.toFixed(2)}`;
+                
+                return text;
+            },
+
+            formatForTeam() {
+                let text = '🔥 CHECK THESE DEALS!\n\n';
+                
+                this.orderList.forEach(item => {
+                    text += `${item.name}\n`;
+                    text += `SKU: ${item.sku}\n`;
+                    text += `Price: $${item.price.toFixed(2)}/case\n`;
+                    text += `Qty Available: ${item.quantity} cases\n`;
+                    text += `---\n`;
+                });
+                
+                return text;
+            },
+
+            formatForCustomer() {
+                const date = new Date();
+                const quoteNum = `Q${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}-${String(Math.floor(Math.random()*1000)).padStart(3,'0')}`;
+                const validUntil = new Date(date.getTime() + 7*24*60*60*1000).toLocaleDateString();
+                let total = 0;
+                
+                let text = `QUOTE #${quoteNum}\n`;
+                text += `Valid Until: ${validUntil}\n\n`;
+                
+                this.orderList.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    text += `${item.quantity} cases - ${item.name}\n`;
+                });
+                
+                text += `\nEstimated Total: $${total.toFixed(2)}\n`;
+                text += `*Pricing subject to final confirmation`;
+                
+                return text;
+            },
+
+            formatSKUsOnly() {
+                return this.orderList.map(item => `${item.sku} x${item.quantity}`).join('\n');
+            },
+
+            shareList() {
+                const text = this.formatForBoss();
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Mission Linen Order',
+                        text: text
+                    }).catch(err => {
+                        console.log('Share cancelled or failed', err);
+                    });
+                } else {
+                    // Fallback to copy
+                    this.copyFormat('boss');
+                }
             }
-        }
+        };
 
         // PWA Installation
         let deferredPrompt;
@@ -2315,12 +2340,12 @@
         window.addEventListener('offline', updateNetworkStatus);
 
         // Initialize on load
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => MissionLinen.init());
 
         // Handle back button
         window.addEventListener('popstate', () => {
-            if (document.getElementById('categoryOverlay').classList.contains('active')) {
-                hideCategoryMenu();
+            if (document.getElementById('categoryOverlay').classList.contains('ml-active')) {
+                MissionLinen.hideCategoryMenu();
             }
         });
     </script>
